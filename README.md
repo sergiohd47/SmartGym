@@ -35,3 +35,9 @@ En cuanto a la estructura interna de la pagina web, podremos encontrar una serie
    - _Entidad Retroalimentacion:_ posibilidad de los usuarios de puntuar o realizar un comentario a una rutina de entrenamiento o a un entrenador personal en concreto. 
    
    - _Entidad Clase:_ clases presenciales disponibles por el usuario. En concreto podra disponer de clases de Spinning, Crossfit o Zumba. En estas, el usuario podra reservar plaza, ya que son limitadas, y elegir horario que mejor le convenga.
+
+#### Funcionalidad servicio interno<a name="id5"></a>
+La funcionalidad principal del servicio interno de nuestra pagina web queda dividida fundamentalmente en tres pilares:
+   - Comunicacion entre usuarios
+   - Descargar rutina de entrenamiento en formato PDF
+   - Descargar horario de las diferentes clases en formato PDF
