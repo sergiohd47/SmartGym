@@ -41,3 +41,15 @@ La funcionalidad principal del servicio interno de nuestra pagina web queda divi
    - Comunicacion entre usuarios
    - Descargar rutina de entrenamiento en formato PDF
    - Descargar horario de las diferentes clases en formato PDF
+   
+#### Integrantes proyecto<a name="id6"></a>
+El equipo de desarrollo de la pagina web es:
+   - ***Borja Martin Alonso***
+      - _Correo URJC:_ b.martinal@alumnos.urjc.es
+      - _Usuario GitHub:_ 
+   - ***Daniel Molina Ballesteros***
+      - _Correo URJC:_ d.molinab@alumnos.urjc.es
+      - _Usuario GitHub:_ danyelmb
+   - ***Sergio Hernandez Dominguez***
+      - _Correo URJC:_ s.hernandezdo@alumnos.urjc.es
+      - _Usuario GitHub:_ sergiohd47
