@@ -20,3 +20,18 @@ En la pagina web, segmentaremos el acceso a esta con dos partes bien distinguida
        - _Perfil usuario gimnasio:_ cada usuario del gimnasio tendra una cuenta donde podran acceder a rutinas personalizadas, mediante la comunicacion con un entrenador personal, ademas de poder ver la disponibilidad y horarios de las diferentes clases ofertadas por el gimnasio.
        - _Perfil entrenador:_ usuario especial del gimnasio, el cual puede realizar diferentes rutinas de entrenamiento a los usuarios que demandan sus servicios.
 
+#### Entidades principales<a name="id4"></a>
+En cuanto a la estructura interna de la pagina web, podremos encontrar una serie entidades basicas. 
+
+   - _Entidad Usuario Gimnasio:_ se trata del usuario apuntado al gimnasio. Este podra contactar con un entrenador para poder realizar un servicio de seguimiento personalizado. Ademas de este servicio, el usuario podra visualizar, valorar y comentar una serie de rutinas de entrenamiento y clases presenciales disponibles en el gimnasio.
+   
+   - _Entidad Entrenador Personal:_ se trata de un usario del gimnasio con servicios especiales. Tiene la posibilidad de crear y compartir con sus clientes las rutinas de entrenamiento especificas. Añadidamente, este perfil podra comunicarse con los usuarios que hayan contratado sus servicios.
+   
+   - _Entidad Rutina Entrenamiento:_ rutina de ejercicios que componen el entrenamiento de un usuario. Estas rutinas pueden ser generales(disponibles desde la parte publica de la pagina web) y especificas(realizadas por los entrenadores personales).
+    Ademas, es posible que sean valoradas por los usuarios, quedando almacenadas las favoritas en funcion de un usuario concreto.
+     
+   - _Entidad Rutinas Favoritas:_ coleccion de rutinas de entrenamiento marcadas como favoritas por un usuario del gimnasio en contreto.
+   
+   - _Entidad Retroalimentacion:_ posibilidad de los usuarios de puntuar o realizar un comentario a una rutina de entrenamiento o a un entrenador personal en concreto. 
+   
+   - _Entidad Clase:_ clases presenciales disponibles por el usuario. En concreto podra disponer de clases de Spinning, Crossfit o Zumba. En estas, el usuario podra reservar plaza, ya que son limitadas, y elegir horario que mejor le convenga.
