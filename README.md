@@ -46,7 +46,7 @@ La funcionalidad principal del servicio interno de nuestra pagina web queda divi
 El equipo de desarrollo de la pagina web es:
    - ***Borja Martin Alonso***
       - _Correo URJC:_ b.martinal@alumnos.urjc.es
-      - _Usuario GitHub:_ 
+      - _Usuario GitHub:_ BorjaPiruXx
    - ***Daniel Molina Ballesteros***
       - _Correo URJC:_ d.molinab@alumnos.urjc.es
       - _Usuario GitHub:_ danyelmb
