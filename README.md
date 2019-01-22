@@ -29,8 +29,6 @@ En cuanto a la estructura interna de la pagina web, podremos encontrar una serie
    
    - _Entidad Rutina Entrenamiento:_ rutina de ejercicios que componen el entrenamiento de un usuario. Estas rutinas pueden ser generales(disponibles desde la parte publica de la pagina web) y especificas(realizadas por los entrenadores personales).
     Ademas, es posible que sean valoradas por los usuarios, quedando almacenadas las favoritas en funcion de un usuario concreto.
-     
-   - _Entidad Rutinas Favoritas:_ coleccion de rutinas de entrenamiento marcadas como favoritas por un usuario del gimnasio en contreto.
    
    - _Entidad Retroalimentacion:_ posibilidad de los usuarios de puntuar o realizar un comentario a una rutina de entrenamiento o a un entrenador personal en concreto. 
    
