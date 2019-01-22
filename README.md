@@ -49,7 +49,7 @@ El equipo de desarrollo de la pagina web es:
       - _Usuario GitHub:_ BorjaPiruXx
    - ***Daniel Molina Ballesteros***
       - _Correo URJC:_ d.molinab@alumnos.urjc.es
-      - _Usuario GitHub:_ danyelmb
+      - _Usuario GitHub:_ [danyelmb](https://github.com/danyelmb)
    - ***Sergio Hernandez Dominguez***
       - _Correo URJC:_ s.hernandezdo@alumnos.urjc.es
       - _Usuario GitHub:_ sergiohd47
