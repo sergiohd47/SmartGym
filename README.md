@@ -23,7 +23,7 @@ En la pagina web, segmentaremos el acceso a esta con dos partes bien distinguida
 #### Entidades principales<a name="id4"></a>
 En cuanto a la estructura interna de la pagina web, podremos encontrar una serie entidades basicas. 
 
-   - _Entidad Usuario Gimnasio:_ se trata del usuario apuntado al gimnasio. Este podra contactar con un entrenador para poder realizar un servicio de seguimiento personalizado. Ademas de este servicio, el usuario podra visualizar, valorar y comentar una serie de rutinas de entrenamiento y clases presenciales disponibles en el gimnasio.
+   - _Entidad Usuario Gimnasio:_ se trata del usuario apuntado al gimnasio. Este podra contactar con un entrenador para poder realizar un servicio de seguimiento personalizado. Ademas de este servicio, el usuario podra visualizar, valorar y comentar una serie de rutinas de entrenamiento y clases presenciales disponibles en el gimnasio. Puede guardar una lista con sus rutinas favoritas.
    
    - _Entidad Entrenador Personal:_ se trata de un usario del gimnasio con servicios especiales. Tiene la posibilidad de crear y compartir con sus clientes las rutinas de entrenamiento especificas. Añadidamente, este perfil podra comunicarse con los usuarios que hayan contratado sus servicios.
    
