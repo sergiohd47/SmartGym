@@ -1,4 +1,5 @@
 # SmartGym
+![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/logoSmartGym.png)
 ## Indice
 - [Introduccion](#id1). 
 - [Primera fase](#id2). 
