@@ -3,9 +3,9 @@ package com.DAD.SmartGym;
 import java.util.ArrayList;
 import java.util.Random;
 
-import javax.persistence.Entity;
+//import javax.persistence.Entity;
 
-@Entity
+//@Entity
 public class Clase {
 
 	private static int MAX_PLAZAS;
