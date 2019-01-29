@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class RegistroController {
-	@RequestMapping("/#registro")
+	@RequestMapping("/registro")
 	public String registro(Model model) {
 		return "registro.html";
 	}
