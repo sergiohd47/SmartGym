@@ -13,6 +13,8 @@ public class TablaRutina {
 	
 	private String objetivo;
 	
+	//private PNG rutina;
+	
 	public TablaRutina (int id,Entrenador entrenador, Usuario usuario, String objetivo) {
 		this.idRutina = id;
 		this.entrenador = entrenador;
