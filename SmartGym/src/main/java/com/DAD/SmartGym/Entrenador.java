@@ -43,7 +43,17 @@ public class Entrenador {
 		return MAXRUTINA > numRutinasPendientes;
 	}
 	
-	public void rutinaCasillero(Usuario usuario, String Objetivo) {
-		//TablaRutina rutina = new TablaRutina();
+	public void rutinaCasillero(Usuario usuario, String objetivo) {
+		TablaRutina rutina = new TablaRutina(this, usuario, objetivo);
+		pendientes.add(rutina);
+	}
+	
+	public void crearRutina(int id, int duracion) {
+		TablaRutina rutina = this.pendientes.get(0);
+		rutina.getUsuario().recibirRutina(rutina.iniciarRutina(id, duracion));
+	}
+	
+	public void ponerRutina(int id, int duracion, Fecha inicio) {
+		
 	}
 }

@@ -1,5 +1,8 @@
 package com.DAD.SmartGym;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class TablaRutina {
 
@@ -8,25 +11,24 @@ public class TablaRutina {
 	private Entrenador entrenador;
 	private Usuario usuario;
 	
-	private Fecha inicio;
+	private Date inicio;
+	private DateFormat form = new SimpleDateFormat("dd-MM-yyyy");
 	private int duracion;//semanas
 	
 	private String objetivo;
 	
 	//private PNG rutina;
 	
-	public TablaRutina (int id,Entrenador entrenador, Usuario usuario, String objetivo) {
-		this.idRutina = id;
+	public TablaRutina (Entrenador entrenador, Usuario usuario, String objetivo) {
 		this.entrenador = entrenador;
 		this.usuario = usuario;
-		this.inicio = inicio;
-		this.duracion = duracion;
 		this.objetivo = objetivo;
 	}
 	
-	public void iniciarRutina(Fecha inicio, int duracion) {
-		this.inicio = inicio;
-		this.duracion = duracion;
+	public TablaRutina iniciarRutina(int id, int duracion) {
+		this.idRutina = id;
+		this.inicio = new Date();
+		return this;
 	}
 	
 	public int getId() {
@@ -45,7 +47,7 @@ public class TablaRutina {
 	}
 	
 	public String fechaInicio() {
-		return this.inicio.toString();
+		return this.form.format(inicio);
 	}
 	
 	public String getObjetivo() {

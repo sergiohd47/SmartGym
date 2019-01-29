@@ -85,6 +85,19 @@ public class Usuario {
 	}
 	
 	public void solicitarRutina(String objetivo) {
+		if ((this.num_rutinas < MAXRUTINAS)&&(this.entrenador.casillero())){
+			this.num_rutinas++;
+			this.entrenador.rutinaCasillero(this,objetivo);
+		}
+		
+	}
+	
+	
+	public void recibirRutina(TablaRutina rutina) {
+		rutinas.add(rutina);
+	}
+	
+	public void darDeBajaRutina(int id) {
 		
 	}
 	
