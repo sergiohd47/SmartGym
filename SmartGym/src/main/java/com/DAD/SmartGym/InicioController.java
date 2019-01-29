@@ -14,8 +14,4 @@ public class InicioController {
 	public String registrar(Model model) {
 		return "registro.html";
 	}
-	@RequestMapping("/acceso")
-	public String acceder(Model model) {
-		return "acceso.html";
-	}
 }

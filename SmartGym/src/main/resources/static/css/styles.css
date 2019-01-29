@@ -87,9 +87,7 @@ body{
 	#registration-form .form-control{
 		width: 100%;
 	}
-}
-
-@media screen and (max-width: 500px){
+	
 	#registration-form .image{
 		display: none;
 	}
