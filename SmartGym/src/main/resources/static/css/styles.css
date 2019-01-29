@@ -43,6 +43,37 @@ body{
 	height: auto;
 }
 
+#log-in-form .heading{
+	text-align: center;
+    margin-top: 50px;
+    margin-bottom: 70px;
+}
+
+#log-in-form .form-group{
+    float: left;
+    width: 28%;
+    margin-left: 40px;
+}
+
+#log-in-form .form-control{
+    padding: 15px 25px;
+    height: auto;
+}
+
+#log-in-form .form-group-btn{
+    width: 15%;
+    margin-left: 70px;
+}
+
+#log-in-form .btn{
+    padding: 13px 32px;
+}
+
+#log-in-form .checkbox{
+    float: left;
+    margin: 15px 0 50px 40px;
+}
+
 @media screen and (max-width: 700px){
 	#registration-form .image{
 		width: 30%;
@@ -74,5 +105,39 @@ body{
 	#registration-form .btn{
 		width: 100%;
 		margin-top: 20px;
+	}
+	
+	#log-in-form{
+        margin: 20px;
+    }
+
+    #log-in-form .form-group{
+        width: 60%;
+        float: none;
+        margin: 10px auto;
+    }
+
+    #log-in-form .form-group-btn{
+        margin-top: 30px;
+    }
+
+    #log-in-form .btn{
+        width: 100%;
+    }
+
+    #log-in-form .checkbox{
+        width: 60%;
+        float: none;
+        margin: 15px auto 50px auto;
+    }
+	
+	#log-in-form{
+    margin: 230px auto 0;
+    padding: 10px;
+    color: white;
+    height: auto;
+    max-width: 800px;
+    background-image: url("../img/imagenLogIn.jpg");
+    background-size: cover;
 	}
 }
