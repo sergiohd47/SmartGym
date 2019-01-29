@@ -3,7 +3,7 @@ package com.DAD.SmartGym;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EntidadUsuario {
+public class Usuario {
 
 	final int MAXRUTINAS = 3;
 	
@@ -13,7 +13,7 @@ public class EntidadUsuario {
 	private char genero;
 	private int edad;
 	
-	private EntidadEntrenador entrenador;
+	private Entrenador entrenador;
 	
 	private int num_rutinas;
 	private int num_favoritas;
@@ -21,7 +21,7 @@ public class EntidadUsuario {
 	private List<TablaRutina> rutinas= new ArrayList<TablaRutina>();
 	private List<TablaRutina> rutinas_fav = new ArrayList<TablaRutina>();
 	
-	public EntidadUsuario(String nombre, String id, char genero, int edad,String contrasena) {
+	public Usuario(String nombre, String id, char genero, int edad,String contrasena) {
 		this.nombre = nombre;
 		this.id = id;
 		this.contrasena = contrasena.toCharArray();
@@ -54,11 +54,11 @@ public class EntidadUsuario {
 		this.edad = edad;
 	}
 
-	public EntidadEntrenador getEntrenador() {
+	public Entrenador getEntrenador() {
 		return entrenador;
 	}
 
-	public String solicitarEntrenador(EntidadEntrenador entrenador) {
+	public String solicitarEntrenador(Entrenador entrenador) {
 		if (entrenador.disponible()) {
 			entrenador.anadirUsuario(this);
 			this.entrenador = entrenador;
@@ -68,7 +68,7 @@ public class EntidadUsuario {
 		}
 	}
 	
-	public String cambiarEntrenador(EntidadEntrenador entrenador) { //setEntrenador
+	public String cambiarEntrenador(Entrenador entrenador) { //setEntrenador
 		if (entrenador.disponible()) {
 			this.entrenador.quitarUsuario(this);
 			entrenador.anadirUsuario(this);

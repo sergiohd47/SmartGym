@@ -5,15 +5,15 @@ public class TablaRutina {
 
 	private int idRutina;
 	
-	private EntidadEntrenador entrenador;
-	private EntidadUsuario usuario;
+	private Entrenador entrenador;
+	private Usuario usuario;
 	
 	private Fecha inicio;
 	private int duracion;//semanas
 	
 	private String objetivo;
 	
-	public TablaRutina (int id,EntidadEntrenador entrenador, EntidadUsuario usuario, String objetivo) {
+	public TablaRutina (int id,Entrenador entrenador, Usuario usuario, String objetivo) {
 		this.idRutina = id;
 		this.entrenador = entrenador;
 		this.usuario = usuario;
@@ -30,11 +30,11 @@ public class TablaRutina {
 	public int getId() {
 		return this.idRutina;
 	}
-	public EntidadUsuario getUsuario() {
+	public Usuario getUsuario() {
 		return this.usuario;
 	}
 	
-	public EntidadEntrenador getEntrenador() {
+	public Entrenador getEntrenador() {
 		return this.entrenador;
 	}
 	
