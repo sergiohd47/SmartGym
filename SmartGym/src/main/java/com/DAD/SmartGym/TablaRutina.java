@@ -4,11 +4,22 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class TablaRutina {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int idRutina;
 	
+	@ManyToOne
 	private Entrenador entrenador;
+	@ManyToOne
 	private Usuario usuario;
 	
 	private Date inicio;
@@ -18,6 +29,8 @@ public class TablaRutina {
 	private String objetivo;
 	
 	//private PNG rutina;
+	
+	protected TablaRutina() {} // Constructor para la base de datos
 	
 	public TablaRutina (Entrenador entrenador, Usuario usuario, String objetivo) {
 		this.entrenador = entrenador;

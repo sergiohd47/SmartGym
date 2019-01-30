@@ -3,23 +3,41 @@ package com.DAD.SmartGym;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+
+import java.sql.*;
+
+@Entity
 public class Usuario {
 
 	final int MAXRUTINAS = 3;
 	
-	private String nombre;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String id;
 	private char[] contrasena = new char[8];
+	
+	private String nombre;
 	private char genero;
 	private int edad;
 	
+	@ManyToOne
 	private Entrenador entrenador;
 	
 	private int num_rutinas;
 	private int num_favoritas;
 	
+	@OneToMany
 	private List<TablaRutina> rutinas= new ArrayList<TablaRutina>();
+	@OneToMany
 	private List<TablaRutina> rutinas_fav = new ArrayList<TablaRutina>();
+	
+	protected Usuario() {} //Constructor para la base de datos
 	
 	public Usuario(String nombre, String id, char genero, int edad,String contrasena) {
 		this.nombre = nombre;

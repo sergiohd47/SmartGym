@@ -3,24 +3,32 @@ package com.DAD.SmartGym;
 import java.util.ArrayList;
 import java.util.Random;
 
-//import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.Entity;
 
-//@Entity
+@Entity
 public class Clase {
 
 	private static int MAX_PLAZAS;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private String nombre;
 	private int intensidadCardio;
 	private int intensidadFuerza;
 	private int plazas;
-	private String monitor;
+	@ManyToOne
+	private Entrenador monitor;
 	private ArrayList<String> plazasReservadas;
 	private ArrayList<String> horarios;
 	
-	public Clase(){}
+	protected Clase(){} //Constructor para la base de datos
 	
 	public Clase(String nombre,int intensidadCardio,int intensidadFuerza,int plazas,
-			String monitor,ArrayList<String> plazasReservadas,ArrayList<String> horarios) {
+			Entrenador monitor,ArrayList<String> plazasReservadas,ArrayList<String> horarios) {
 		this.nombre = nombre;
 		this.intensidadCardio = intensidadCardio;
 		this.intensidadFuerza = intensidadFuerza;
@@ -46,7 +54,7 @@ public class Clase {
     	return plazas;
     }
 
-    public String getMonitor() {
+    public Entrenador getMonitor() {
         return monitor;
     }
     
@@ -74,7 +82,7 @@ public class Clase {
     	this.plazas = plazas;
     }
 
-    public void setMonitor(String monitor) {
+    public void setMonitor(Entrenador monitor) {
     	this.monitor = monitor;
     }
 
@@ -144,6 +152,6 @@ public class Clase {
     
     @Override
     public String toString() {
-        return this.nombre + ", cuyo entrenador personal es " + this.monitor;
+        return this.nombre + ", cuyo entrenador personal es " + this.monitor.getNombre();
     }
 }
