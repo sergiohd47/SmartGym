@@ -5,9 +5,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class InicioController {
-	@RequestMapping("/")
-	public String inicio(Model model) {
-		return "index.html";
+public class RegistroController {
+	@RequestMapping("/registro")
+	public String registrar(Model model) {
+		return "registro.html";
 	}
 }
