@@ -22,8 +22,8 @@ public class Entrenador {
 	private char[] contrasena = new char[8];
 	
 	private String nombre;
+	private String apellidos;
 	private char genero;
-	private int edad;
 	
 	private int numUsuarios;
 	private int numRutinasPendientes;
@@ -33,6 +33,7 @@ public class Entrenador {
 	private List<Usuario> usuarios = new ArrayList<Usuario>(MAXUSUARIOS);
 	@OneToMany
 	private List<TablaRutina> pendientes = new ArrayList<TablaRutina>(MAXRUTINA);
+	//implementar la lista de tablas como una cola (Queue)
 	@OneToMany
 	private List<Clase> clases = new ArrayList<Clase>(MAXCLASES);
 	
@@ -40,7 +41,7 @@ public class Entrenador {
 	
 	
 	public String getNombre() {
-		return this.nombre;
+		return this.nombre + " " + this.apellidos;
 	}
 	
 	public boolean disponible() {
@@ -68,14 +69,13 @@ public class Entrenador {
 	public void rutinaCasillero(Usuario usuario, String objetivo) {
 		TablaRutina rutina = new TablaRutina(this, usuario, objetivo);
 		pendientes.add(rutina);
+		numRutinasPendientes++;
 	}
 	
 	public void crearRutina(int id, int duracion) {
 		TablaRutina rutina = this.pendientes.get(0);
 		rutina.getUsuario().recibirRutina(rutina.iniciarRutina(id, duracion));
+		numRutinasPendientes--;
 	}
 	
-	public void ponerRutina(int id, int duracion, Fecha inicio) {
-		
-	}
 }

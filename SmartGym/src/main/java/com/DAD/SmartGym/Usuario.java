@@ -23,8 +23,8 @@ public class Usuario {
 	private char[] contrasena = new char[8];
 	
 	private String nombre;
+	private String apellidos;
 	private char genero;
-	private int edad;
 	
 	@ManyToOne
 	private Entrenador entrenador;
@@ -33,23 +33,23 @@ public class Usuario {
 	private int num_favoritas;
 	
 	@OneToMany
-	private List<TablaRutina> rutinas= new ArrayList<TablaRutina>();
+	private List<TablaRutina> rutinas= new ArrayList<TablaRutina>(MAXRUTINAS);
 	@OneToMany
-	private List<TablaRutina> rutinas_fav = new ArrayList<TablaRutina>();
+	private List<TablaRutina> rutinas_fav = new ArrayList<TablaRutina>(MAXRUTINAS);
 	
 	protected Usuario() {} //Constructor para la base de datos
 	
-	public Usuario(String nombre, String id, char genero, int edad,String contrasena) {
+	public Usuario(String nombre, String apellidos, String id, char genero ,String contrasena) {
 		this.nombre = nombre;
+		this.apellidos = apellidos;
 		this.id = id;
 		this.contrasena = contrasena.toCharArray();
-		this.edad = edad;
 		this.genero = genero;
 		
 	}
 
 	public String getNombre() {
-		return nombre;
+		return nombre + " " + apellidos;
 	}
 
 	public String getId() {
@@ -62,14 +62,6 @@ public class Usuario {
 
 	public char getGenero() {
 		return genero;
-	}
-
-	public int getEdad() {
-		return edad;
-	}
-
-	public void setEdad(int edad) {
-		this.edad = edad;
 	}
 
 	public Entrenador getEntrenador() {
@@ -102,10 +94,15 @@ public class Usuario {
 		return "" + entrenador.getNombre() + " ya no es tu entrenador.";
 	}
 	
-	public void solicitarRutina(String objetivo) {
+	public String solicitarRutina(String objetivo) {
 		if ((this.num_rutinas < MAXRUTINAS)&&(this.entrenador.casillero())){
 			this.num_rutinas++;
 			this.entrenador.rutinaCasillero(this,objetivo);
+			return "Solicitud realizada con éxito.";
+		} else if (this.num_rutinas >= MAXRUTINAS) {
+			return "Ya tienes el máximo de rutinas disponibles.";
+		} else {
+			return "El casillero del entrenador " + this.entrenador.getNombre() + " está completo.";
 		}
 		
 	}
@@ -115,8 +112,50 @@ public class Usuario {
 		rutinas.add(rutina);
 	}
 	
-	public void darDeBajaRutina(int id) {
-		
+	public String darDeBajaRutina(int id) {
+			int i = 0;
+			for(TablaRutina rutina:rutinas) {
+				if (rutina.getId()==id) {
+					rutinas.remove(i);
+					num_rutinas--;
+					return "La rutina ha sido dada de baja con éxito.";
+				}
+				i++;
+			}
+			return "No se ha encontrado la rutina.";
+	}
+	
+	public String ponerRutinaFavorita(int id) {
+		if (MAXRUTINAS > num_favoritas) {
+			if (num_rutinas > 0) {
+				for (TablaRutina rutina:rutinas) {
+					if (rutina.getId()==id) {
+						rutinas_fav.add(rutina);
+						num_favoritas++;
+						return "Rutina añadida a favoritas.";
+					}
+				}
+				return "No se ha encontrado la rutina";
+			} else {
+				return "No tienes rutinas disponibles";
+			}
+		}
+		return "Tienes el máximo de rutinas favoritas disponibles.";
+	}
+	
+	public String quitarRutinaFavorita(int id) {
+		if (0 <= num_favoritas) {
+			int i = 0;
+			for (TablaRutina rutina:rutinas_fav) {
+				if (rutina.getId()==id) {
+					rutinas_fav.remove(i);
+					num_favoritas--;
+					return "Rutina eliminada de favoritas.";
+				}
+			}
+				return "No se ha encontrado la rutina";
+			}
+		return "No tienes rutinas favoritas.";
 	}
 	
 	
