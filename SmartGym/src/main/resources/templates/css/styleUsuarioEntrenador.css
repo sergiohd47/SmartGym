@@ -317,3 +317,31 @@ header.masthead p {
   -webkit-box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
   box-shadow: 0 0 0 0.2rem rgba(240, 95, 64, 0.5) !important;
 }
+.insidebox {
+	box-shadow: 0 0px 5px rgba(0, 0, 0, .07);
+	background: #ffffff;
+	width: 100%;
+	height: auto;
+	display: flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -webkit-flex;
+	display: -o-flex;
+	-webkit-align-items: center;
+	align-items: center;
+	padding: 10px 20px;
+	color: #6164B2;
+	transition: all 0.2s ease-in;
+	/*    justify-content: center;*/
+}
+
+.day-one {
+	margin-bottom: 50px;
+	font-weight: bold;
+	font-size: 20px;
+	color: #6164B2;
+}
+
+.card-columns { @include media-breakpoint-only(lg) { column-count:4;
+	
+}
