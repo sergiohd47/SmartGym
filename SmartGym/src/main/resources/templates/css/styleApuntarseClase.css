@@ -435,4 +435,11 @@ header.masthead p {
 include media-breakpoint-only (xl) {
 	column-count: 5;
 }
+.modal-center {
+    display:table;
+    height: 100%;
+    width: 100%;
+}
+.modal-align-center {: table-cell;vertical-align: middle;}
+.modal-content {height:500px;margin: 0 auto;}
 

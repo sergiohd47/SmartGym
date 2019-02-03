@@ -33,6 +33,7 @@
 <link
 	href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
 	rel="stylesheet" id="bootstrap-css">
+
 <script
 	src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <script
@@ -96,7 +97,7 @@
 					<p class="text-faded mb-4">Sala: Box Crossfit</p>
 					<p class="text-faded mb-4">Plazas libres: 10</p>
 					<iframe width="600" height="400"
-						src="https://youtube.com/embed/P8leVcbog4s"> </iframe>
+						src="https://youtube.com/embed/0HofXKSjUCs"> </iframe>
 					<p class="text-faded mb-4">HORARIO</p>
 					<table class="table table-dark">
 						<thead>
@@ -203,8 +204,59 @@
 							</tr>
 						</tbody>
 					</table>
-					<a class="btn btn-light btn-xl js-scroll-trigger"
-						href="formularioApuntarseCrossfit">APUNTARSE</a>
+					<div class="modal fade" id="formularioCrossfit" tabindex="-1"
+						role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-center">
+							<div class="modal-dialog .modal-align-center">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h4 class="modal-title" id="myModalLabel">CROSSFIT</h4>
+										<button type="button" class="close" data-dismiss="modal">
+											<span aria-hidden="true">×</span><span class="sr-only">Cerrar</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<div class="col-12">
+											<h4>Seleccione horario</h4>
+											<select class="custom-select" id="no_checkboxes"
+												multiple="multiple">
+												<optgroup label="LUNES">
+													<option value="1">SALA BOX 11:00-13:00</option>
+													<option value="2">SALA BOX 17:00-19:00</option>
+												</optgroup>
+												<optgroup label="MARTES">
+													<option value="3">SALA BOX 9:00-11:00</option>
+													<option value="4">SALA BOX 19:00-21:00</option>
+												</optgroup>
+												<optgroup label="MIERCOLES">
+													<option value="5">SALA BOX 15:00-17:00</option>
+													<option value="6">SALA BOX 17:00-19:00</option>
+												</optgroup>
+												<optgroup label="JUEVES">
+													<option value="7">SALA BOX 13:00-15:00</option>
+												</optgroup>
+												<optgroup label="VIERNES">
+													<option value="8">SALA BOX 9:00-11:00</option>
+													<option value="9">SALA BOX 19:00-21:00</option>
+												</optgroup>
+												<optgroup label="SABADO">
+													<option value="10">SALA BOX 9:00-11:00</option>
+													<option value="11">SALA BOX 19:00-21:00</option>
+												</optgroup>
+											</select>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-dark"
+											data-dismiss="modal">Cerrar</button>
+										<button type="button" class="btn btn-primary">GUARDAR</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button class="btn btn-dark btn-xl js-scroll-trigger"
+						data-toggle="modal" data-target="#formularioCrossfit">APUNTARSE</button>
 				</div>
 			</div>
 		</div>
@@ -328,8 +380,59 @@
 							</tr>
 						</tbody>
 					</table>
-					<a class="btn btn-dark btn-xl js-scroll-trigger"
-						href="formularioApuntarseSpinning">APUNTARSE</a>
+					<div class="modal fade" id="formularioSpinning" tabindex="-1"
+						role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-center">
+							<div class="modal-dialog .modal-align-center">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h4 class="modal-title" id="myModalLabel">SPINNING</h4>
+										<button type="button" class="close" data-dismiss="modal">
+											<span aria-hidden="true">×</span><span class="sr-only">Cerrar</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<div class="col-12">
+											<h4>Seleccione horario</h4>
+											<select class="custom-select" id="no_checkboxes"
+												multiple="multiple">
+												<optgroup label="LUNES">
+													<option value="1">SALA 1 9:00-11:00</option>
+													<option value="2">SALA 4 19:00-21:00</option>
+												</optgroup>
+												<optgroup label="MARTES">
+													<option value="3">SALA 4 11:00-13:00</option>
+												</optgroup>
+												<optgroup label="MIERCOLES">
+													<option value="4">SALA 1 13:00-15:00</option>
+													<option value="5">SALA 4 19:00-21:00</option>
+												</optgroup>
+												<optgroup label="JUEVES">
+													<option value="6">SALA 1 17:00-19:00</option>
+													<option value="7">SALA 4 19:00-21:00</option>
+												</optgroup>
+												<optgroup label="VIERNES">
+													<option value="8">SALA 4 11:00-13:00</option>
+													<option value="9">SALA 1 17:00-19:00</option>
+												</optgroup>
+												<optgroup label="SABADO">
+													<option value="10">SALA 4 11:00-13:00</option>
+													<option value="11">SALA 1 15:00-17:00</option>
+												</optgroup>
+											</select>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-dark"
+											data-dismiss="modal">Cerrar</button>
+										<button type="button" class="btn btn-primary">GUARDAR</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button class="btn btn-dark btn-xl js-scroll-trigger"
+						data-toggle="modal" data-target="#formularioSpinning">APUNTARSE</button>
 				</div>
 			</div>
 		</div>
@@ -455,8 +558,55 @@
 							</tr>
 						</tbody>
 					</table>
-					<a class="btn btn-dark btn-xl js-scroll-trigger"
-						href="formularioApuntarseZumba">APUNTARSE</a>
+					<div class="modal fade" id="formularioZumba" tabindex="-1"
+						role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+						<div class="modal-center">
+							<div class="modal-dialog .modal-align-center">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h4 class="modal-title" id="myModalLabel">ZUMBA</h4>
+										<button type="button" class="close" data-dismiss="modal">
+											<span aria-hidden="true">×</span><span class="sr-only">Cerrar</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<div class="col-12">
+											<h4>Seleccione horario</h4>
+											<select class="custom-select" id="no_checkboxes"
+												multiple="multiple">
+												<optgroup label="LUNES">
+													<option value="1">SALA 3 15:00-17:00</option>
+												</optgroup>
+												<optgroup label="MARTES">
+													<option value="3">SALA 2 13:00-15:00</option>
+												</optgroup>
+												<optgroup label="MIERCOLES">
+													<option value="4">SALA 3 9:00-11:00</option>
+												</optgroup>
+												<optgroup label="JUEVES">
+													<option value="6">SALA 2 15:00-17:00</option>
+												</optgroup>
+												<optgroup label="VIERNES">
+													<option value="9">SALA 3 15:00-17:00</option>
+												</optgroup>
+												<optgroup label="SABADO">
+													<option value="10">SALA 3 13:00-15:00</option>
+													<option value="11">SALA 2 17:00-19:00</option>
+												</optgroup>
+											</select>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-dark"
+											data-dismiss="modal">Cerrar</button>
+										<button type="button" class="btn btn-primary">GUARDAR</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<button class="btn btn-dark btn-xl js-scroll-trigger"
+						data-toggle="modal" data-target="#formularioZumba">APUNTARSE</button>
 				</div>
 			</div>
 		</div>
