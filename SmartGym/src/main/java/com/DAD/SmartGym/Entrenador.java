@@ -23,6 +23,7 @@ public class Entrenador {
 	private String nombre;
 	private String apellidos;
 	private char genero;
+	private String mail;
 	private char[] contrasena = new char[8];
 	private int numUsuarios;
 	private int numRutinasPendientes;

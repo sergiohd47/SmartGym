@@ -24,6 +24,7 @@ public class Usuario {
 	private String nombre;
 	private String apellidos;
 	private char genero;
+	private String mail;
 	private char[] contrasena = new char[8];
 	
 	@ManyToOne
@@ -39,10 +40,10 @@ public class Usuario {
 	
 	protected Usuario() {} //Constructor para la base de datos
 	
-	public Usuario(String nombre, String apellidos, Long id, char genero ,String contrasena) {
+	public Usuario(String nombre, String apellidos, String mail, char genero ,String contrasena) {
 		this.nombre = nombre;
 		this.apellidos = apellidos;
-		this.id = id;
+		this.mail = mail;
 		this.contrasena = contrasena.toCharArray();
 		this.genero = genero;
 		
@@ -55,9 +56,13 @@ public class Usuario {
 	public Long getId() {
 		return id;
 	}
-
-	public void cambiarId(Long id) { //setId
-		this.id = id;
+	
+	public String getMail() {
+		return mail;
+	}
+	
+	public void cambiarMail(String mail) { //SetMail
+		this.mail = mail;
 	}
 
 	public char getGenero() {
