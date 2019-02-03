@@ -44,8 +44,8 @@ body{
     padding: 13px 32px;
 }
 
-#log-in-form .checkbox{
-    float: left;
+#log-in-form .radio{
+    float: center;
     margin: 15px 0 50px 40px;
 }
 
@@ -69,9 +69,9 @@ body{
         width: 100%;
     }
 
-    #log-in-form .checkbox{
+    #log-in-form .radio{
         width: 60%;
-        float: none;
+        float: center;
         margin: 15px auto 50px auto;
     }
 }
