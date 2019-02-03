@@ -18,13 +18,12 @@ public class Entrenador {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String id;
-	private char[] contrasena = new char[8];
+	private Long id;
 	
 	private String nombre;
 	private String apellidos;
 	private char genero;
-	
+	private char[] contrasena = new char[8];
 	private int numUsuarios;
 	private int numRutinasPendientes;
 	private int numClases;

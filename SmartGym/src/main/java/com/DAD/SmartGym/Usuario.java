@@ -19,12 +19,12 @@ public class Usuario {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private String id;
-	private char[] contrasena = new char[8];
+	private Long id;
 	
 	private String nombre;
 	private String apellidos;
 	private char genero;
+	private char[] contrasena = new char[8];
 	
 	@ManyToOne
 	private Entrenador entrenador;
@@ -39,7 +39,7 @@ public class Usuario {
 	
 	protected Usuario() {} //Constructor para la base de datos
 	
-	public Usuario(String nombre, String apellidos, String id, char genero ,String contrasena) {
+	public Usuario(String nombre, String apellidos, Long id, char genero ,String contrasena) {
 		this.nombre = nombre;
 		this.apellidos = apellidos;
 		this.id = id;
@@ -52,11 +52,11 @@ public class Usuario {
 		return nombre + " " + apellidos;
 	}
 
-	public String getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void cambiarId(String id) { //setId
+	public void cambiarId(Long id) { //setId
 		this.id = id;
 	}
 
