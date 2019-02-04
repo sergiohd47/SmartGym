@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class AccesoController {
-	@Autowired
-	private EntrenadoresRepository entrenadores;
-	@Autowired
-	private UsuariosRepository usuarios;
+	//@Autowired
+	//private EntrenadoresRepository entrenadores;
+	//@Autowired
+	//private UsuariosRepository usuarios;
 	@RequestMapping("/acceso")
 	public String acceder(Model model) {
-		return "acceso.html";
+		return "../templates/acceso.html";
 	}
 }
