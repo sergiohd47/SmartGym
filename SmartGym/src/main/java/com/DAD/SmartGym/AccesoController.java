@@ -13,6 +13,6 @@ public class AccesoController {
 	//private UsuariosRepository usuarios;
 	@RequestMapping("/acceso")
 	public String acceder(Model model) {
-		return "../templates/acceso.html";
+		return "acceso.html";
 	}
 }
