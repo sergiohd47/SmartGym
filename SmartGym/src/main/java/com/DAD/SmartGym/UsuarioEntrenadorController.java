@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class UsuarioEntrenadorController {
-	@RequestMapping("/usuarioEntrenador")
+	@RequestMapping("/acceso?usuario=usuarioEntrenador")
 	public String usuarioEntrenador(Model model) {
 		return "usuarioEntrenador.html";
 	}
