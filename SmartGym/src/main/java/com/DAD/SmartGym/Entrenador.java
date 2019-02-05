@@ -39,6 +39,13 @@ public class Entrenador {
 	
 	protected Entrenador() {} //Constructor para la base de datos
 	
+	public Entrenador(String nombre, String apellidos, String mail, char genero ,String contrasena) {
+		this.nombre = nombre;
+		this.apellidos = apellidos;
+		this.mail = mail;
+		this.genero = genero;
+		this.contrasena = contrasena.toCharArray();;
+	}
 	
 	public String getNombre() {
 		return this.nombre + " " + this.apellidos;
