@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UsuarioBasicoController {
 	@RequestMapping("/usuarioBasico")
 	public String usuarioBasico(Model model) {
-		return "usuarioBasico.html";
+		return "usuarioBasico";
 	}
 }

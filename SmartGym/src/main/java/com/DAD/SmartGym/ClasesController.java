@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ClasesController {
 	@RequestMapping("/apuntarseClase")
 	public String apuntarseClase(Model model) {
-		return "apuntarseClase.html";
+		return "apuntarseClase";
 	}
 }

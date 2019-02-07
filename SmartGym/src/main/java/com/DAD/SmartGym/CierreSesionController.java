@@ -8,6 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class CierreSesionController {
 	@RequestMapping("/cerrarSesion")
 	public String acceder(Model model) {
-		return "index.html";
+		return "cerrarSesion";
+	}
+	@RequestMapping("/volverInicio")
+	public String volverInicio(Model model) {
+		return "index";
 	}
 }

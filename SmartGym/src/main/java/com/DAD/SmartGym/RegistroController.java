@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class RegistroController {
 	@RequestMapping("/registro")
 	public String registrar(Model model) {
-		return "registro.html";
+		return "registro";
 	}
 }

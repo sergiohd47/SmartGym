@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class InicioController {
 	@RequestMapping("/")
 	public String inicio(Model model) {
-		return "index.html";
+		return "index";
 	}
 }

@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UsuarioEntrenadorController {
 	@RequestMapping("/usuarioEntrenador")
 	public String usuarioEntrenador(Model model) {
-		return "usuarioEntrenador.html";
+		return "usuarioEntrenador";
 	}
 }
