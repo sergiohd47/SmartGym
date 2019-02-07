@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class UsuarioEntrenadorController {
 	@RequestMapping("/usuarioEntrenador")
 	public String usuarioEntrenador(Model model) {
+		model.addAttribute("nombreUsuario","Sergio_usuarioEntrenador");
 		return "usuarioEntrenador";
 	}
 }
