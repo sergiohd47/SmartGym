@@ -1,4 +1,4 @@
-package com.DAD.SmartGym;
+package com.DAD.SmartGym.Model;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;

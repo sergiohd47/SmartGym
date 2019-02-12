@@ -1,4 +1,4 @@
-package com.DAD.SmartGym;
+package com.DAD.SmartGym.Model;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;

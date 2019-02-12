@@ -1,4 +1,4 @@
-package com.DAD.SmartGym;
+package com.DAD.SmartGym.Model;
 
 import java.util.ArrayList;
 import java.util.List;

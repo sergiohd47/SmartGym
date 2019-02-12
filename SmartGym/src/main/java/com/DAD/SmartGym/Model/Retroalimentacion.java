@@ -1,4 +1,4 @@
-package com.DAD.SmartGym;
+package com.DAD.SmartGym.Model;
 
 public class Retroalimentacion {
 	private boolean valoracion; //TRUE-> ME GUSTA   FALSE-> NO ME GUSTA

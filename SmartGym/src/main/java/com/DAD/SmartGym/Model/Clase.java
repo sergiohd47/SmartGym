@@ -1,4 +1,4 @@
-package com.DAD.SmartGym;
+package com.DAD.SmartGym.Model;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Entity;
 
 @Entity
@@ -27,6 +28,7 @@ public class Clase {
 	
 	private int max_plazas;
 	private int duracion;
+	@OneToMany
 	private ArrayList<Horario> horarios;
 	
 	
@@ -79,14 +81,6 @@ public class Clase {
     public void removeHorarios(int indice) {
     	this.horarios.remove(indice);
     }
-    /*
-    private String escogerHorario(ArrayList<String> horariosLibres) {
-    	String hDeseado = "";
-    	Random rnd = new Random();
-    	int aleatorio = rnd.nextInt(horariosLibres.size()-1);
-    	hDeseado+=horariosLibres.get(aleatorio);
-    	return hDeseado;
-    }*/
     
     public String reservarPlaza(Usuario idUsuario, Horario hora) {
     	String resultado;
@@ -97,6 +91,17 @@ public class Clase {
     		} else {
 	    		resultado ="Esta clase ha alcanzado el límite de plazas";
     		}
+    	return resultado;
+    }
+    
+    public String cancelarPlaza(Usuario idUsuario, Horario hora) {
+    	String resultado;
+    	if(this.plazasReservadas.remove(idUsuario)) {
+    		hora.cancelarReserva();
+    		resultado = "La reserva ha sido cancelada con éxito";
+    	} else {
+    		resultado = "No tiene reserva";
+    	}    	
     	return resultado;
     }
     

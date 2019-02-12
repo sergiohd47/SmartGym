@@ -1,4 +1,4 @@
-package com.DAD.SmartGym;
+package com.DAD.SmartGym.Controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
