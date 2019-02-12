@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.DAD.SmartGym.Repository.EntrenadoresRepository;
 import com.DAD.SmartGym.Repository.UsuariosRepository;
 
-
 @Controller
 public class AccesoController {
 	@Autowired

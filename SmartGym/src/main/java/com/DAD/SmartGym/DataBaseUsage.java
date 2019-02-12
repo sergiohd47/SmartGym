@@ -65,6 +65,11 @@ public class DataBaseUsage {
 		trainerRepo.save(trainer1);
 		trainerRepo.save(trainer2);
 		
+		user1.solicitarRutina("Definición");
+		trainer1.crearRutina(1, 6);
+		
+		userRepo.save(user1);
+		trainerRepo.save(trainer1);
 		
 		
 	}
