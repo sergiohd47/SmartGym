@@ -28,7 +28,7 @@ public class Clase {
 	
 	private int max_plazas;
 	private int duracion;
-	@OneToMany
+	//@OneToMany
 	private ArrayList<Horario> horarios;
 	
 	

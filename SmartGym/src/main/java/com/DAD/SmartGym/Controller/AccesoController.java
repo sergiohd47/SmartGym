@@ -6,9 +6,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.DAD.SmartGym.Repository.EntrenadoresRepository;
+import com.DAD.SmartGym.Repository.UsuariosRepository;
+
 
 @Controller
 public class AccesoController {
+	@Autowired
+	private EntrenadoresRepository entrenadores;
+	@Autowired
+	private UsuariosRepository usuarios;	
 	@RequestMapping("/acceso")
 	public String acceder(Model model) {
 		return "acceso";
