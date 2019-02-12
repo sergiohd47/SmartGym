@@ -15,7 +15,7 @@ import java.sql.*;
 @Entity
 public class Usuario {
 
-	final int MAXRUTINAS = 3;
+	final int MAXRUTINAS = 6;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

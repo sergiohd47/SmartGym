@@ -12,30 +12,38 @@ import javax.persistence.Entity;
 @Entity
 public class Clase {
 
-	private static int MAX_PLAZAS;
+	
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
+	
+	
 	private String nombre;
+	private String descripcion;
+	
 	private int intensidadCardio;
 	private int intensidadFuerza;
-	private int plazas;
+	
+	private int max_plazas;
+	private int duracion;
+	private ArrayList<Horario> horarios;
+	
+	
 	@ManyToOne
 	private Entrenador monitor;
-	private ArrayList<String> plazasReservadas;
-	private ArrayList<String> horarios;
+	private ArrayList<Usuario> plazasReservadas;
+	
+	
 	
 	protected Clase(){} //Constructor para la base de datos
 	
-	public Clase(String nombre,int intensidadCardio,int intensidadFuerza,int plazas,
-			Entrenador monitor,ArrayList<String> plazasReservadas,ArrayList<String> horarios) {
+	public Clase(String nombre,int intensidadCardio,int intensidadFuerza,int plazas, Entrenador monitor) {
 		this.nombre = nombre;
 		this.intensidadCardio = intensidadCardio;
 		this.intensidadFuerza = intensidadFuerza;
-		this.plazas = plazas;
+		this.max_plazas = plazas;
 		this.monitor = monitor;
-		this.plazasReservadas = plazasReservadas;
-		this.horarios = horarios;
 	}
 	
 	public String getNombre() {
@@ -50,82 +58,45 @@ public class Clase {
     	return intensidadFuerza;
     }
     
-    public int getPlazas() {
-    	return plazas;
-    }
 
     public Entrenador getMonitor() {
         return monitor;
     }
-    
-    public ArrayList<String> getPlazasReservadas() {
-    	return plazasReservadas;
-    }
-    
-    public ArrayList<String> getHorarios() {
-    	return horarios;
-    }
-    
-    public void setNombre(String nombre) {
-    	this.nombre = nombre;
-    }
-    
-    public void setIntensidadCardio(int intensidadCardio) {
-    	this.intensidadCardio = intensidadCardio;
-    }
-    
-    public void setIntensidadFuerza(int intensidadFuerza) {
-    	this.intensidadFuerza = intensidadFuerza;
-    }
-    
+       
     public void setPlazas(int plazas) {
-    	this.plazas = plazas;
+    	this.max_plazas = plazas;
     }
 
     public void setMonitor(Entrenador monitor) {
     	this.monitor = monitor;
     }
 
-    public void setPlazasReservadas(ArrayList<String> plazasReservadas) {
-    	this.plazasReservadas = plazasReservadas;
+    public void addHorarios(int hora, String dia, int sala) {
+    	Horario horario = new Horario(hora,dia,sala,this.max_plazas);
+    	horarios.add(horario);
     }
     
-    public void setHorarios(ArrayList<String> horarios) {
-    	this.horarios = horarios;
+    public void removeHorarios(int indice) {
+    	this.horarios.remove(indice);
     }
-    
-    private int numMaxPlazasClase(String nombreClase) {
-    	switch(nombreClase) {
-	    	case "Crossfit": MAX_PLAZAS = 20;
-	    	break;
-	    	case "Spinning": MAX_PLAZAS = 30;
-	    	break;
-	    	default: MAX_PLAZAS = 40;
-    	}
-    	return MAX_PLAZAS;
-    }
-    
+    /*
     private String escogerHorario(ArrayList<String> horariosLibres) {
     	String hDeseado = "";
     	Random rnd = new Random();
     	int aleatorio = rnd.nextInt(horariosLibres.size()-1);
     	hDeseado+=horariosLibres.get(aleatorio);
     	return hDeseado;
-    }
+    }*/
     
-    public String reservarPlaza(String idUsuario) {
-    	ArrayList<String> horariosLibres = new ArrayList<>();
-    	String resultado ="";
-    	for(String h : horarios) {
-    		if(plazas < numMaxPlazasClase(nombre)) {
-    			horariosLibres.add(h);
-    			String horarioEscogido = escogerHorario(horariosLibres);
-	    		plazasReservadas.add(idUsuario);
-	    		plazas++;
-	    		resultado+="Su plaza ha sido reservada con éxito a las " + horarioEscogido ;
-    		} else
-	    		resultado+="Esta clase ha alcanzado el límite de plazas";
-    	}
+    public String reservarPlaza(Usuario idUsuario, Horario hora) {
+    	String resultado;
+    	if(hora.getPlazas()>0) {
+    		hora.reservarPlaza();
+    		this.plazasReservadas.add(idUsuario);
+	    		resultado ="Su plaza ha sido reservada con éxito";
+    		} else {
+	    		resultado ="Esta clase ha alcanzado el límite de plazas";
+    		}
     	return resultado;
     }
     
@@ -150,8 +121,14 @@ public class Clase {
         return resultado;
     }
     
-    @Override
-    public String toString() {
-        return this.nombre + ", cuyo entrenador personal es " + this.monitor.getNombre();
+    private int getSala(String dia, int hora) {
+    	
+    	
+    	return 1;
     }
+    
+    /*@Override
+    public String toString() {
+        return this.nombre + " ( Sala " + + " )";
+    }*/
 }

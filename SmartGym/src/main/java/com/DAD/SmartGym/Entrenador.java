@@ -25,6 +25,7 @@ public class Entrenador {
 	private char genero;
 	private String mail;
 	private char[] contrasena = new char[8];
+	
 	private int numUsuarios;
 	private int numRutinasPendientes;
 	private int numClases;
