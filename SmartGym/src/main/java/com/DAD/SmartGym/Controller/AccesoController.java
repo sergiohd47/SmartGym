@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class AccesoController {
-
 	@RequestMapping("/acceso")
 	public String acceder(Model model) {
 		return "acceso";
