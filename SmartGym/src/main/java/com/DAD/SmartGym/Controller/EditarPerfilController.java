@@ -1,4 +1,4 @@
-package com.DAD.SmartGym;
+package com.DAD.SmartGym.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;

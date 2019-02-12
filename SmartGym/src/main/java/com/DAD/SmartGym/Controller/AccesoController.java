@@ -8,10 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class AccesoController {
-	@Autowired
-	private EntrenadoresRepository entrenadores;
-	@Autowired
-	private UsuariosRepository usuarios;
+
 	@RequestMapping("/acceso")
 	public String acceder(Model model) {
 		return "acceso";
