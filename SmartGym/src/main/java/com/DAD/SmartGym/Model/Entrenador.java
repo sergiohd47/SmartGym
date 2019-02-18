@@ -3,13 +3,11 @@ package com.DAD.SmartGym.Model;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
+
 
 @Entity
+@Table(name = "entrenador")
 public class Entrenador {
 	
 	private final int MAXUSUARIOS = 20;
@@ -20,10 +18,15 @@ public class Entrenador {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
+	@Column
 	private String nombre;
+	@Column
 	private String apellidos;
+	@Column
 	private char genero;
+	@Column
 	private String mail;
+	@Column
 	private char[] contrasena = new char[8];
 	
 	private int numUsuarios;
@@ -45,7 +48,7 @@ public class Entrenador {
 		this.apellidos = apellidos;
 		this.mail = mail;
 		this.genero = genero;
-		this.contrasena = contrasena.toCharArray();;
+		this.contrasena = contrasena.toCharArray();
 	}
 	
 	public String getNombre() {

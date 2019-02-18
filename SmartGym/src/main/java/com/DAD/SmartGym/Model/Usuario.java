@@ -3,16 +3,13 @@ package com.DAD.SmartGym.Model;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
+
 
 import java.sql.*;
 
 @Entity
+@Table(name = "usuario")
 public class Usuario {
 
 	final int MAXRUTINAS = 6;
@@ -21,10 +18,15 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
+	@Column
 	private String nombre;
+	@Column
 	private String apellidos;
+	@Column
 	private char genero;
+	@Column
 	private String mail;
+	@Column
 	private char[] contrasena = new char[8];
 	
 	@ManyToOne
@@ -37,6 +39,8 @@ public class Usuario {
 	private List<TablaRutina> rutinas= new ArrayList<TablaRutina>(MAXRUTINAS);
 	@OneToMany
 	private List<TablaRutina> rutinas_fav = new ArrayList<TablaRutina>(MAXRUTINAS);
+	
+	
 	
 	protected Usuario() {} //Constructor para la base de datos
 	

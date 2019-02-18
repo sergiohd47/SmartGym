@@ -4,13 +4,16 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 @Entity
+@Table(name = "rutina")
 public class TablaRutina {
 
 	@Id
@@ -22,8 +25,11 @@ public class TablaRutina {
 	@ManyToOne
 	private Usuario usuario;
 	
+	@Column
 	private Date inicio;
+	@Column
 	private DateFormat form = new SimpleDateFormat("dd-MM-yyyy");
+	@Column
 	private int duracion;//semanas
 	
 	private String objetivo;

@@ -8,25 +8,31 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Entity
+@Table(name = "clase")
 public class Clase {
-
 	
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
-	
+	@Column
 	private String nombre;
+	@Column
 	private String descripcion;
 	
+	@Column
 	private int intensidadCardio;
+	@Column
 	private int intensidadFuerza;
-	
+	@Column
 	private int max_plazas;
+	@Column
 	private int duracion;
 	//@OneToMany
 	private ArrayList<Horario> horarios;

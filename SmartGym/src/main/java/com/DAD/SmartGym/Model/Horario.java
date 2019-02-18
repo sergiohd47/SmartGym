@@ -3,17 +3,24 @@ package com.DAD.SmartGym.Model;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 
 @Entity
+@Table(name = "horario")
 public class Horario {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
+	@Column
 	private int hora;
+	@Column
 	private String dia;
+	@Column
 	private int sala;
+	@Column
 	private int plazas;
 	
 
