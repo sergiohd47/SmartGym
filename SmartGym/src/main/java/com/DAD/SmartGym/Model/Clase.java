@@ -1,16 +1,11 @@
 package com.DAD.SmartGym.Model;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
-import javax.persistence.Column;
-import javax.persistence.Entity;
+import javax.persistence.*;
+
 
 @Entity
 @Table(name = "clase")
@@ -34,13 +29,14 @@ public class Clase {
 	private int max_plazas;
 	@Column
 	private int duracion;
-	//@OneToMany
-	private ArrayList<Horario> horarios;
+	@OneToMany
+	private List<Horario> horarios = new ArrayList<Horario>();
 	
 	
 	@ManyToOne
 	private Entrenador monitor;
-	private ArrayList<Usuario> plazasReservadas;
+	@ManyToMany
+	private List<Usuario> plazasReservadas = new ArrayList<Usuario>();
 	
 	
 	

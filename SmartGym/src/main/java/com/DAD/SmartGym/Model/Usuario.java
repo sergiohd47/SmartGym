@@ -29,6 +29,7 @@ public class Usuario {
 	@Column
 	private char[] contrasena = new char[8];
 	
+	
 	@ManyToOne
 	private Entrenador entrenador;
 	
@@ -39,6 +40,8 @@ public class Usuario {
 	private List<TablaRutina> rutinas= new ArrayList<TablaRutina>(MAXRUTINAS);
 	@OneToMany
 	private List<TablaRutina> rutinas_fav = new ArrayList<TablaRutina>(MAXRUTINAS);
+	@ManyToMany
+	private List<Clase> clases_apuntadas = new ArrayList<Clase>();
 	
 	
 	

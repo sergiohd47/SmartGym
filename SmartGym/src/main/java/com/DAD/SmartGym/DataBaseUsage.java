@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 
 import com.DAD.SmartGym.Model.*;
 import com.DAD.SmartGym.Repository.*;
-
+import javax.annotation.PostConstruct;
 
 @Controller
 public class DataBaseUsage {
@@ -22,6 +22,7 @@ public class DataBaseUsage {
 	@Autowired
 	private ClaseRepository classRepo;
 	
+	//@PostConstruct
 	public void init() throws Exception{
 		
 		Usuario user1 = new Usuario("Danny","Molina","danyel@mail.com",'m',"password");
