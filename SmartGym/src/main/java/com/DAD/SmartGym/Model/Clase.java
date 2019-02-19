@@ -29,13 +29,13 @@ public class Clase {
 	private int max_plazas;
 	@Column
 	private int duracion;
-	@OneToMany
+	@OneToMany(cascade=CascadeType.ALL)
 	private List<Horario> horarios = new ArrayList<Horario>();
 	
 	
 	@ManyToOne
 	private Entrenador monitor;
-	@ManyToMany
+	@ManyToMany(mappedBy="clases_apuntadas")
 	private List<Usuario> plazasReservadas = new ArrayList<Usuario>();
 	
 	
@@ -127,7 +127,7 @@ public class Clase {
             resultado = 1;
         return resultado;
     }
-    
+    //Implementar
     private int getSala(String dia, int hora) {
     	
     	

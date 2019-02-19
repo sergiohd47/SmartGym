@@ -22,6 +22,7 @@ public class TablaRutina {
 	
 	@ManyToOne
 	private Entrenador entrenador;
+	
 	@ManyToOne
 	private Usuario usuario;
 	
@@ -31,7 +32,7 @@ public class TablaRutina {
 	private DateFormat form = new SimpleDateFormat("dd-MM-yyyy");
 	@Column
 	private int duracion;//semanas
-	
+	@Column
 	private String objetivo;
 	
 	//private PNG rutina;

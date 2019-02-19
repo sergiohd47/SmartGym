@@ -30,17 +30,22 @@ public class Usuario {
 	private char[] contrasena = new char[8];
 	
 	
-	@ManyToOne
+	@ManyToOne(cascade=CascadeType.ALL)
 	private Entrenador entrenador;
 	
+	/*
 	private int num_rutinas;
 	private int num_favoritas;
+	*/
 	
-	@OneToMany
-	private List<TablaRutina> rutinas= new ArrayList<TablaRutina>(MAXRUTINAS);
-	@OneToMany
+	@OneToMany(cascade=CascadeType.ALL)
+	private List<TablaRutina> rutinas = new ArrayList<TablaRutina>(MAXRUTINAS);
+	
+	@OneToMany(cascade=CascadeType.ALL)
 	private List<TablaRutina> rutinas_fav = new ArrayList<TablaRutina>(MAXRUTINAS);
-	@ManyToMany
+	
+	
+	@ManyToMany(cascade=CascadeType.ALL)
 	private List<Clase> clases_apuntadas = new ArrayList<Clase>();
 	
 	
@@ -107,11 +112,10 @@ public class Usuario {
 	}
 	
 	public String solicitarRutina(String objetivo) {
-		if ((this.num_rutinas < MAXRUTINAS)&&(this.entrenador.casillero())){
-			this.num_rutinas++;
+		if ((this.rutinas.size() < MAXRUTINAS)&&(this.entrenador.casillero())){
 			this.entrenador.rutinaCasillero(this,objetivo);
 			return "Solicitud realizada con éxito.";
-		} else if (this.num_rutinas >= MAXRUTINAS) {
+		} else if (this.rutinas.size() >= MAXRUTINAS) {
 			return "Ya tienes el máximo de rutinas disponibles.";
 		} else {
 			return "El casillero del entrenador " + this.entrenador.getNombre() + " está completo.";
@@ -124,30 +128,21 @@ public class Usuario {
 		rutinas.add(rutina);
 	}
 	
-	public String darDeBajaRutina(int id) {
-			int i = 0;
-			for(TablaRutina rutina:rutinas) {
-				if (rutina.getId()==id) {
-					rutinas.remove(i);
-					num_rutinas--;
-					return "La rutina ha sido dada de baja con éxito.";
-				}
-				i++;
+	public String darDeBajaRutina(TablaRutina rutina) {
+	
+			if(rutinas.remove(rutina)) {
+				return "La rutina ha sido dada de baja con éxito.";
+			}else {
+				return "No se ha encontrado la rutina.";
 			}
-			return "No se ha encontrado la rutina.";
+			
 	}
 	
-	public String ponerRutinaFavorita(int id) {
-		if (MAXRUTINAS > num_favoritas) {
-			if (num_rutinas > 0) {
-				for (TablaRutina rutina:rutinas) {
-					if (rutina.getId()==id) {
-						rutinas_fav.add(rutina);
-						num_favoritas++;
-						return "Rutina añadida a favoritas.";
-					}
-				}
-				return "No se ha encontrado la rutina";
+	public String ponerRutinaFavorita(TablaRutina rutina) {
+		if (MAXRUTINAS > rutinas_fav.size()) {
+			if (rutinas.size() > 0) {
+				rutinas_fav.add(rutina);
+				return "Rutina añadida a favoritas.";
 			} else {
 				return "No tienes rutinas disponibles";
 			}
@@ -155,19 +150,16 @@ public class Usuario {
 		return "Tienes el máximo de rutinas favoritas disponibles.";
 	}
 	
-	public String quitarRutinaFavorita(int id) {
-		if (0 <= num_favoritas) {
-			int i = 0;
-			for (TablaRutina rutina:rutinas_fav) {
-				if (rutina.getId()==id) {
-					rutinas_fav.remove(i);
-					num_favoritas--;
-					return "Rutina eliminada de favoritas.";
-				}
-			}
+	public String quitarRutinaFavorita(TablaRutina rutina) {
+		if (0 <= rutinas_fav.size()) {
+			if (rutinas_fav.remove(rutina)) {
+				return "Rutina eliminada de favoritas.";
+			} else {
 				return "No se ha encontrado la rutina";
 			}
-		return "No tienes rutinas favoritas.";
+		} else {
+			return "No tienes rutinas favoritas.";
+		}
 	}
 	
 	

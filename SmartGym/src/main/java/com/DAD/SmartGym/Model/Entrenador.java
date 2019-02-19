@@ -29,16 +29,20 @@ public class Entrenador {
 	@Column
 	private char[] contrasena = new char[8];
 	
+	/*
 	private int numUsuarios;
 	private int numRutinasPendientes;
 	private int numClases;
+	*/
 	
-	@OneToMany
+	@OneToMany(mappedBy="entrenador")
 	private List<Usuario> usuarios = new ArrayList<Usuario>(MAXUSUARIOS);
-	@OneToMany
+	
+	@OneToMany(cascade=CascadeType.PERSIST)
 	private List<TablaRutina> pendientes = new ArrayList<TablaRutina>(MAXRUTINA);
-	//implementar la lista de tablas como una cola (Queue)
-	@OneToMany
+	
+	
+	@OneToMany(cascade=CascadeType.ALL)
 	private List<Clase> clases = new ArrayList<Clase>(MAXCLASES);
 	
 	protected Entrenador() {} //Constructor para la base de datos
@@ -56,37 +60,33 @@ public class Entrenador {
 	}
 	
 	public boolean disponible() {
-		return MAXUSUARIOS > numUsuarios;
+		return MAXUSUARIOS > usuarios.size();
 	}
 	
 	public boolean libre() {
-		return MAXCLASES > numClases;
+		return MAXCLASES > clases.size();
 	}
 	
 	public void anadirUsuario(Usuario usuario) {
-		numUsuarios++;
 		usuarios.add(usuario);
 	}
 	
 	public void quitarUsuario(Usuario usuario) {
-		numUsuarios--;
 		usuarios.remove(usuario);
 	}
 	
 	public boolean casillero() {
-		return MAXRUTINA > numRutinasPendientes;
+		return MAXRUTINA > pendientes.size();
 	}
 	
 	public void rutinaCasillero(Usuario usuario, String objetivo) {
 		TablaRutina rutina = new TablaRutina(this, usuario, objetivo);
 		pendientes.add(rutina);
-		numRutinasPendientes++;
 	}
 	
 	public void crearRutina(int id, int duracion) {
 		TablaRutina rutina = this.pendientes.get(0);
 		rutina.getUsuario().recibirRutina(rutina.iniciarRutina(id, duracion));
-		numRutinasPendientes--;
 	}
 	
 }

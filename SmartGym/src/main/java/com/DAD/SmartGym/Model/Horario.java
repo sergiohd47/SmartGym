@@ -17,8 +17,6 @@ public class Horario {
 	private int sala;
 	@Column
 	private int plazas;
-	@ManyToOne
-	private Clase clase;
 	
 
 	public Horario(int hora, String dia, int sala, int plazas) {
