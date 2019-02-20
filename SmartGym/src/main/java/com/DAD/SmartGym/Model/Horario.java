@@ -18,6 +18,7 @@ public class Horario {
 	@Column
 	private int plazas;
 	
+	protected Horario() {} //Constructor para la base de datos
 
 	public Horario(int hora, String dia, int sala, int plazas) {
 		this.hora = hora;

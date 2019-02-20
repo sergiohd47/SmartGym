@@ -36,14 +36,14 @@ public class Entrenador {
 	*/
 	
 	@OneToMany(mappedBy="entrenador")
-	private List<Usuario> usuarios = new ArrayList<Usuario>(MAXUSUARIOS);
+	private List<Usuario> usuarios /*= new ArrayList<Usuario>(MAXUSUARIOS)*/;
 	
 	@OneToMany(cascade=CascadeType.PERSIST)
-	private List<TablaRutina> pendientes = new ArrayList<TablaRutina>(MAXRUTINA);
+	private List<TablaRutina> pendientes /*= new ArrayList<TablaRutina>(MAXRUTINA)*/;
 	
 	
 	@OneToMany(cascade=CascadeType.ALL)
-	private List<Clase> clases = new ArrayList<Clase>(MAXCLASES);
+	private List<Clase> clases/* = new ArrayList<Clase>(MAXCLASES)*/;
 	
 	protected Entrenador() {} //Constructor para la base de datos
 	
