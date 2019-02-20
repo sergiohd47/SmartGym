@@ -7,7 +7,8 @@
     - [Entidades principales](#id4).
     - [Funcionalidad servicio interno](#id5). 
     - [Integrantes proyecto](#id6).
-    
+- [Segunda fase](#id7).
+    - [Diagrama de clases](#id8).    
 ### Introduccion<a name="id1"></a>
 La pagina web SmartGym consiste en la pagina web de un gimnasio donde se facilita el seguimiento de rutinas para usuarios del gimnasio mediante monitores titulados.  
 
@@ -52,3 +53,17 @@ El equipo de desarrollo de la pagina web es:
    - ***Sergio Hernandez Dominguez***
       - _Correo URJC:_ s.hernandezdo@alumnos.urjc.es
       - _Usuario GitHub:_ [sergiohd47](https://github.com/sergiohd47)
+
+### Segunda fase<a name="id7"></a>
+#### Diagrama de clases<a name="id8"></a>
+   - ***Parte Pública***
+      - La entidad ***Usuario***, esté o no registrado en la página, puede realizar diferentes acciones dentro la interfaz de la clase _index.html_ (ver las rutinas, instalaciones y poder contactar con el propio gimnasio) mediante su respectivo controlador **Inicio**. Este controlador puede conectarse a su vez con otros dos controladores distintos, cuya función es que la entidad **Usuario** pueda registrarse o acceder a la página del gimnasio mediante los controladores **Registro** y **Acceso** respectivamente. Si el usuario se registra como un nuevo integrante de la página web, sea un usuario básico o un entrenador lo hará desde la interfaz _registro.html_ y se redirigirá a la interfaz _acceso.html_ para entrar en la parte privada de dicho usuario.
+      ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/SmartGym_PartePublica.png)
+
+   - ***Parte Privada(Usuario Básico)***
+      - Al acceder como un usuario normal, la entidad ***UsuarioBasico*** tiene como jefe de tareas al controlador **Usuario** que, al saber que es un usuario básico del centro le ofrece la posibilidad de realizar diferentes acciones (ver clases presenciales o rutinas favoritas) mediante la interfaz de la clase _usuarioBasico.html_. Este controlador principal puede conectarse a otros cuatro controladores: **Clases** en el que su principal objetivo es indicar al usuario qué clases tiene disponibles para realizar en el gimnasio y se enlaza con un nuevo controlador denominado **ApuntarClase** cuya función será la de apuntar a dicho usuario a esa clase mediante _apuntarseClase.html_; **ContactarEntrenador** que tiene como objetivo que el propio usuario tenga la posibilidad de contactar con el entrenador que impartirá alguna de las clases del gimnasio; **EditarPerfil** en el que el propio usuario podrá editar sus datos personales si lo desea mediante la interfaz _editarPerfil.html_; **CierreSesion** permite al usuario, en caso de que no tenga ninguna acción más que realizar en su cuenta, la posibilidad de cerrar su sesión mediante la interfaz _cerrarSesion.html_ con la que regresará a la página principal del gimnasio.
+      ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/SmartGym_PartePrivada(I).png) 
+ 
+   - ***Parte Privada(Usuario Entrenador)***
+      - Si el usuario accedió como entidad ***UsuarioEntrenador***, el controlador **Usuario** sabrá que es un entrenador del gimnasio y le ofrecerá ciertas acciones (ver clases presenciales, rutuinas favoritas,editar su perfil o cerrar sesión) idénticas que puede realizar un usuario normal pero con la variante de que el entrenador puede ojear las personas inscritas o que quieren reservar su clase mediante el controlador **CarteraClientes** cuya interfaz es _carteraClientes.html_.
+      ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/SmartGym_PartePrivada(II).png)
