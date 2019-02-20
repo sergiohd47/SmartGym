@@ -36,18 +36,19 @@ public class Clase {
 	@ManyToOne
 	private Entrenador monitor;
 	@ManyToMany(mappedBy="clases_apuntadas")
-	private List<Usuario> plazasReservadas = new ArrayList<Usuario>();
+	private List<Usuario> plazasReservadas /*= new ArrayList<Usuario>()*/;
 	
 	
 	
 	protected Clase(){} //Constructor para la base de datos
 	
-	public Clase(String nombre,int intensidadCardio,int intensidadFuerza,int plazas, Entrenador monitor) {
+	public Clase(String nombre,int intensidadCardio,int intensidadFuerza,int plazas, Entrenador monitor,int duracion) {
 		this.nombre = nombre;
 		this.intensidadCardio = intensidadCardio;
 		this.intensidadFuerza = intensidadFuerza;
 		this.max_plazas = plazas;
 		this.monitor = monitor;
+		this.duracion = duracion;
 	}
 	
 	public String getNombre() {

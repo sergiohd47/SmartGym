@@ -23,7 +23,7 @@ public class DataBaseUsage {
 	private ClaseRepository classRepo;
 	
 	//@PostConstruct
-	public void init() throws Exception{
+	public void init(){
 		
 		Usuario user1 = new Usuario("Danny","Molina","danyel@mail.com",'m',"password");
 		Usuario user2 = new Usuario("Victory","Saint","markku@mail.com",'f',"rock");
@@ -35,7 +35,7 @@ public class DataBaseUsage {
 		userRepo.save(user3);
 		userRepo.save(user4);
 		
-		List<Usuario> usuarios = userRepo.findAll();
+		//List<Usuario> usuarios = userRepo.findAll();
 		
 		Entrenador trainer1 = new Entrenador("Sergio","Hernandez","sergym@mail.com",'m',"vaper");
 		Entrenador trainer2 = new Entrenador("Sergio","Peinado","peinadoSer@mail.com",'m',"hiit");
@@ -51,11 +51,11 @@ public class DataBaseUsage {
 		userRepo.save(user1);
 		userRepo.save(user2);
 		
-		trainerRepo.save(trainer1);
-		trainerRepo.save(trainer2);
+		//trainerRepo.save(trainer1);
+		//trainerRepo.save(trainer2);
 		
-		Clase clase1 = new Clase("XtremeFit",4,5,15,trainer1);
-		Clase clase2 = new Clase("Hiit",5,3,20,trainer2);
+		Clase clase1 = new Clase("XtremeFit",4,5,15,trainer1,30);
+		Clase clase2 = new Clase("Hiit",5,3,20,trainer2,45);
 		
 		clase1.addHorarios(17, "Jueves", 0);
 		clase2.addHorarios(11, "Martes", 2);
@@ -65,13 +65,13 @@ public class DataBaseUsage {
 		
 		trainerRepo.save(trainer1);
 		trainerRepo.save(trainer2);
-		
+		/*
 		user1.solicitarRutina("Definición");
 		trainer1.crearRutina(1, 6);
 		
 		userRepo.save(user1);
 		trainerRepo.save(trainer1);
-		
+		*/
 		
 	}
 }
