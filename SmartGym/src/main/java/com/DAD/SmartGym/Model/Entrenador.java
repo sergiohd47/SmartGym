@@ -45,6 +45,9 @@ public class Entrenador {
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<Clase> clases = new ArrayList<Clase>(MAXCLASES);
 	
+	@OneToMany(cascade=CascadeType.ALL)
+	private List<Retroalimentacion> comentarios = new ArrayList<Retroalimentacion>();
+	
 	protected Entrenador() {} //Constructor para la base de datos
 	
 	public Entrenador(String nombre, String apellidos, String mail, char genero ,String contrasena) {
@@ -87,6 +90,14 @@ public class Entrenador {
 	public void crearRutina(int id, int duracion) {
 		TablaRutina rutina = this.pendientes.get(0);
 		rutina.getUsuario().recibirRutina(rutina.iniciarRutina(id, duracion));
+	}
+	
+	public void añadirComentario(Retroalimentacion comentario) {
+		comentarios.add(comentario);
+	} 
+	
+	public Retroalimentacion getComentarios(int indice) {
+		return this.comentarios.get(indice);
 	}
 	
 }

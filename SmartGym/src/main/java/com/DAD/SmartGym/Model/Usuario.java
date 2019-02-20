@@ -48,6 +48,8 @@ public class Usuario {
 	@ManyToMany(cascade=CascadeType.ALL)
 	private List<Clase> clases_apuntadas = new ArrayList<Clase>();
 	
+	@OneToMany(cascade=CascadeType.ALL)
+	private List<Retroalimentacion> comentarios = new ArrayList<Retroalimentacion>();
 	
 	
 	protected Usuario() {} //Constructor para la base de datos
@@ -162,6 +164,13 @@ public class Usuario {
 		}
 	}
 	
+	public void añadirComentario(Retroalimentacion comentario) {
+		comentarios.add(comentario);
+	} 
+	
+	public Retroalimentacion getComentario(int indice) {
+		return this.comentarios.get(indice);
+	}
 	
 	
 }
