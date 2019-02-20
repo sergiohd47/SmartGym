@@ -36,7 +36,7 @@ public class Clase {
 	@ManyToOne
 	private Entrenador monitor;
 	@ManyToMany(mappedBy="clases_apuntadas")
-	private List<Usuario> plazasReservadas /*= new ArrayList<Usuario>()*/;
+	private List<Usuario> plazasReservadas = new ArrayList<Usuario>();
 	
 	
 	

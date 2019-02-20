@@ -39,14 +39,14 @@ public class Usuario {
 	*/
 	
 	@OneToMany(cascade=CascadeType.ALL)
-	private List<TablaRutina> rutinas /*= new ArrayList<TablaRutina>(MAXRUTINAS)*/;
+	private List<TablaRutina> rutinas = new ArrayList<TablaRutina>(MAXRUTINAS);
 	
 	@OneToMany(cascade=CascadeType.ALL)
-	private List<TablaRutina> rutinas_fav /*= new ArrayList<TablaRutina>(MAXRUTINAS)*/;
+	private List<TablaRutina> rutinas_fav = new ArrayList<TablaRutina>(MAXRUTINAS);
 	
 	
 	@ManyToMany(cascade=CascadeType.ALL)
-	private List<Clase> clases_apuntadas /*= new ArrayList<Clase>()*/;
+	private List<Clase> clases_apuntadas = new ArrayList<Clase>();
 	
 	
 	
