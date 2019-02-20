@@ -164,7 +164,7 @@ public class Usuario {
 		}
 	}
 	
-	public void añadirComentario(Retroalimentacion comentario) {
+	public void anadirComentario(Retroalimentacion comentario) {
 		comentarios.add(comentario);
 	} 
 	
