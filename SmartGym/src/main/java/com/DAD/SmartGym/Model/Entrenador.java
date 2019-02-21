@@ -123,9 +123,9 @@ public class Entrenador {
 		pendientes.add(rutina);
 	}
 	
-	public void crearRutina(int id, int duracion) {
+	public void crearRutina(int duracion) {
 		TablaRutina rutina = this.pendientes.get(0);
-		rutina.getUsuario().recibirRutina(rutina.iniciarRutina(id, duracion));
+		rutina.getUsuario().recibirRutina(rutina.iniciarRutina(duracion));
 	}
 	
 	public void añadirComentario(Retroalimentacion comentario) {

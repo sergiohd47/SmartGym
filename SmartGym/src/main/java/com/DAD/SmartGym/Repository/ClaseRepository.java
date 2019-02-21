@@ -12,13 +12,12 @@ import com.DAD.SmartGym.Model.Clase;
 public interface ClaseRepository extends JpaRepository<Clase, Long>{
 	List<Clase> findByNombre(String nombre);
 	
-	@Modifying @Transactional
-	@Query("update Clase c set c.intensidadCardio = ?1 where c.nombre = ?2")
-	void setIntensidadCardioByNombre( int intensidadCardio, String nombre);
 	
-	@Modifying @Transactional
-	@Query("update Clase c set c.intensidadFuerza = ?1 where c.nombre = ?2")
-	void setIntensidadFuerzaByNombre(int intensidadFuerza, String nombre);
+	@Query("select c from Clase c where c.intensidadCardio between :intensidadCardio1 and :intensidadCardio2")
+	List<Clase> findByRangoCardio( int intensidadCardio1, int intensidadCardio2);
+	
+	@Query("select c from Clase c where c.intensidadFuerza between :intensidadFuerza1 and :intensidadFuerza2")
+	List<Clase> findByRangoFuerza(int intensidadFuerza1, int intensidadFuerza2);
 	
 	@Modifying @Transactional
 	@Query("update Clase c set c.max_plazas = ?1 where c.nombre = ?2")

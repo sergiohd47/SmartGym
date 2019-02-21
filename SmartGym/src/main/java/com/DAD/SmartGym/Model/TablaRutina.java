@@ -26,9 +26,9 @@ public class TablaRutina {
 	@ManyToOne
 	private Usuario usuario;
 	
-	@Column
+	/*@Column
 	private Date inicio;
-	private DateFormat form = new SimpleDateFormat("dd-MM-yyyy");
+	private DateFormat form = new SimpleDateFormat("dd-MM-yyyy");*/
 	@Column
 	private int duracion;//semanas
 	@Column
@@ -44,9 +44,9 @@ public class TablaRutina {
 		this.objetivo = objetivo;
 	}
 	
-	public TablaRutina iniciarRutina(int id, int duracion) {
-		this.idRutina = id;
-		this.inicio = new Date();
+	public TablaRutina iniciarRutina( int duracion) {
+		//this.inicio = new Date();
+		this.duracion = duracion;
 		return this;
 	}
 	
@@ -69,9 +69,9 @@ public class TablaRutina {
 		return this.entrenador.getNombre();
 	}
 	
-	public String fechaInicio() {
+	/*public String fechaInicio() {
 		return this.form.format(inicio);
-	}
+	}*/
 	
 	public String getObjetivo() {
 		return this.objetivo;
