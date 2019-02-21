@@ -1,15 +1,15 @@
 # SmartGym
 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/logoSmartGym.png)
 ## Indice
-- [Introduccion](#id1). 
-- [Primera fase](#id2). 
-    - [Segmentacion del acceso](#id3). 
-    - [Entidades principales](#id4).
-    - [Funcionalidad servicio interno](#id5). 
-    - [Integrantes proyecto](#id6).
-- [Segunda fase](#id7).
-    - [Diagrama de clases](#id8).
-    - [Diagrama E/R](#id9). 
+- [Introduccion](#id1)
+- [Primera fase](#id2) 
+    - [Segmentacion del acceso](#id3) 
+    - [Entidades principales](#id4)
+    - [Funcionalidad servicio interno](#id5) 
+    - [Integrantes proyecto](#id6)
+- [Segunda fase](#id7)
+    - [Diagrama de clases](#id8)
+    - [Diagrama E/R](#id9) 
     - [Visualización de páginas](#id10)
 	
 ### Introduccion<a name="id1"></a>
@@ -88,9 +88,9 @@ El equipo de desarrollo de la pagina web es:
    - ***Página Usuario Básico***
    ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym9.PNG)
       - _Clases Presenciales:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym10.PNG)
-		   - _Clases:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym15.PNG)
-		   - _Visualizar Tipo de Clase:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym16.PNG) 
-		   - _Seleccionar Horario de Clase:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym17.PNG)			 
+			- _Clases:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym15.PNG)
+			- _Visualizar Tipo de Clase:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym16.PNG) 
+			- _Seleccionar Horario de Clase:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym17.PNG)			 
 	  - _Entrenador Personal:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym11.PNG)
 	  - _Rutinas Favoritas:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym12.PNG) 
 	  - _Editar Perfil:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym13.PNG) 
@@ -98,7 +98,7 @@ El equipo de desarrollo de la pagina web es:
 		 
    - ***Página Usuario Entrenador***
       - _Cartera Clientes:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym18.PNG)
-		   - _Visualizar Cartera Clientes:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym19.PNG)
+			- _Visualizar Cartera Clientes:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym19.PNG)
 		 
    
    
