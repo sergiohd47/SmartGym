@@ -79,53 +79,28 @@ El equipo de desarrollo de la pagina web es:
    
    ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym1.PNG)
       - _Inicio:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym2.PNG)		 
-	  - _Trato Personalizado:_
-	  ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym3.PNG)	 
-	  - _Servicios:_
-	  ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym4.PNG)
+	  - _Trato Personalizado:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym3.PNG)	 
+	  - _Servicios:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym4.PNG)
 	  ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym5.PNG)	 
-	  - _Contacto:_
-	  ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym6.PNG)
-	  - _Registrarse:_
-	  ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym7.PNG) 
-	  - _Acceder:_
-	  ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym8.PNG)
+	  - _Contacto:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym6.PNG)
+	  - _Registrarse:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym7.PNG) 
+	  - _Acceder:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym8.PNG)
    
    - ***Página Usuario Básico***
    
    ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym9.PNG)
-   
-         - _Clases Presenciales:_
-		 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym10.PNG)
-		 
-		     - _Clases:_
-			 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym15.PNG)
-			 
-				 - _Visualizar Tipo de Clase:_
-				 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym16.PNG)
-				 
-				 - _Seleccionar Horario de Clase:_ 
-				 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym17.PNG)
-				 
-		 - _Entrenador Personal:_
-		 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym11.PNG)
-		 
-		 - _Rutinas Favoritas:_
-		 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym12.PNG)
-		 
-		 - _Editar Perfil:_
-		 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym13.PNG)
-		 
-		 - _Cerrar Sesion:_
-		 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym14.PNG)
+      - _Clases Presenciales:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym10.PNG)
+		   - _Clases:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym15.PNG)
+		   - _Visualizar Tipo de Clase:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym16.PNG) 
+		   - _Seleccionar Horario de Clase:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym17.PNG)			 
+	  - _Entrenador Personal:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym11.PNG)
+	  - _Rutinas Favoritas:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym12.PNG) 
+	  - _Editar Perfil:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym13.PNG) 
+	  - _Cerrar Sesion:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym14.PNG)
 		 
    - ***Página Usuario Entrenador***
-   
-         - _Cartera Clientes:_
-		 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym18.PNG)
-		 
-             - _Visualizar Cartera Clientes:_
-		     ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym19.PNG)
+      - _Cartera Clientes:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym18.PNG)
+		   - _Visualizar Cartera Clientes:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym19.PNG)
 		 
    
    
