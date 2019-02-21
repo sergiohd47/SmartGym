@@ -70,6 +70,42 @@ public class Entrenador {
 		return MAXCLASES > clases.size();
 	}
 	
+	public String getApellidos() {
+		return apellidos;
+	}
+
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
+	}
+
+	public char getGenero() {
+		return genero;
+	}
+
+	public void setGenero(char genero) {
+		this.genero = genero;
+	}
+
+	public String getMail() {
+		return mail;
+	}
+
+	public void setMail(String mail) {
+		this.mail = mail;
+	}
+
+	public char[] getContrasena() {
+		return contrasena;
+	}
+
+	public void setContrasena(char[] contrasena) {
+		this.contrasena = contrasena;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	
 	public void anadirUsuario(Usuario usuario) {
 		usuarios.add(usuario);
 	}
