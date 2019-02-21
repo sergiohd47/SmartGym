@@ -70,4 +70,4 @@ El equipo de desarrollo de la pagina web es:
       ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/SmartGym_PartePrivada(II).png)
 
 #### Diagrama E/R<a name="id9"></a>
-    ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/EntidadRelacion.png)
+![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/EntidadRelacion.png)
