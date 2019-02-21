@@ -76,29 +76,30 @@ El equipo de desarrollo de la pagina web es:
 
 #### Visualización de páginas<a name="id10"></a>
    - ***Página Principal***
-   ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym1.PNG)
    
-         - _Inicio:_	 
-         ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym2.PNG)
+   ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym1.PNG)
+      - _Inicio:_	 
+      ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym2.PNG)
 		 
-		 - _Trato Personalizado:_
-		 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym3.PNG)
+	  - _Trato Personalizado:_
+	  ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym3.PNG)
 		 
-		 - _Servicios:_
-		 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym4.PNG)
+	  - _Servicios:_
+	  ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym4.PNG)
+	
+	  ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym5.PNG)
 		 
-		 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym5.PNG)
-		 
-		 - _Contacto:_
-		 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym6.PNG)
+	  - _Contacto:_
+	  ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym6.PNG)
 
-		 - _Registrarse:_
-		 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym7.PNG)
+	  - _Registrarse:_
+	  ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym7.PNG)
 		 
-		 - _Acceder:_
-		 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym8.PNG)
+	  - _Acceder:_
+	  ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym8.PNG)
    
    - ***Página Usuario Básico***
+   
    ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym9.PNG)
    
          - _Clases Presenciales:_
