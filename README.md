@@ -8,7 +8,8 @@
     - [Funcionalidad servicio interno](#id5). 
     - [Integrantes proyecto](#id6).
 - [Segunda fase](#id7).
-    - [Diagrama de clases](#id8).    
+    - [Diagrama de clases](#id8).
+    - [Diagrama E/R](#id9).    
 ### Introduccion<a name="id1"></a>
 La pagina web SmartGym consiste en la pagina web de un gimnasio donde se facilita el seguimiento de rutinas para usuarios del gimnasio mediante monitores titulados.  
 
@@ -67,3 +68,6 @@ El equipo de desarrollo de la pagina web es:
    - ***Parte Privada(Usuario Entrenador)***
       - Si el usuario accedió como entidad ***UsuarioEntrenador***, el controlador **Usuario** sabrá que es un entrenador del gimnasio y le ofrecerá ciertas acciones (ver clases presenciales, rutuinas favoritas,editar su perfil o cerrar sesión) idénticas que puede realizar un usuario normal pero con la variante de que el entrenador puede ojear las personas inscritas o que quieren reservar su clase mediante el controlador **CarteraClientes** cuya interfaz es _carteraClientes.html_.
       ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/SmartGym_PartePrivada(II).png)
+
+#### Diagrama E/R<a name="id9"></a>
+    ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/EntidadRelacion.png)
