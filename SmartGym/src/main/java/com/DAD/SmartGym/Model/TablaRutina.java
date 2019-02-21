@@ -28,7 +28,6 @@ public class TablaRutina {
 	
 	@Column
 	private Date inicio;
-	@Column
 	private DateFormat form = new SimpleDateFormat("dd-MM-yyyy");
 	@Column
 	private int duracion;//semanas
