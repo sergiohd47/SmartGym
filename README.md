@@ -9,7 +9,9 @@
     - [Integrantes proyecto](#id6).
 - [Segunda fase](#id7).
     - [Diagrama de clases](#id8).
-    - [Diagrama E/R](#id9).    
+    - [Diagrama E/R](#id9). 
+    - [Visualización de páginas](#id10).
+
 ### Introduccion<a name="id1"></a>
 La pagina web SmartGym consiste en la pagina web de un gimnasio donde se facilita el seguimiento de rutinas para usuarios del gimnasio mediante monitores titulados.  
 
@@ -71,3 +73,65 @@ El equipo de desarrollo de la pagina web es:
 
 #### Diagrama E/R<a name="id9"></a>
 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/EntidadRelacion.png)
+
+#### Visualización de páginas<a name="id10"></a>
+   - ***Página Principal***
+   ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym1.png)
+   
+         - _Inicio:_	 
+         ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym2.png)
+		 
+		 - _Trato Personalizado:_
+		 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym3.png)
+		 
+		 - _Servicios:_
+		 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym4.png)
+		 
+		 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym5.png)
+		 
+		 - _Contacto:_
+		 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym6.png)
+
+		 - _Registrarse:_
+		 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym7.png)
+		 
+		 - _Acceder:_
+		 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym8.png)
+   
+   - ***Página Usuario Básico***
+   ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym9.png)
+   
+         - _Clases Presenciales:_
+		 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym10.png)
+		 
+		     - _Clases:_
+			 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym15.png)
+			 
+				 - _Visualizar Tipo de Clase:_
+				 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym16.png)
+				 
+				 - _Seleccionar Horario de Clase:_ 
+				 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym17.png)
+				 
+		 - _Entrenador Personal:_
+		 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym11.png)
+		 
+		 - _Rutinas Favoritas:_
+		 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym12.png)
+		 
+		 - _Editar Perfil:_
+		 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym13.png)
+		 
+		 - _Cerrar Sesion:_
+		 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym14.png)
+		 
+   - ***Página Usuario Entrenador***
+   
+         - _Cartera Clientes:_
+		 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym18.png)
+		 
+             - _Visualizar Cartera Clientes:_
+		     ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym19.png)
+		 
+   
+   
