@@ -10,8 +10,8 @@
 - [Segunda fase](#id7).
     - [Diagrama de clases](#id8).
     - [Diagrama E/R](#id9). 
-    - [Visualización de páginas](#id10).
-
+    - [Visualización de páginas](#id10)
+	
 ### Introduccion<a name="id1"></a>
 La pagina web SmartGym consiste en la pagina web de un gimnasio donde se facilita el seguimiento de rutinas para usuarios del gimnasio mediante monitores titulados.  
 
