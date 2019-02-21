@@ -75,8 +75,7 @@ El equipo de desarrollo de la pagina web es:
 ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/EntidadRelacion.png)
 
 #### Visualización de páginas<a name="id10"></a>
-   - ***Página Principal***
-   
+   - ***Página Principal***  
    ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym1.PNG)
       - _Inicio:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym2.PNG)		 
 	  - _Trato Personalizado:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym3.PNG)	 
@@ -87,7 +86,6 @@ El equipo de desarrollo de la pagina web es:
 	  - _Acceder:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym8.PNG)
    
    - ***Página Usuario Básico***
-   
    ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym9.PNG)
       - _Clases Presenciales:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym10.PNG)
 		   - _Clases:_ ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym15.PNG)
