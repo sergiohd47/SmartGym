@@ -18,17 +18,28 @@ public interface UsuariosRepository extends JpaRepository<Usuario,Long>{
 	@Query(value = "select contrasena from usuario where usuario.nombre_usuario= ?1", nativeQuery = true)
 	String getContrasenaByNombreUsuario(String nombreUsuario);
 	
+	@Query(value = "select id from usuario where usuario.nombre_usuario= ?1", nativeQuery = true)
+	int getIdByNombreUsuario(String nombreUsuario);
+	
 	@Modifying @Transactional
 	@Query("update Usuario u set u.apellidos = ?1 where u.nombre = ?2")
 	void setApellidosByNombre( String apellidos, String nombre);
+	
+	@Modifying @Transactional
+	@Query(value = "update usuario set usuario.nombre_usuario = ?1 where usuario.id = ?2", nativeQuery = true)
+	void setUsuarioById( String nombreUsuario, int id);
 	
 	@Modifying @Transactional
 	@Query("update Usuario u set u.genero = ?1 where u.nombre = ?2")
 	void setGeneroByNombre( char genero, String nombre);
 	
 	@Modifying @Transactional
-	@Query("update Usuario u set u.contrasena = ?1 where u.mail = ?2")
-	void setContrasenaByMail( char[] contrasena , String mail);
+	@Query(value ="update usuario set usuario.contrasena = ?1 where usuario.id = ?2", nativeQuery = true)
+	void setContrasenaById( String contrasena , int id);
+	
+	@Modifying @Transactional
+	@Query(value ="update usuario set usuario.mail = ?1 where usuario.id = ?2", nativeQuery = true)
+	void setMailById( String mail , int id);
 	
 	Usuario getByNombre(String nombre);
 	
