@@ -32,8 +32,4 @@ public class ClasesController {
 		model.addAttribute("plazasLibresZumba","25");
 		return "apuntarseClase";
 	}
-	@RequestMapping("/añadirClase")
-	public String añadirClase(Model model) {
-		return "añadirClase";
-	}
 }
