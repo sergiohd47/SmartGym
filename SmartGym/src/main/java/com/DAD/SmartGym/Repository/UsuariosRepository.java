@@ -10,9 +10,13 @@ import com.DAD.SmartGym.Model.Usuario;
 
 public interface UsuariosRepository extends JpaRepository<Usuario,Long>{
 	List<Usuario> findByNombre(String nombre);
+	
+	List<Usuario> findByNombreUsuario(String nombreUsuario);
 
 	List<Usuario> findByMail(String mail);
-
+	
+	@Query(value = "select contrasena from usuario where usuario.nombre_usuario= ?1", nativeQuery = true)
+	String getContrasenaByNombreUsuario(String nombreUsuario);
 	
 	@Modifying @Transactional
 	@Query("update Usuario u set u.apellidos = ?1 where u.nombre = ?2")

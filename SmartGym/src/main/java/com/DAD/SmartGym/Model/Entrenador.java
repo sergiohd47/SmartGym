@@ -23,11 +23,14 @@ public class Entrenador {
 	@Column
 	private String apellidos;
 	@Column
+	private String nombreUsuario;
+	@Column
 	private char genero;
 	@Column
 	private String mail;
 	@Column
-	private char[] contrasena = new char[8];
+	//private char[] contrasena = new char[8];
+	private String contrasena;
 	
 	/*
 	private int numUsuarios;
@@ -50,12 +53,13 @@ public class Entrenador {
 	
 	protected Entrenador() {} //Constructor para la base de datos
 	
-	public Entrenador(String nombre, String apellidos, String mail, char genero ,String contrasena) {
+	public Entrenador(String nombre, String apellidos,String nombreUsuario, String mail, char genero ,String contrasena) {
 		this.nombre = nombre;
 		this.apellidos = apellidos;
+		this.nombreUsuario = nombreUsuario;
 		this.mail = mail;
 		this.genero = genero;
-		this.contrasena = contrasena.toCharArray();
+		this.contrasena = contrasena;
 	}
 	
 	public String getNombre() {
@@ -73,9 +77,17 @@ public class Entrenador {
 	public String getApellidos() {
 		return apellidos;
 	}
-
+	
 	public void setApellidos(String apellidos) {
 		this.apellidos = apellidos;
+	}
+	
+	public String getNombreUsuario() {
+		return nombreUsuario;
+	}
+	
+	public void setNombreUsuario(String nombreUsuario) {
+		this.nombreUsuario = nombreUsuario;
 	}
 
 	public char getGenero() {
@@ -94,11 +106,11 @@ public class Entrenador {
 		this.mail = mail;
 	}
 
-	public char[] getContrasena() {
+	public String getContrasena() {
 		return contrasena;
 	}
 
-	public void setContrasena(char[] contrasena) {
+	public void setContrasena(String contrasena) {
 		this.contrasena = contrasena;
 	}
 

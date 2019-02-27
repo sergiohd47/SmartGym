@@ -23,11 +23,14 @@ public class Usuario {
 	@Column
 	private String apellidos;
 	@Column
+	private String nombreUsuario;
+	@Column
 	private char genero;
 	@Column
 	private String mail;
 	@Column
-	private char[] contrasena = new char[8];
+	//private char[] contrasena = new char[8];
+	private String contrasena;
 	
 	
 	@ManyToOne(cascade=CascadeType.ALL)
@@ -54,11 +57,12 @@ public class Usuario {
 	
 	protected Usuario() {} //Constructor para la base de datos
 	
-	public Usuario(String nombre, String apellidos, String mail, char genero ,String contrasena) {
+	public Usuario(String nombre, String apellidos,String nombreUsuario, String mail, char genero ,String contrasena) {
 		this.nombre = nombre;
 		this.apellidos = apellidos;
+		this.nombreUsuario = nombreUsuario;
 		this.mail = mail;
-		this.contrasena = contrasena.toCharArray();
+		this.contrasena = contrasena;
 		this.genero = genero;
 		
 	}
@@ -66,7 +70,11 @@ public class Usuario {
 	public String getNombre() {
 		return nombre + " " + apellidos;
 	}
-
+	
+	public String getNombreUsuario() {
+		return nombreUsuario;
+	}
+	
 	public Long getId() {
 		return id;
 	}
@@ -77,6 +85,10 @@ public class Usuario {
 	
 	public void cambiarMail(String mail) { //SetMail
 		this.mail = mail;
+	}
+	
+	public void setNombreUsuario(String nombreUsuario) {
+		this.nombreUsuario = nombreUsuario;
 	}
 
 	public char getGenero() {

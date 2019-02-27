@@ -15,7 +15,7 @@
 		<div class="image"></div>
 		<div class="frm">
 			<h1>Primer paso</h1>
-			<form action="acceso">
+			<form action="accesoRegistro">
 				<div class="form-group">
 					<label for="nombre">Nombre:</label> <input type="text"
 						class="form-control" id="nombre" name="nombre" placeholder="Nombre">
@@ -26,9 +26,8 @@
 				</div>
 				<div class="form-group">
 					<label for="genero"> Genero:</label> <span class="radio"> <label>
-							<input type="radio" class="radio-input" name="sexo"> <span>Masculino</span>
-					</label> <label> <input type="radio" class="radio-input"
-							name="sexo"> <span>Femenino</span>
+							<input type="radio" class="radio-input" name="sexo" value='m'> <span>Masculino</span>
+					</label> <label> <input type="radio" class="radio-input" name="sexo" value='f'> <span>Femenino</span>
 					</label>
 					</span>
 				</div>
@@ -43,7 +42,7 @@
 				</div>
 				<div class="form-group">
 					<label for="contraseña">Contraseña:</label> <input type="password"
-						class="form-control" id="contraseña" placeholder="Contraseña">
+						class="form-control" id="contrasena" name="contrasena" placeholder="Contraseña">
 				</div>
 				<div class="form-group">
 					<label for="tipoUsuario"> Tipo Usuario:</label> <span class="radio">
@@ -55,7 +54,7 @@
 					</span>
 				</div>
 				<div class="form-group">
-					<button type="registrarse" class="btn btn-success btn-lg" href="acceso">Registrarse</button>
+					<button type="registrarse" class="btn btn-success btn-lg" href="accesoRegistro">Registrarse</button>
 				</div>
 			</form>
 		</div>

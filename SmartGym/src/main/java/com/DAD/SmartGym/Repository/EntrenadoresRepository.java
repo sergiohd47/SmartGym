@@ -8,12 +8,18 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.DAD.SmartGym.Model.Entrenador;
+import com.DAD.SmartGym.Model.Usuario;
 
 public interface EntrenadoresRepository extends JpaRepository<Entrenador ,Long>{
 	
 	List<Entrenador> findByNombre(String nombre);
 	
+	List<Usuario> findByNombreUsuario(String nombreUsuario);
+	
 	List<Entrenador> findByMail(String mail);
+	
+	@Query(value = "select contrasena from entrenador where entrenador.nombre_usuario= ?1", nativeQuery = true)
+	String getContrasenaByNombreUsuario(String nombreUsuario);
 	
 	@Modifying @Transactional
 	@Query("update Entrenador e set e.apellidos = ?1 where e.nombre = ?2")
