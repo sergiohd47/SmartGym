@@ -1,5 +1,7 @@
 package com.DAD.SmartGym.Controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class ClasesController {
 	@RequestMapping("/apuntarseClase")
-	public String apuntarseClase(Model model) {
-		model.addAttribute("nombreUsuario","Sergio_usuarioBasico");
+	public String apuntarseClase(Model model, HttpSession sesion) {
+		model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
 		
 		model.addAttribute("descripcionCrossfit","Entrenamiento funcional");
 		model.addAttribute("duracionCrossfit","120");
