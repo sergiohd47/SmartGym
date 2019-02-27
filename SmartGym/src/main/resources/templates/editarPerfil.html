@@ -15,11 +15,11 @@
 		<div class="image"></div>
 		<div class="frm">
 			<h1>Editar Perfil</h1>
-			<form action="acceso">
+			<form>
 				<div class="form-group">
 					<label for="nombreUsuario">Nuevo Nombre Usuario:</label> <input
 						type="text" class="form-control" id="nombreUsuario"
-						name="nombreUsuario" placeholder="{{nombreUsuarioAntiguo}}">
+						name="nombreUsuario" placeholder="Nombre Usuario">
 				</div>
 				<div class="form-group">
 					<label for="email">Nuevo Email:</label> <input type="email"
@@ -31,19 +31,12 @@
 						placeholder="Contraseña">
 				</div>
 				<div style="text-align: center;">
-						<button type="editar" class="btn btn-success btn-lg" href="editar" onclick="editarPerfilOK()">Editar</button>
-						<button type="cancelar" class="btn btn-success btn-lg" href="cancelar" onclick="descartadosCambios()">Cancelar</button>
+						<button type="editar" class="btn btn-success btn-lg" href="editar">Editar</button>
+						<button type="cancelar" class="btn btn-success btn-lg" href="cancelar">Cancelar</button>
 				</div>
 			</form>
 		</div>
 	</div>
 </body>
-<script>
-function editarPerfilOK(){
-	alert("El perfil ha sido editado correctamente!");
-}
-function descartadosCambios(){
-	alert("Los cambios han sido descartados");
-}</script>
 
 </html>

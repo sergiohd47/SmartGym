@@ -22,7 +22,7 @@ public class DataBaseUsage {
 	@Autowired
 	private ClaseRepository classRepo;
 	
-	//@PostConstruct
+	@PostConstruct
 	public void init(){
 		/*
 		Usuario user1 = new Usuario("Danny","Molina","danyel@mail.com",'m',"password");
