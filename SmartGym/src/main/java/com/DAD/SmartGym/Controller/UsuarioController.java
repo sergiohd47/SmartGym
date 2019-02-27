@@ -1,6 +1,7 @@
 package com.DAD.SmartGym.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,17 +16,22 @@ public class UsuarioController {
 	private EntrenadoresRepository entrenadores;
 	@Autowired
 	private UsuariosRepository usuarios;
+	
+	private String nombreUsuarioSesion;
+	private String tipoUsuarioSesion;
 	@RequestMapping("/usuarioController")
-	public String usuarioBasico(Model model, @RequestParam String nombreUsuario, @RequestParam String contrasena, @RequestParam String usuario) {
-		if(usuario.equals("usuarioBasico") ) {
+	public String usuarioBasico(Model model, @RequestParam String nombreUsuario, @RequestParam String contrasena, @RequestParam String usuario, HttpSession sesion) {
+		sesion.setAttribute("nombreUsuarioSesion", nombreUsuario);
+		sesion.setAttribute("tipoUsuarioSesion", usuario);
+		if(sesion.getAttribute("tipoUsuarioSesion").equals("usuarioBasico") ) {
 			if(usuarios.getContrasenaByNombreUsuario(nombreUsuario).toString().equals(contrasena)) {
-				model.addAttribute("nombreUsuario",nombreUsuario);
+				model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
 				return "usuarioBasico";
 			} else {
 				return "acceso";
 			}
 			
-		} else if (usuario.equals("usuarioEntrenador")) {
+		} else if (sesion.getAttribute("tipoUsuarioSesion").equals("usuarioEntrenador")) {
 			
 			if(entrenadores.getContrasenaByNombreUsuario(nombreUsuario).toString().equals(contrasena)) {
 				model.addAttribute("nombreUsuario",nombreUsuario);
@@ -33,7 +39,20 @@ public class UsuarioController {
 			} else {
 				return "acceso";
 			}
-			
+/*			
+	private String nombreUsuarioSesion;
+	private String tipoUsuarioSesion;
+	@RequestMapping("/usuarioController")
+	public String usuarioBasico(Model model, @RequestParam String nombreUsuario, @RequestParam String usuario, HttpSession sesion) {
+		sesion.setAttribute("nombreUsuarioSesion", nombreUsuario);
+		sesion.setAttribute("tipoUsuarioSesion", usuario);
+		if(sesion.getAttribute("tipoUsuarioSesion").equals("usuarioBasico") ) {
+			model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
+			return "usuarioBasico";
+		} else {
+			model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
+			return "usuarioEntrenador";
+*/
 		}
 		return "acceso";
 	} 
