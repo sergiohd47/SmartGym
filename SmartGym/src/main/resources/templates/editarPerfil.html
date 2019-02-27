@@ -8,6 +8,14 @@
 <link rel="stylesheet"
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css" href="css/styleEditarPerfil.css">
+<script>
+	function editarPerfilOK(){
+		alert("El perfil ha sido editado correctamente!");
+	}
+	function descartadosCambios(){
+		alert("Los cambios han sido descartados");
+	}
+</script>
 </head>
 
 <body>
@@ -31,19 +39,12 @@
 						placeholder="Contraseña">
 				</div>
 				<div style="text-align: center;">
-						<button type="editar" class="btn btn-success btn-lg" href="editar" onclick="editarPerfilOK()">Editar</button>
-						<button type="cancelar" class="btn btn-success btn-lg" href="cancelar" onclick="descartadosCambios()">Cancelar</button>
+						<button type="submit" class="btn btn-success btn-lg" href="editar" onclick="editarPerfilOK()">Editar</button>
+						<button type="submit" class="btn btn-success btn-lg" href="cancelar" onclick="descartadosCambios()">Cancelar</button>
 				</div>
 			</form>
 		</div>
 	</div>
 </body>
-<script>
-function editarPerfilOK(){
-	alert("El perfil ha sido editado correctamente!");
-}
-function descartadosCambios(){
-	alert("Los cambios han sido descartados");
-}</script>
 
 </html>
