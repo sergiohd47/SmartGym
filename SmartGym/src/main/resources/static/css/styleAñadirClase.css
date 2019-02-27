@@ -1,11 +1,11 @@
 html{
-    /*background: url("../img/background.jpg") no-repeat;*/
+    background: url("../img/fondoAñadirClase.jpg") no-repeat;
 	background-size: cover;
     min-height: 100%;
 }
 
 body{
-	background-color: blue;
+	background-color: transparent;
 }
 
 #registration-form{
@@ -13,19 +13,18 @@ body{
 	margin: 120px auto;
 }
 
-/*
 #registration-form .image{
 	float:left;
-	background-image: url("../img/desk.jpg");
-	height: 725px;
+	background-image: url("../img/crossfit.png");
+	height: 700px;
 	width: 50%;
 	background-size: cover;
-	background-position: 25%;
+	background-position: 50%;
 }
-*/
+
 #registration-form .frm{
 	float:right;
-	height: 725px;
+	height: 700px;
     width: 50%;
     min-width: 250px;
     padding: 0 35px;
@@ -89,9 +88,9 @@ body{
 		width: 100%;
 	}
 	
-	/*#registration-form .image{
+	#registration-form .image{
 		display: none;
-	}*/
+	}
 
 	#registration-form .frm{
 		width: 100%;
@@ -136,7 +135,7 @@ body{
     color: white;
     height: auto;
     max-width: 800px;
-    /*background-image: url("../img/imagenLogIn.jpg");*/
+    background-image: url("../img/imagenLogIn.jpg");
     background-size: cover;
 	}
 }

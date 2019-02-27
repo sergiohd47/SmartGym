@@ -26,6 +26,9 @@
 
 <!-- Plugin CSS -->
 <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
+<link href="https://unpkg.com/bootstrap-table@1.13.4/dist/bootstrap-table.min.css" rel="stylesheet">
+
+<script src="https://unpkg.com/bootstrap-table@1.13.4/dist/bootstrap-table.min.js"></script>
 
 <!-- Custom styles for this template -->
 <link href="css/styleContactarEntrenador.css" rel="stylesheet">
@@ -38,7 +41,7 @@
 	<nav class="navbar navbar-expand-lg navbar-light fixed-top"
 		id="mainNav">
 		<div class="container">
-			<a class="navbar-brand js-scroll-trigger" href="#page-top">ENTRENADOR
+			<a class="navbar-brand js-scroll-trigger" href="#page-top">
 				{{nombreUsuario}}</a>
 			<button class="navbar-toggler navbar-toggler-right" type="button"
 				data-toggle="collapse" data-target="#navbarResponsive"
@@ -49,28 +52,19 @@
 			<div class="collapse navbar-collapse" id="navbarResponsive">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="#carteraClientes">Cartera Clientes</a></li>
-					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="#clasesPresenciales">Clases Presenciales</a></li>
-					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="#entrenadorPersonal">Entrenador Personal</a></li>
-					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="#rutinasFavoritas">Rutinas Favoritas</a></li>
-					<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="editarPerfil">Editar Perfil</a></li>
+						href="#contactarEntrenador">Contactar Entrenador</a></li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="cerrarSesion">Cerrar Sesion</a></li>
 				</ul>
 			</div>
 		</div>
 	</nav>
-
 	<header class="masthead text-center text-white d-flex">
 		<div class="container my-auto">
 			<div class="row">
 				<div class="col-lg-10 mx-auto">
 					<h1 class="text-uppercase">
-						<strong>DESEARAS RENDIRTE, NO LO HAGAS!</strong>
+						<strong>Se mas fuerte que tus excusas</strong>
 					</h1>
 					<hr>
 				</div>
@@ -88,353 +82,284 @@
 					<h2 class="section-heading text-white">CARTERA CLIENTES</h2>
 					<hr class="light my-4">
 					<p class="text-faded mb-4">Nosotros te organizamos el trabajo</p>
-					<a class="btn btn-light btn-xl js-scroll-trigger"
-						href="carteraClientes">ACCEDER</a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="bg-primary" id="clasesPresenciales">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 mx-auto text-center">
-					<h2 class="section-heading text-white">CLASES PRESENCIALES</h2>
-					<hr class="light my-4">
-					<p class="text-faded mb-4">Disponemos del siguiente horario de
-						clases presenciales. No dudes en apuntarte</p>
+					<p class="text-faded mb-4">A continuacion te mostramos la lista
+						de clientes que han solicitado tus servicios.</p>
+					<p class="text-faded mb-4">Contacta con ellos mediante el
+						correo de Smart Gym</p>
 					<table class="table table-dark">
 						<thead>
 							<tr>
 								<th scope="col"></th>
-								<th scope="col">9:00-11:00</th>
-								<th scope="col">11:00-13:00</th>
-								<th scope="col">13:00-15:00</th>
-								<th scope="col">15:00-17:00</th>
-								<th scope="col">17:00-19:00</th>
-								<th scope="col">19:00-21:00</th>
+								<th scope="col">Nombre Usuario</th>
+								<th scope="col">Objetivo Rutina</th>
+								<th scope="col">Intensidad Rutina</th>
+								<th scope="col">Rutina</th>
+								<th scope="col">Comentario</th>
 							</tr>
 						</thead>
 						<tbody>
 							<tr>
-								<th scope="row">Lunes</th>
-								<td class="table-info">Spinning (Sala 1)</td>
-								<!-- 9-11 -->
-								<td class="table-danger">Crossfit (Sala Box)</td>
-								<!-- 11-13 -->
-								<td></td>
-								<!-- 13-15 -->
-								<td class="table-success">Zumba (Sala 3)</td>
-								<!-- 15-17 -->
-								<td class="table-danger">Crossfit (Sala Box)</td>
-								<!-- 17-19 -->
-								<td class="table-info">Spinning (Sala 4)</td>
-								<!-- 19-21 -->
+								<th scope="row">1</th>
+								<!-- Nombre Usuario -->
+								<td class=></td>
+								<!-- Objetivo Rutina -->
+								<td class=></td>
+								<!-- Intensidad Rutina -->
+								<td class=></td>
+								<!-- Rutina -->
+								<td class="table-success"></td>
+								<!-- Comentario -->
+								<td class=""></td>
 							</tr>
 							<tr>
-								<th scope="row">Martes</th>
-								<td class="table-danger">Crossfit (Sala Box)</td>
-								<!-- 9-11 -->
-								<td class="table-info">Spinning (Sala 4)</td>
-								<!-- 11-13 -->
-								<td class="table-success">Zumba (Sala 2)</td>
-								<!-- 13-15 -->
-								<td></td>
-								<!-- 15-17 -->
-								<td></td>
-								<!-- 17-19 -->
-								<td class="table-danger">Crossfit (Sala Box)</td>
-								<!-- 19-21 -->
+								<th scope="row">2</th>
+								<!-- Nombre Usuario -->
+								<td class=></td>
+								<!-- Objetivo Rutina -->
+								<td class=></td>
+								<!-- Intensidad Rutina -->
+								<td class=></td>
+								<!-- Rutina -->
+								<td class=></td>
+								<!-- Comentario -->
+								<td class=""></td>
 							</tr>
 							<tr>
-								<th scope="row">Miercoles</th>
-								<td class="table-success">Zumba (Sala 3)</td>
-								<!-- 9-11 -->
-								<td></td>
-								<!-- 11-13 -->
-								<td class="table-info">Spinning (Sala 1)</td>
-								<!-- 13-15 -->
-								<td class="table-danger">Crossfit (Sala Box)</td>
-								<!-- 15-17 -->
-								<td class="table-danger">Crossfit (Sala Box)</td>
-								<!-- 17-19 -->
-								<td class="table-info">Spinning (Sala 4)</td>
-								<!-- 19-21 -->
+								<th scope="row">3</th>
+								<!-- Nombre Usuario -->
+								<td class=></td>
+								<!-- Objetivo Rutina -->
+								<td class=></td>
+								<!-- Intensidad Rutina -->
+								<td class=></td>
+								<!-- Rutina -->
+								<td class=></td>
+								<!-- Comentario -->
+								<td class=""></td>
 							</tr>
 							<tr>
-								<th scope="row">Jueves</th>
-								<td></td>
-								<!-- 9-11 -->
-								<td></td>
-								<!-- 11-13 -->
-								<td class="table-danger">Crossfit (Sala Box)</td>
-								<!-- 13-15 -->
-								<td class="table-success">Zumba (Sala 2)</td>
-								<!-- 15-17 -->
-								<td class="table-info">Spinning (Sala 1)</td>
-								<!-- 17-19 -->
-								<td class="table-info">Spinning (Sala 4)</td>
-								<!-- 19-21 -->
+								<th scope="row">4</th>
+								<!-- Nombre Usuario -->
+								<td class=></td>
+								<!-- Objetivo Rutina -->
+								<td class=></td>
+								<!-- Intensidad Rutina -->
+								<td class=></td>
+								<!-- Rutina -->
+								<td class=></td>
+								<!-- Comentario -->
+								<td class=""></td>
 							</tr>
 							<tr>
-								<th scope="row">Viernes</th>
-								<td class="table-danger">Crossfit (Sala Box)</td>
-								<!-- 9-11 -->
-								<td class="table-info">Spinning (Sala 4)</td>
-								<!-- 11-13 -->
-								<td></td>
-								<!-- 13-15 -->
-								<td class="table-success">Zumba ()</td>
-								<!-- 15-17 -->
-								<td class="table-info">Spinning (Sala 1)</td>
-								<!-- 17-19 -->
-								<td class="table-danger">Crossfit (Sala Box)</td>
-								<!-- 19-21 -->
+								<th scope="row">5</th>
+								<!-- Nombre Usuario -->
+								<td class=></td>
+								<!-- Objetivo Rutina -->
+								<td class=></td>
+								<!-- Intensidad Rutina -->
+								<td class=></td>
+								<!-- Rutina -->
+								<td class=></td>
+								<!-- Comentario -->
+								<td class=""></td>
 							</tr>
 							<tr>
-								<th scope="row">Sabado</th>
-								<td class="table-danger">Crossfit (Sala Box)</td>
-								<!-- 9-11 -->
-								<td class="table-info">Spinning (Sala 4)</td>
-								<!-- 11-13 -->
-								<td class="table-success">Zumba (Sala 3)</td>
-								<!-- 13-15 -->
-								<td class="table-info">Spinning (Sala 1)</td>
-								<!-- 15-17 -->
-								<td class="table-success">Zumba (Sala 2)</td>
-								<!-- 17-19 -->
-								<td class="table-danger">Crossfit (Sala Box)</td>
-								<!-- 19-21 -->
+								<th scope="row">6</th>
+								<!-- Nombre Usuario -->
+								<td class=></td>
+								<!-- Objetivo Rutina -->
+								<td class=></td>
+								<!-- Intensidad Rutina -->
+								<td class=></td>
+								<!-- Rutina -->
+								<td class=></td>
+								<!-- Comentario -->
+								<td class=""></td>
+							</tr>
+							<tr>
+								<th scope="row">7</th>
+								<!-- Nombre Usuario -->
+								<td class=></td>
+								<!-- Objetivo Rutina -->
+								<td class=></td>
+								<!-- Intensidad Rutina -->
+								<td class=></td>
+								<!-- Rutina -->
+								<td class=></td>
+								<!-- Comentario -->
+								<td class=""></td>
+							</tr>
+							<tr>
+								<th scope="row">8</th>
+								<!-- Nombre Usuario -->
+								<td class=></td>
+								<!-- Objetivo Rutina -->
+								<td class=></td>
+								<!-- Intensidad Rutina -->
+								<td class=></td>
+								<!-- Rutina -->
+								<td class=></td>
+								<!-- Comentario -->
+								<td class=""></td>
+							</tr>
+							<tr>
+								<th scope="row">9</th>
+								<!-- Nombre Usuario -->
+								<td class=></td>
+								<!-- Objetivo Rutina -->
+								<td class=></td>
+								<!-- Intensidad Rutina -->
+								<td class=></td>
+								<!-- Rutina -->
+								<td class=></td>
+								<!-- Comentario -->
+								<td class=""></td>
+							</tr>
+							<tr>
+								<th scope="row">10</th>
+								<!-- Nombre Usuario -->
+								<td class=></td>
+								<!-- Objetivo Rutina -->
+								<td class=></td>
+								<!-- Intensidad Rutina -->
+								<td class=></td>
+								<!-- Rutina -->
+								<td class=></td>
+								<!-- Comentario -->
+								<td class=""></td>
+							</tr>
+							<tr>
+								<th scope="row">11</th>
+								<!-- Nombre Usuario -->
+								<td class=></td>
+								<!-- Objetivo Rutina -->
+								<td class=></td>
+								<!-- Intensidad Rutina -->
+								<td class=></td>
+								<!-- Rutina -->
+								<td class=></td>
+								<!-- Comentario -->
+								<td class=""></td>
+							</tr>
+							<tr>
+								<th scope="row">12</th>
+								<!-- Nombre Usuario -->
+								<td class=></td>
+								<!-- Objetivo Rutina -->
+								<td class=></td>
+								<!-- Intensidad Rutina -->
+								<td class=></td>
+								<!-- Rutina -->
+								<td class=></td>
+								<!-- Comentario -->
+								<td class=""></td>
+							</tr>
+							<tr>
+								<th scope="row">13</th>
+								<!-- Nombre Usuario -->
+								<td class=></td>
+								<!-- Objetivo Rutina -->
+								<td class=></td>
+								<!-- Intensidad Rutina -->
+								<td class=></td>
+								<!-- Rutina -->
+								<td class=></td>
+								<!-- Comentario -->
+								<td class=""></td>
+							</tr>
+							<tr>
+								<th scope="row">14</th>
+								<!-- Nombre Usuario -->
+								<td class=></td>
+								<!-- Objetivo Rutina -->
+								<td class=></td>
+								<!-- Intensidad Rutina -->
+								<td class=></td>
+								<!-- Rutina -->
+								<td class=></td>
+								<!-- Comentario -->
+								<td class=""></td>
+							</tr>
+							<tr>
+								<th scope="row">15</th>
+								<!-- Nombre Usuario -->
+								<td class=></td>
+								<!-- Objetivo Rutina -->
+								<td class=></td>
+								<!-- Intensidad Rutina -->
+								<td class=></td>
+								<!-- Rutina -->
+								<td class=></td>
+								<!-- Comentario -->
+								<td class=""></td>
+							</tr>
+							<tr>
+								<th scope="row">16</th>
+								<!-- Nombre Usuario -->
+								<td class=></td>
+								<!-- Objetivo Rutina -->
+								<td class=></td>
+								<!-- Intensidad Rutina -->
+								<td class=></td>
+								<!-- Rutina -->
+								<td class=></td>
+								<!-- Comentario -->
+								<td class=""></td>
+							</tr>
+							<tr>
+								<th scope="row">17</th>
+								<!-- Nombre Usuario -->
+								<td class=></td>
+								<!-- Objetivo Rutina -->
+								<td class=></td>
+								<!-- Intensidad Rutina -->
+								<td class=></td>
+								<!-- Rutina -->
+								<td class=></td>
+								<!-- Comentario -->
+								<td class=""></td>
+							</tr>
+							<tr>
+								<th scope="row">18</th>
+								<!-- Nombre Usuario -->
+								<td class=></td>
+								<!-- Objetivo Rutina -->
+								<td class=></td>
+								<!-- Intensidad Rutina -->
+								<td class=></td>
+								<!-- Rutina -->
+								<td class=></td>
+								<!-- Comentario -->
+								<td class=""></td>
+							</tr>
+							<tr>
+								<th scope="row">19</th>
+								<!-- Nombre Usuario -->
+								<td class=></td>
+								<!-- Objetivo Rutina -->
+								<td class=></td>
+								<!-- Intensidad Rutina -->
+								<td class=></td>
+								<!-- Rutina -->
+								<td class=></td>
+								<!-- Comentario -->
+								<td class=""></td>
+							</tr>
+							<tr>
+								<th scope="row">20</th>
+								<!-- Nombre Usuario -->
+								<td class=></td>
+								<!-- Objetivo Rutina -->
+								<td class=></td>
+								<!-- Intensidad Rutina -->
+								<td class=></td>
+								<!-- Rutina -->
+								<td class=></td>
+								<!-- Comentario -->
+								<td class=""></td>
 							</tr>
 						</tbody>
 					</table>
-					<a class="btn btn-light btn-xl js-scroll-trigger"
-						href="apuntarseClase">APUNTARSE</a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section id="entrenadorPersonal">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12 text-center">
-					<h2 class="section-heading">ENTRENADOR PERSONAL</h2>
-					<hr class="my-4">
-					<p class="text-dark mb-4">En esta seccion, aparecera el
-						seguimiento de tu entrenador personal.</p>
-					<p class="text-dark mb-4">Si no dispones de uno, no dudes en
-						contactar con alguno de ellos.</p>
-					<div class="card-columns">
-						<div class="card">
-							<img class="card-img-top" src="../img/imagenUsuario.jpg"
-								alt="Imagen 1">
-							<div class="card-body">
-								<h5 class="card-title">RUTINA NO PREDEFINIDA 1</h5>
-								<p class="card-text">Objetivo: NO PREDEFINIDO</p>
-								<p class="card-text">Duracion: NO PREDEFINIDO</p>
-								<a href="<a href="https://www.urjc.es"> Descargar en formato
-									.pdf</a>
-								<p>
-									<small class="text-muted">Ultima modificacion hace 1h</small>
-								</p>
-								<button class="btn">
-									<i class="fa fa-heart"></i>Añadir Favoritos
-								</button>
-							</div>
-						</div>
-						<div class="card p-3">
-							<blockquote class="blockquote mb-0 card-body">
-								<p>No Pares, No te Conformes</p>
-								<footer class="blockquote-footer">
-									<small class="text-muted"> Smart Gym <cite
-										title="Source Title">2019</cite>
-									</small>
-								</footer>
-							</blockquote>
-						</div>
-						<div class="card">
-							<img class="card-img-top" src="../img/logoSmartGym.png"
-								alt="Imagen 2">
-							<div class="card-body">
-								<h5 class="card-title">RUTINA NO PREDEFINIDA 2</h5>
-								<p class="card-text">Objetivo: NO PREDEFINIDO</p>
-								<p class="card-text">Duracion: NO PREDEFINIDO</p>
-								<a href="<a href="https://www.urjc.es"> Descargar en formato
-									.pdf</a>
-								<p class="card-text">
-									<small class="text-muted">Ultima modificacion hace 2h</small>
-								</p>
-								<button class="btn">
-									<i class="fa fa-heart"></i>Añadir Favoritos
-								</button>
-							</div>
-						</div>
-						<div class="card bg-primary text-white text-center p-3">
-							<blockquote class="blockquote mb-0">
-								<p>NO PAIN, NO GAIN.</p>
-								<footer class="blockquote-footer">
-									<small> Alguien en <cite title="Source Title">Smart
-											Gym, 2019</cite>
-									</small>
-								</footer>
-							</blockquote>
-						</div>
-						<div class="card text-center">
-							<div class="card-body">
-								<h5 class="card-title">SERVICIO PERSONALIZADO</h5>
-								<p class="card-text">Registrate en Smart Gym</p>
-								<p class="card-text">
-									<small class="text-muted">Ultima modificacion hace 1
-										min</small>
-								</p>
-							</div>
-						</div>
-						<div class="card">
-							<img class="card-img-top" src="../img/imagenEntrenador.jpg"
-								alt="Imagen 3">
-							<div class="card-body">
-								<h5 class="card-title">RUTINA NO PREDEFINIDA 3</h5>
-								<p class="card-text">Objetivo: NO PREDEFINIDO</p>
-								<p class="card-text">Duracion: NO PREDEFINIDO</p>
-								<a href="<a href="https://www.urjc.es"> Descargar en formato
-									.pdf</a>
-								<p class="card-text">
-									<small class="text-muted">Ultima modificacion hace 20h</small>
-								</p>
-								<button class="btn">
-									<i class="fa fa-heart"></i>Añadir Favoritos
-								</button>
-							</div>
-						</div>
-						<div class="card">
-							<div class="card-body">
-								<h5 class="card-title">ENTRENAMIENTO DE HOY</h5>
-								<p class="card-text">Estare por la sala hoy a las 19:30.
-									¿Entrenamos juntos? Hablamos por email.</p>
-								<p class="card-text">
-									<small class="text-muted">Ultima modificacion hace 2
-										horas</small>
-								</p>
-							</div>
-						</div>
-					</div>
-					<a class="btn btn-dark btn-xl js-scroll-trigger"
-						href="contactarEntrenador">CONTACTAR CON ENTRENADOR</a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section id="rutinasFavoritas">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12 text-center">
-					<h2 class="section-heading">RUTINAS FAVORITAS</h2>
-					<hr class="my-4">
-					<p class="text-dark mb-4">En este apartado apareceran tus
-						rutinas favoritas</p>
-					<div class="card-columns">
-						<div class="card">
-							<img class="card-img-top" src="../img/imagenUsuario.jpg"
-								alt="Imagen 1">
-							<div class="card-body">
-								<h5 class="card-title">RUTINA FAVORITA 1</h5>
-								<p class="card-text">Objetivo: NO PREDEFINIDO</p>
-								<p class="card-text">Duracion: NO PREDEFINIDO</p>
-								<a href="<a href="https://www.urjc.es"> Descargar en formato
-									.pdf</a>
-								<p>
-									<small class="text-muted">Ultima modificacion hace 1h</small>
-								</p>
-								<button class="btn">
-									<i class="fa fa-ban"></i>Eliminar Favoritos
-								</button>
-							</div>
-						</div>
-						<div class="card">
-							<img class="card-img-top" src="../img/logoSmartGym.png"
-								alt="Imagen 2">
-							<div class="card-body">
-								<h5 class="card-title">RUTINA FAVORITA 2</h5>
-								<p class="card-text">Objetivo: NO PREDEFINIDO</p>
-								<p class="card-text">Duracion: NO PREDEFINIDO</p>
-								<a href="<a href="https://www.urjc.es"> Descargar en formato
-									.pdf</a>
-								<p class="card-text">
-									<small class="text-muted">Ultima modificacion hace 2h</small>
-								</p>
-								<button class="btn">
-									<i class="fa fa-ban"></i>Eliminar Favoritos
-								</button>
-							</div>
-						</div>
-						<div class="card">
-							<img class="card-img-top" src="../img/imagenEntrenador.jpg"
-								alt="Imagen 3">
-							<div class="card-body">
-								<h5 class="card-title">RUTINA FAVORITA 3</h5>
-								<p class="card-text">Objetivo: NO PREDEFINIDO</p>
-								<p class="card-text">Duracion: NO PREDEFINIDO</p>
-								<a href="<a href="https://www.urjc.es"> Descargar en formato
-									.pdf</a>
-								<p class="card-text">
-									<small class="text-muted">Ultima modificacion hace 20h</small>
-								</p>
-								<button class="btn">
-									<i class="fa fa-ban"></i>Eliminar Favoritos
-								</button>
-							</div>
-						</div>
-						<div class="card">
-							<img class="card-img-top" src="../img/imagenUsuario.jpg"
-								alt="Imagen 4">
-							<div class="card-body">
-								<h5 class="card-title">RUTINA FAVORITA 4</h5>
-								<p class="card-text">Objetivo: NO PREDEFINIDO</p>
-								<p class="card-text">Duracion: NO PREDEFINIDO</p>
-								<a href="<a href="https://www.urjc.es"> Descargar en formato
-									.pdf</a>
-								<p>
-									<small class="text-muted">Ultima modificacion hace 1h</small>
-								</p>
-								<button class="btn">
-									<i class="fa fa-ban"></i>Eliminar Favoritos
-								</button>
-							</div>
-						</div>
-						<div class="card">
-							<img class="card-img-top" src="../img/imagenUsuario.jpg"
-								alt="Imagen 5">
-							<div class="card-body">
-								<h5 class="card-title">RUTINA FAVORITA 5</h5>
-								<p class="card-text">Objetivo: NO PREDEFINIDO</p>
-								<p class="card-text">Duracion: NO PREDEFINIDO</p>
-								<a href="<a href="https://www.urjc.es"> Descargar en formato
-									.pdf</a>
-								<p>
-									<small class="text-muted">Ultima modificacion hace 1h</small>
-								</p>
-								<button class="btn">
-									<i class="fa fa-ban"></i>Eliminar Favoritos
-								</button>
-							</div>
-						</div>
-						<div class="card">
-							<img class="card-img-top" src="../img/imagenUsuario.jpg"
-								alt="Imagen 6">
-							<div class="card-body">
-								<h5 class="card-title">RUTINA FAVORITA 6</h5>
-								<p class="card-text">Objetivo: NO PREDEFINIDO</p>
-								<p class="card-text">Duracion: NO PREDEFINIDO</p>
-								<a href="<a href="https://www.urjc.es"> Descargar en formato
-									.pdf</a>
-								<p>
-									<small class="text-muted">Ultima modificacion hace 1h</small>
-								</p>
-								<button class="btn">
-									<i class="fa fa-ban"></i>Eliminar Favoritos
-								</button>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 		</div>
