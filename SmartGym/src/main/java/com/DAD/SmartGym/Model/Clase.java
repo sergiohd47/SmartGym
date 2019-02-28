@@ -42,14 +42,25 @@ public class Clase {
 	
 	protected Clase(){} //Constructor para la base de datos
 	
-	public Clase(String nombre,int intensidadCardio,int intensidadFuerza,int plazas, Entrenador monitor,int duracion) {
+	public Clase(String nombre,int intensidadCardio,int intensidadFuerza,int plazas, Entrenador monitor,int duracion,String descripcion) {
 		this.nombre = nombre;
 		this.intensidadCardio = intensidadCardio;
 		this.intensidadFuerza = intensidadFuerza;
 		this.max_plazas = plazas;
 		this.monitor = monitor;
 		this.duracion = duracion;
+		this.descripcion = descripcion;
 	}
+	/*
+	public Clase(String nombre,int intensidadCardio,int intensidadFuerza,int plazas, int duracion,String descripcion) {
+		this.nombre = nombre;
+		this.intensidadCardio = intensidadCardio;
+		this.intensidadFuerza = intensidadFuerza;
+		this.max_plazas = plazas;
+		//this.monitor = monitor;
+		this.duracion = duracion;
+		this.descripcion = descripcion;
+	}*/
 	
 	public String getNombre() {
         return nombre;

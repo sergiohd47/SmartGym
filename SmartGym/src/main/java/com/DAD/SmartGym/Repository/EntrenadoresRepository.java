@@ -14,7 +14,9 @@ public interface EntrenadoresRepository extends JpaRepository<Entrenador ,Long>{
 	
 	List<Entrenador> findByNombre(String nombre);
 	
-	List<Usuario> findByNombreUsuario(String nombreUsuario);
+	Entrenador findByNombreUsuario(String nombreUsuario);
+	
+	List<Entrenador> findListByNombreUsuario(String nombreUsuario);
 	
 	List<Entrenador> findByMail(String mail);
 	
@@ -29,7 +31,7 @@ public interface EntrenadoresRepository extends JpaRepository<Entrenador ,Long>{
 	void setApellidosByNombre( String apellidos, String nombre);
 	
 	@Modifying @Transactional
-	@Query(value = "update entrenador set entrenador.nombre_usuario = ?1 where e.id = ?2", nativeQuery = true)
+	@Query(value = "update entrenador set entrenador.nombre_usuario = ?1 where entrenador.id = ?2", nativeQuery = true)
 	void setUsuarioById( String nombreUsuario , int id);
 	
 	@Modifying @Transactional
@@ -37,11 +39,11 @@ public interface EntrenadoresRepository extends JpaRepository<Entrenador ,Long>{
 	void setGeneroByNombre( char genero, String nombre);
 	
 	@Modifying @Transactional
-	@Query(value = "update entrenador set entrenador.contrasena = ?1 where e.id = ?2", nativeQuery = true)
+	@Query(value = "update entrenador set entrenador.contrasena = ?1 where entrenador.id = ?2", nativeQuery = true)
 	void setContrasenaById( String contrasena , int id);
 	
 	@Modifying @Transactional
-	@Query(value = "update entrenador set entrenador.mail = ?1 where e.id = ?2", nativeQuery = true)
+	@Query(value = "update entrenador set entrenador.mail = ?1 where entrenador.id = ?2", nativeQuery = true)
 	void setMailById( String mail , int id);
 	
 	Entrenador getByNombre(String nombre);

@@ -28,7 +28,7 @@ public class InicioRegistroController {
 				return "acceso";
 			}
 		} else if(usuario.equals("usuarioEntrenador")) {
-			if(entrenadores.findByNombreUsuario(nombreUsuario).size()==0) {
+			if(entrenadores.findListByNombreUsuario(nombreUsuario).size()==0) {
 				Entrenador trainer = new Entrenador(nombre,apellidos,nombreUsuario,email,sexo,contrasena);
 				entrenadores.save(trainer);
 				return "acceso";
