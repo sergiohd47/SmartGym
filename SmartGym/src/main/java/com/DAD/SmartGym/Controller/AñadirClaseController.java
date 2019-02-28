@@ -17,6 +17,10 @@ public class AñadirClaseController {
 		//model.addAttribute("nombreUsuarioAntiguo",sesion.getAttribute("nombreUsuarioSesion"));
 		return "añadirClase";
 	}
+	@RequestMapping("/nuevoHorario")
+	public String nuevoHorario(Model model) {
+		return "añadirHorario";
+	}
 	
 
 	
