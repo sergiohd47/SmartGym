@@ -14,7 +14,7 @@ import com.DAD.SmartGym.Repository.ClaseRepository;
 import com.DAD.SmartGym.Repository.EntrenadoresRepository;
 
 @Controller
-public class nuevaClase {
+public class NuevaClaseController {
 	@Autowired
 	private EntrenadoresRepository entrenadores;
 	@Autowired

@@ -12,6 +12,8 @@ import com.DAD.SmartGym.Model.Clase;
 public interface ClaseRepository extends JpaRepository<Clase, Long>{
 	List<Clase> findByNombre(String nombre);
 	
+	@Query(value = "select id from clase where clase.nombre = ?1", nativeQuery = true)
+	int getIdByNombre(String nombre);
 	
 	@Query("select c from Clase c where c.intensidadCardio between :intensidadCardio1 and :intensidadCardio2")
 	List<Clase> findByRangoCardio( int intensidadCardio1, int intensidadCardio2);
