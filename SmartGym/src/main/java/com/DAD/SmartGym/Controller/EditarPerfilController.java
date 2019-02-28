@@ -24,7 +24,7 @@ public class EditarPerfilController {
 		return "editarPerfil";
 	}
 	/*
-	@RequestMapping("/cancelarPerfil")
+	@RequestMapping("/cancelar")
 	public String cancelar(Model model,@RequestParam String editar, HttpSession sesion) {
 		if(editar.equals("usuarioBasico")) {
 			model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
