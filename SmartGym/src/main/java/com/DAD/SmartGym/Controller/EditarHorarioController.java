@@ -12,7 +12,7 @@ import com.DAD.SmartGym.Model.Clase;
 import com.DAD.SmartGym.Repository.ClaseRepository;
 
 @Controller
-public class editarHorario {
+public class EditarHorarioController {
 	
 	@Autowired
 	private ClaseRepository clases;
@@ -24,6 +24,7 @@ public class editarHorario {
 		clase.addHorarios(horaClase, diaClase, salaClase);
 		clases.save(clase);
 		model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
+		//tablaHorario(model);
 		return "usuarioEntrenador";
 	}
 }
