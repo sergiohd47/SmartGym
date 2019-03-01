@@ -41,6 +41,7 @@ public class UsuarioController {
 			
 			if(entrenadores.getContrasenaByNombreUsuario(nombreUsuario).toString().equals(contrasena)) {
 				model.addAttribute("nombreUsuario",nombreUsuario);
+				model.addAttribute("listaClases",clases.findAllNombre());
 				return "usuarioEntrenador";
 			} else {
 				return "acceso";
