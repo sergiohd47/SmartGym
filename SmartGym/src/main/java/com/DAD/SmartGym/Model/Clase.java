@@ -16,6 +16,37 @@ public class Clase {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
+	public String getDescripcion() {
+		return descripcion;
+	}
+
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
+	}
+
+	public int getMax_plazas() {
+		return max_plazas;
+	}
+
+	public void setMax_plazas(int max_plazas) {
+		this.max_plazas = max_plazas;
+	}
+
+	public int getDuracion() {
+		return duracion;
+	}
+
+	public void setDuracion(int duracion) {
+		this.duracion = duracion;
+	}
+
+	public List<Horario> getHorarios() {
+		return horarios;
+	}
+
+	public void setHorarios(List<Horario> horarios) {
+		this.horarios = horarios;
+	}
 	@Column
 	private String nombre;
 	@Column

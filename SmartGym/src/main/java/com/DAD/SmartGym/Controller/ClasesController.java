@@ -2,36 +2,29 @@ package com.DAD.SmartGym.Controller;
 
 import javax.servlet.http.HttpSession;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import com.DAD.SmartGym.Model.Clase;
+import com.DAD.SmartGym.Repository.*;
 @Controller
 public class ClasesController {
+	@Autowired
+	private ClaseRepository clases;
 	@RequestMapping("/apuntarseClase")
-	public String apuntarseClase(Model model, HttpSession sesion) {
+	public String apuntarseClase(Model model, HttpSession sesion,@RequestParam String nombreClase) {
 		model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
-		
-		model.addAttribute("descripcionCrossfit","Entrenamiento funcional");
-		model.addAttribute("duracionCrossfit","120");
-		model.addAttribute("intensidadCardioCrossfit","7");
-		model.addAttribute("intensidadFuerzaCrossfit","9");
-		model.addAttribute("salaCrossfit","Box");
-		model.addAttribute("plazasLibresCrossfit","20");
-		
-		model.addAttribute("descripcionSpinning","Entrenamiento cardiovascular");
-		model.addAttribute("duracionSpinning","120");
-		model.addAttribute("intensidadCardioSpinning","9");
-		model.addAttribute("intensidadFuerzaSpinning","2");
-		model.addAttribute("salaSpinning","1 y 4");
-		model.addAttribute("plazasLibresSpinning","40");
-		
-		model.addAttribute("descripcionZumba","Entrenamiento cardiovascular");
-		model.addAttribute("duracionZumba","120");
-		model.addAttribute("intensidadCardioZumba","8");
-		model.addAttribute("intensidadFuerzaZumba","4");
-		model.addAttribute("salaZumba","2 y 3");
-		model.addAttribute("plazasLibresZumba","25");
+		Clase claseSacada=clases.getClaseByNombre(nombreClase);
+		model.addAttribute("nombreClase",nombreClase);
+		model.addAttribute("descripcionClase",claseSacada.getDescripcion());
+		model.addAttribute("duracionClase",claseSacada.getDuracion());
+		model.addAttribute("intensidadCardioClase",claseSacada.getIntensidadCardio());
+		model.addAttribute("intensidadFuerzaClase",claseSacada.getIntensidadFuerza());
+		model.addAttribute("plazasClase",claseSacada.getMax_plazas());
+		model.addAttribute("monitorClase",claseSacada.getMonitor().getNombre());
 		return "apuntarseClase";
 	}
 }
