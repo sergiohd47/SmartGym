@@ -1,6 +1,7 @@
 package com.DAD.SmartGym.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+
 import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.DAD.SmartGym.Repository.EntrenadoresRepository;
 import com.DAD.SmartGym.Repository.UsuariosRepository;
+import com.DAD.SmartGym.Repository.ClaseRepository;
+
 
 @Controller
 public class UsuarioController {
@@ -16,6 +19,8 @@ public class UsuarioController {
 	private EntrenadoresRepository entrenadores;
 	@Autowired
 	private UsuariosRepository usuarios;
+	@Autowired
+	private ClaseRepository clases;
 	
 	private String nombreUsuarioSesion;
 	private String tipoUsuarioSesion;
@@ -26,6 +31,7 @@ public class UsuarioController {
 		if(sesion.getAttribute("tipoUsuarioSesion").equals("usuarioBasico") ) {
 			if(usuarios.getContrasenaByNombreUsuario(nombreUsuario).toString().equals(contrasena)) {
 				model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
+				model.addAttribute("listaClases",clases.findAll());
 				return "usuarioBasico";
 			} else {
 				return "acceso";
