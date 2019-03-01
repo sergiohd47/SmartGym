@@ -12,6 +12,8 @@ import com.DAD.SmartGym.Model.Clase;
 
 public interface ClaseRepository extends JpaRepository<Clase, Long>{
 	List<Clase> findByNombre(String nombre);
+	@Query(value="select nombre from clase", nativeQuery=true)
+	List<String> findAllNombre();
 	
 	/*@Query(value = "select clase.nombre from clase inner join clase_horarios on clase_horarios.clase_id=clase.id inner join horario on horario.id=clase_horarios.horarios_id where horario.dia= ?1 and horario.hora= ?2")
 	Optional<String> findNombreByDiaAndHora(String dia, int hora);*/

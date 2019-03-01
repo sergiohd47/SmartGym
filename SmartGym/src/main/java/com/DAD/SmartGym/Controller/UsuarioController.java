@@ -31,7 +31,7 @@ public class UsuarioController {
 		if(sesion.getAttribute("tipoUsuarioSesion").equals("usuarioBasico") ) {
 			if(usuarios.getContrasenaByNombreUsuario(nombreUsuario).toString().equals(contrasena)) {
 				model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
-				model.addAttribute("listaClases",clases.findAll());
+				model.addAttribute("listaClases",clases.findAllNombre());
 				return "usuarioBasico";
 			} else {
 				return "acceso";
