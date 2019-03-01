@@ -11,6 +11,8 @@ import com.DAD.SmartGym.Model.Clase;
 
 public interface ClaseRepository extends JpaRepository<Clase, Long>{
 	List<Clase> findByNombre(String nombre);
+	@Query(value="select nombre from clase", nativeQuery=true)
+	List<String> findAllNombre();
 	
 	@Query(value = "select id from clase where clase.nombre = ?1", nativeQuery = true)
 	int getIdByNombre(String nombre);
