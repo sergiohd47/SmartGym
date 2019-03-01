@@ -1,6 +1,7 @@
 package com.DAD.SmartGym.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -11,6 +12,9 @@ import com.DAD.SmartGym.Model.Clase;
 
 public interface ClaseRepository extends JpaRepository<Clase, Long>{
 	List<Clase> findByNombre(String nombre);
+	
+	/*@Query(value = "select clase.nombre from clase inner join clase_horarios on clase_horarios.clase_id=clase.id inner join horario on horario.id=clase_horarios.horarios_id where horario.dia= ?1 and horario.hora= ?2")
+	Optional<String> findNombreByDiaAndHora(String dia, int hora);*/
 	
 	@Query(value = "select id from clase where clase.nombre = ?1", nativeQuery = true)
 	int getIdByNombre(String nombre);
