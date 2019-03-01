@@ -15,7 +15,7 @@ public class ClasesController {
 	@Autowired
 	private ClaseRepository clases;
 	@RequestMapping("/apuntarseClase")
-	public String apuntarseClase(Model model, HttpSession sesion,@RequestParam String nombreClase) {
+	public String apuntarseClase(Model model,@RequestParam String nombreClase, HttpSession sesion) {
 		model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
 		Clase claseSacada=clases.getClaseByNombre(nombreClase);
 		model.addAttribute("nombreClase",nombreClase);
