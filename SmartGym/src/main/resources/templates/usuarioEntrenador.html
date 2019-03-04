@@ -134,100 +134,25 @@
 						seguimiento de tu entrenador personal.</p>
 					<p class="text-dark mb-4">Si no dispones de uno, no dudes en
 						contactar con alguno de ellos.</p>
-					<div class="card-columns">
-						<div class="card">
-							<img class="card-img-top" src="../img/imagenUsuario.jpg"
-								alt="Imagen 1">
-							<div class="card-body">
-								<h5 class="card-title">RUTINA NO PREDEFINIDA 1</h5>
-								<p class="card-text">Objetivo: NO PREDEFINIDO</p>
-								<p class="card-text">Duracion: NO PREDEFINIDO</p>
-								<a href="<a href="https://www.urjc.es"> Descargar en formato
-									.pdf</a>
-								<p>
-									<small class="text-muted">Ultima modificacion hace 1h</small>
-								</p>
-								<button class="btn">
-									<i class="fa fa-heart"></i>Añadir Favoritos
-								</button>
-							</div>
-						</div>
-						<div class="card p-3">
-							<blockquote class="blockquote mb-0 card-body">
-								<p>No Pares, No te Conformes</p>
-								<footer class="blockquote-footer">
-									<small class="text-muted"> Smart Gym <cite
-										title="Source Title">2019</cite>
-									</small>
-								</footer>
-							</blockquote>
-						</div>
-						<div class="card">
-							<img class="card-img-top" src="../img/logoSmartGym.png"
-								alt="Imagen 2">
-							<div class="card-body">
-								<h5 class="card-title">RUTINA NO PREDEFINIDA 2</h5>
-								<p class="card-text">Objetivo: NO PREDEFINIDO</p>
-								<p class="card-text">Duracion: NO PREDEFINIDO</p>
-								<a href="<a href="https://www.urjc.es"> Descargar en formato
-									.pdf</a>
-								<p class="card-text">
-									<small class="text-muted">Ultima modificacion hace 2h</small>
-								</p>
-								<button class="btn">
-									<i class="fa fa-heart"></i>Añadir Favoritos
-								</button>
-							</div>
-						</div>
-						<div class="card bg-primary text-white text-center p-3">
-							<blockquote class="blockquote mb-0">
-								<p>NO PAIN, NO GAIN.</p>
-								<footer class="blockquote-footer">
-									<small> Alguien en <cite title="Source Title">Smart
-											Gym, 2019</cite>
-									</small>
-								</footer>
-							</blockquote>
-						</div>
-						<div class="card text-center">
-							<div class="card-body">
-								<h5 class="card-title">SERVICIO PERSONALIZADO</h5>
-								<p class="card-text">Registrate en Smart Gym</p>
-								<p class="card-text">
-									<small class="text-muted">Ultima modificacion hace 1
-										min</small>
-								</p>
-							</div>
-						</div>
-						<div class="card">
-							<img class="card-img-top" src="../img/imagenEntrenador.jpg"
-								alt="Imagen 3">
-							<div class="card-body">
-								<h5 class="card-title">RUTINA NO PREDEFINIDA 3</h5>
-								<p class="card-text">Objetivo: NO PREDEFINIDO</p>
-								<p class="card-text">Duracion: NO PREDEFINIDO</p>
-								<a href="<a href="https://www.urjc.es"> Descargar en formato
-									.pdf</a>
-								<p class="card-text">
-									<small class="text-muted">Ultima modificacion hace 20h</small>
-								</p>
-								<button class="btn">
-									<i class="fa fa-heart"></i>Añadir Favoritos
-								</button>
-							</div>
-						</div>
-						<div class="card">
-							<div class="card-body">
-								<h5 class="card-title">ENTRENAMIENTO DE HOY</h5>
-								<p class="card-text">Estare por la sala hoy a las 19:30.
-									¿Entrenamos juntos? Hablamos por email.</p>
-								<p class="card-text">
-									<small class="text-muted">Ultima modificacion hace 2
-										horas</small>
-								</p>
-							</div>
-						</div>
-					</div>
+					<table class="table table-dark">
+						<thead>
+							<tr>
+								<th scope="col"></th>
+								<th scope="col">Nombre Entrenador</th>
+								<th scope="col">Objetivo</th>
+								<th scope="col">Rutina</th>
+							</tr>
+						</thead>
+						{{#listaRutinasPersonales}}
+						<tr>
+							<td>{{-index}}</td> 
+							<td> </td>  <!-- Nombre Entrenador -->
+							<td> </td> <!-- Objetivo Rutina -->
+							<td id="rutina" name="rutina"
+							value = "{{.}}">Rutina</td>
+						</tr>
+						{{/listaRutinasPersonales}}	
+					</table>
 					<a class="btn btn-dark btn-xl js-scroll-trigger"
 						href="contactarEntrenador">CONTACTAR CON ENTRENADOR</a>
 				</div>

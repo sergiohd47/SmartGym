@@ -89,167 +89,28 @@
 					<p class="text-faded mb-4">Intensidad fuerza: {{intensidadFuerzaClase}}</p>
 					<p class="text-faded mb-4">Plazas libres: {{plazasClase}}</p>
 					<p class="text-faded mb-4">Monitor: {{monitorClase}}</p>
-					<iframe width="600" height="400"
-						src="https://youtube.com/embed/0HofXKSjUCs"> </iframe>
 					<p class="text-faded mb-4">HORARIO</p>
 					<table class="table table-dark">
 						<thead>
 							<tr>
 								<th scope="col"></th>
-								<th scope="col">9:00-11:00</th>
-								<th scope="col">11:00-13:00</th>
-								<th scope="col">13:00-15:00</th>
-								<th scope="col">15:00-17:00</th>
-								<th scope="col">17:00-19:00</th>
-								<th scope="col">19:00-21:00</th>
+								<th scope="col">Dia</th>
+								<th scope="col">Hora Comienzo</th>
+								<th scope="col">Sala</th>
+								<th scope="col">Reservar Plaza</th>
 							</tr>
 						</thead>
-						<tbody>
-							<tr>
-								<th scope="row">Lunes</th>
-								<td class=""></td>
-								<!-- 9-11 -->
-								<td class="table-danger">Crossfit (Sala Box)</td>
-								<!-- 11-13 -->
-								<td class=""></td>
-								<!-- 13-15 -->
-								<td class=""></td>
-								<!-- 15-17 -->
-								<td class="table-danger">Crossfit (Sala Box)</td>
-								<!-- 17-19 -->
-								<td class=""></td>
-								<!-- 19-21 -->
-							</tr>
-							<tr>
-								<th scope="row">Martes</th>
-								<td class="table-danger">Crossfit (Sala Box)</td>
-								<!-- 9-11 -->
-								<td class=""></td>
-								<!-- 11-13 -->
-								<td class=""></td>
-								<!-- 13-15 -->
-								<td class=""></td>
-								<!-- 15-17 -->
-								<td class=""></td>
-								<!-- 17-19 -->
-								<td class="table-danger">Crossfit (Sala Box)</td>
-								<!-- 19-21 -->
-							</tr>
-							<tr>
-								<th scope="row">Miercoles</th>
-								<td class=""></td>
-								<!-- 9-11 -->
-								<td class=""></td>
-								<!-- 11-13 -->
-								<td class=""></td>
-								<!-- 13-15 -->
-								<td class="table-danger">Crossfit (Sala Box)</td>
-								<!-- 15-17 -->
-								<td class="table-danger">Crossfit (Sala Box)</td>
-								<!-- 17-19 -->
-								<td class=""></td>
-								<!-- 19-21 -->
-							</tr>
-							<tr>
-								<th scope="row">Jueves</th>
-								<td class=""></td>
-								<!-- 9-11 -->
-								<td class=""></td>
-								<!-- 11-13 -->
-								<td class="table-danger">Crossfit (Sala Box)</td>
-								<!-- 13-15 -->
-								<td class=""></td>
-								<!-- 15-17 -->
-								<td class=""></td>
-								<!-- 17-19 -->
-								<td class=""></td>
-								<!-- 19-21 -->
-							</tr>
-							<tr>
-								<th scope="row">Viernes</th>
-								<td class="table-danger">Crossfit (Sala Box)</td>
-								<!-- 9-11 -->
-								<td class=""></td>
-								<!-- 11-13 -->
-								<td class=""></td>
-								<!-- 13-15 -->
-								<td class=""></td>
-								<!-- 15-17 -->
-								<td class=""></td>
-								<!-- 17-19 -->
-								<td class="table-danger">Crossfit (Sala Box)</td>
-								<!-- 19-21 -->
-							</tr>
-							<tr>
-								<th scope="row">Sabado</th>
-								<td class="table-danger">Crossfit (Sala Box)</td>
-								<!-- 9-11 -->
-								<td class=""></td>
-								<!-- 11-13 -->
-								<td class=""></td>
-								<!-- 13-15 -->
-								<td class=""></td>
-								<!-- 15-17 -->
-								<td class=""></td>
-								<!-- 17-19 -->
-								<td class="table-danger">Crossfit (Sala Box)</td>
-								<!-- 19-21 -->
-							</tr>
-						</tbody>
+						{{#listaHorariosClases}}
+						<tr>
+							<td>{{-index}}</td> 
+							<td> </td>  <!-- Dia clase -->
+							<td>{{.}}</td> <!-- Hora Comienzo -->
+							<td> </td> <!-- Sala -->
+							<td id="reservaPlaza" name="reservaHorario"
+							value = "{{.}}" onclick="apuntadoAClase()">RESERVAR</td>
+						</tr>
+						{{/listaHorariosClases}}	
 					</table>
-					<div class="modal fade" id="formularioCrossfit" tabindex="-1"
-						role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-						<div class="modal-center">
-							<div class="modal-dialog .modal-align-center">
-								<div class="modal-content">
-									<div class="modal-header">
-										<h4 class="modal-title" id="myModalLabel">CROSSFIT</h4>
-										<button type="button" class="close" data-dismiss="modal">
-											<span aria-hidden="true">×</span><span class="sr-only">Cerrar</span>
-										</button>
-									</div>
-									<div class="modal-body">
-										<div class="col-12">
-											<h4>Seleccione horario</h4>
-											<select class="custom-select" id="no_checkboxes"
-												multiple="multiple">
-												<optgroup label="LUNES">
-													<option value="1">SALA BOX 11:00-13:00</option>
-													<option value="2">SALA BOX 17:00-19:00</option>
-												</optgroup>
-												<optgroup label="MARTES">
-													<option value="3">SALA BOX 9:00-11:00</option>
-													<option value="4">SALA BOX 19:00-21:00</option>
-												</optgroup>
-												<optgroup label="MIERCOLES">
-													<option value="5">SALA BOX 15:00-17:00</option>
-													<option value="6">SALA BOX 17:00-19:00</option>
-												</optgroup>
-												<optgroup label="JUEVES">
-													<option value="7">SALA BOX 13:00-15:00</option>
-												</optgroup>
-												<optgroup label="VIERNES">
-													<option value="8">SALA BOX 9:00-11:00</option>
-													<option value="9">SALA BOX 19:00-21:00</option>
-												</optgroup>
-												<optgroup label="SABADO">
-													<option value="10">SALA BOX 9:00-11:00</option>
-													<option value="11">SALA BOX 19:00-21:00</option>
-												</optgroup>
-											</select>
-										</div>
-									</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-dark"
-											data-dismiss="modal">Cerrar</button>
-										<button type="button" class="btn btn-primary" onclick="apuntadoAClase()">GUARDAR</button>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<button class="btn btn-dark btn-xl js-scroll-trigger"
-						data-toggle="modal" data-target="#formularioCrossfit">APUNTARSE</button>
 				</div>
 			</div>
 		</div>

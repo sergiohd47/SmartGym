@@ -14,6 +14,8 @@ import com.DAD.SmartGym.Repository.*;
 public class ClasesController {
 	@Autowired
 	private ClaseRepository clases;
+	@Autowired
+	private horariosClases; //REPOSITORY QUE RELACIONA UNA CLASE CON LOS DIAS HORA DE COMIENZO Y SALA DE LA CLASE
 	@RequestMapping("/apuntarseClase")
 	public String apuntarseClase(Model model,@RequestParam String nombreClase, HttpSession sesion) {
 		model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
@@ -25,6 +27,7 @@ public class ClasesController {
 		model.addAttribute("intensidadFuerzaClase",claseSacada.getIntensidadFuerza());
 		model.addAttribute("plazasClase",claseSacada.getMax_plazas());
 		model.addAttribute("monitorClase",claseSacada.getMonitor().getNombre());
+		model.addAttribute("listaHorariosClases",horariosClases.); //DEBE DEVOLVER VARIAS COSAS PERO NO SE SEGURO COMO HACERLO
 		return "apuntarseClase";
 	}
 }

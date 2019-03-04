@@ -20,6 +20,9 @@ public interface EntrenadoresRepository extends JpaRepository<Entrenador ,Long>{
 	
 	List<Entrenador> findByMail(String mail);
 	
+	@Query(value="select nombre from entrenador", nativeQuery=true)
+	List<String> findAllNombre();
+	
 	@Query(value = "select contrasena from entrenador where entrenador.nombre_usuario= ?1", nativeQuery = true)
 	String getContrasenaByNombreUsuario(String nombreUsuario);
 	
