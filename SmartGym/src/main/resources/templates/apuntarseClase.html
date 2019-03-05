@@ -103,11 +103,13 @@
 						{{#listaHorariosClases}}
 						<tr>
 							<td>{{-index}}</td> 
-							<td></td>  <!-- Dia clase -->
-							<td></td> <!-- Hora Comienzo -->
-							<td></td> <!-- Sala -->
-							<td id="reservaPlaza" name="reservaHorario"
-							value = "{{.}}" onclick="apuntadoAClase()">RESERVAR</td>
+							<td>{{diaClase}}</td>  <!-- Dia clase -->
+							<td>{{horaComienzo}}</td> <!-- Hora Comienzo -->
+							<td>{{salaClase}}</td> <!-- Sala -->
+							<td> 
+								<input type="submit" id="reservaPlaza" name="reservaHorario"
+							value = "RESERVAR" onclick="apuntadoAClase()"/>
+							</td>
 						</tr>
 						{{/listaHorariosClases}}	
 					</table>

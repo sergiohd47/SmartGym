@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.DAD.SmartGym.Model.Clase;
+import com.DAD.SmartGym.Model.Horario;
 import com.DAD.SmartGym.Repository.*;
 @Controller
 public class ClasesController {
@@ -28,7 +29,14 @@ public class ClasesController {
 		model.addAttribute("intensidadFuerzaClase",claseSacada.getIntensidadFuerza());
 		model.addAttribute("plazasClase",claseSacada.getMax_plazas());
 		model.addAttribute("monitorClase",claseSacada.getMonitor().getNombre());
-		model.addAttribute("listaHorariosClases",claseSacada.getHoraios()); //DEBE DEVOLVER VARIAS COSAS PERO NO SE SEGURO COMO HACERLO -> Devuelve todos los horariosde la clase
+		model.addAttribute("listaHorariosClases",claseSacada.getHoraios());
+		if(claseSacada.getHoraios()!=null) {
+			for(Horario horario: claseSacada.getHoraios()) {
+				model.addAttribute("diaClase",horario.getDia());
+				model.addAttribute("horaComienzo",horario.getHora());
+				model.addAttribute("salaClase",horario.getSala());
+			}
+		}
 		
 		return "apuntarseClase";
 	}
