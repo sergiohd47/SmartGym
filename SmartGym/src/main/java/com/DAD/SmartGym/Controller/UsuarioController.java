@@ -2,6 +2,8 @@ package com.DAD.SmartGym.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.DAD.SmartGym.Repository.EntrenadoresRepository;
 import com.DAD.SmartGym.Repository.TablaRutinaRepository;
 import com.DAD.SmartGym.Repository.UsuariosRepository;
+import com.DAD.SmartGym.Model.TablaRutina;
 import com.DAD.SmartGym.Model.Usuario;
 import com.DAD.SmartGym.Repository.ClaseRepository;
 
@@ -37,10 +40,17 @@ public class UsuarioController {
 		sesion.setAttribute("tipoUsuarioSesion", usuario);
 		if(sesion.getAttribute("tipoUsuarioSesion").equals("usuarioBasico") ) {
 			if(usuarios.getContrasenaByNombreUsuario(nombreUsuario).equals(contrasena)) {
-				//Usuario user = usuarios.getByNombre(nombreUsuario);
+				Usuario user = usuarios.getByNombre(nombreUsuario);
 				model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
 				model.addAttribute("listaClases",clases.findAllNombre());
-				//model.addAttribute("listaRutinasPersonales",user.getRutinas()); //RUTINAS PERSONALES MANDADAS POR UN ENTRENADOR -> Devuelvo la lista de rutinas del usuario
+				model.addAttribute("listaRutinasPersonales",user.getRutinas()); //RUTINAS PERSONALES MANDADAS POR UN ENTRENADOR -> Devuelvo la lista de rutinas del usuario
+				if(user.getRutinas()!=null) {
+					for(TablaRutina rutina: user.getRutinas()) {
+						model.addAttribute("nombreEntrenadorRutina",rutina.getNombreEntrenador());
+						model.addAttribute("objetivoRutina",rutina.getObjetivo());
+						model.addAttribute("duracionRutina",rutina.getDuracion());
+					}
+				}
 				//model.addAttribute("listaRutinasFavoritas",user.getRutinas_fav()); //RUTINAS FAVORITAS DE UN USUARIO -> Devuelvo la lista de rutinas favoritas del usuario
 				return "usuarioBasico";
 			} else {

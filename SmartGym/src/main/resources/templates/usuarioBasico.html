@@ -131,17 +131,20 @@
 								<th scope="col"></th>
 								<th scope="col">Nombre Entrenador</th>
 								<th scope="col">Objetivo</th>
+								<th scope="col">Duracion</th>
+								<th scope="col">Añadir Favoritos
 								<th scope="col">Rutina</th>
 							</tr>
 						</thead>
 						{{#listaRutinasPersonales}}
 						<tr>
 							<td>{{-index}}</td>
-							<td> </td>  <!-- Nombre Entrenador -->
-							<td> </td> <!-- Objetivo Rutina -->
+							<td>{{nombreEntrenadorRutina}}</td>  <!-- Nombre Entrenador -->
+							<td>{{objetivoRutina}}</td> <!-- Objetivo Rutina -->
+							<td>{{duracionRutina}}</td> <!-- Duracion Rutina -->
+							<td> </td> <!-- Añadir Favoritos -->
 							<td id="rutina" name="rutina"
 							value = "{{.}}">Rutina</td>
-							<td></td>
 						</tr>
 						{{/listaRutinasPersonales}}
 					</table>
