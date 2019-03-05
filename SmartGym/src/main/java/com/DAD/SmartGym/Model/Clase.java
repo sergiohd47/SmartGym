@@ -60,12 +60,13 @@ public class Clase {
 	private int max_plazas;
 	@Column
 	private int duracion;
+	
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<Horario> horarios = new ArrayList<Horario>();
 	
-	
 	@ManyToOne
 	private Entrenador monitor;
+	
 	@ManyToMany(mappedBy="clases_apuntadas")
 	private List<Usuario> plazasReservadas = new ArrayList<Usuario>();
 	
@@ -108,6 +109,10 @@ public class Clase {
 
     public Entrenador getMonitor() {
         return monitor;
+    }
+    
+    public List<Horario> getHoraios(){
+    	return this.horarios;
     }
        
     public void setPlazas(int plazas) {
@@ -170,13 +175,15 @@ public class Clase {
             resultado = 1;
         return resultado;
     }
-    //Implementar
+    
+
+    /*Implementar
     private int getSala(String dia, int hora) {
     	
     	
     	return 1;
     }
-    
+    */
     /*@Override
     public String toString() {
         return this.nombre + " ( Sala " + + " )";

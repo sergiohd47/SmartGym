@@ -62,6 +62,14 @@ public class Entrenador {
 		this.contrasena = contrasena;
 	}
 	
+	public List<Usuario> getUsuarios() {
+		return usuarios;
+	}
+
+	public void setUsuarios(List<Usuario> usuarios) {
+		this.usuarios = usuarios;
+	}
+
 	public String getNombre() {
 		return this.nombre + " " + this.apellidos;
 	}
