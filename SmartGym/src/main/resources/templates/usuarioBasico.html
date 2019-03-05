@@ -140,14 +140,15 @@
 							<td>{{nombreEntrenadorRutina}}</td>  <!-- Nombre Entrenador -->
 							<td>{{objetivoRutina}}</td> <!-- Objetivo Rutina -->
 							<td>{{duracionRutina}}</td> <!-- Duracion Rutina -->
-							<td> </td> <!-- Añadir Favoritos -->
-							<td id="rutina" name="rutina"
-							value = "{{.}}">Rutina</td>
+							<td> 
+								<a href="añadirFavoritos" onclick="rutinaAñadidaFavoritos()">AÑADIR FAVORITOS</a>
+							</td> <!-- Añadir Favoritos -->
+							<td>
+								<a href="verRutina">RUTINA</a> <!-- ARCHIVO CON RUTINA -->
+							</td>
 						</tr>
 						{{/listaRutinasPersonales}} 
 					</table>
-					<a class="btn btn-dark btn-xl js-scroll-trigger"
-						href="solicitarRutina">SOLICITAR RUTINA</a>
 					<a class="btn btn-dark btn-xl js-scroll-trigger"
 						href="contactarEntrenador">CONTACTAR CON ENTRENADOR</a>
 				</div>
@@ -176,12 +177,14 @@
 						{{#listaRutinasFavoritas}}
 						<tr>
 							<td>{{-index}}</td>
-							<td> </td>  <!-- Objetivo Rutina -->
-							<td> </td> <!-- Rutina -->
-							<td id="rutina" name="rutina"
-							value = "{{.}}">Rutina</td>
-							<td id="quitarFavoritos" name="quitarFavoritos"
-							value = "{{.}}">Eliminar Favoritos</td>
+							<td> </td><!-- Objetivo Rutina -->
+							<td> </td><!-- Rutina -->
+							<td>
+								<a href="verRutina">RUTINA</a> <!-- ARCHIVO CON RUTINA -->
+							</td>
+							<td>
+								<a href="eliminarFavoritos" onclick="rutinaEliminadaFavoritos()">ELIMINAR FAVORITOS</a>
+							</td>
 						</tr>
 						{{/listaRutinasFavoritas}}
 					</table>
@@ -225,7 +228,15 @@
 
 	<!-- Custom scripts for this template -->
 	<script src="js/creative.min.js"></script>
-
+<!-- SCRIPT AUXILIARES ALERTAS -->
+<script>
+	function rutinaEliminadaFavoritos(){
+		alert("Rutina eliminada de favoritos");
+	}	
+	function rutinaAñadidaFavoritos(){
+		alert("Rutina añadida a favoritos");
+	}
+</script>
 </body>
 
 </html>
