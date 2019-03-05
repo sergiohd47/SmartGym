@@ -28,8 +28,8 @@ public class ClasesController {
 		model.addAttribute("intensidadFuerzaClase",claseSacada.getIntensidadFuerza());
 		model.addAttribute("plazasClase",claseSacada.getMax_plazas());
 		model.addAttribute("monitorClase",claseSacada.getMonitor().getNombre());
-		//model.addAttribute("listaHorariosClases",claseSacada.getHoraios()); //DEBE DEVOLVER VARIAS COSAS PERO NO SE SEGURO COMO HACERLO -> Devuelve todos los horariosde la clase
-		//Ver que mas cosas debe de sacar de los horarios
+		model.addAttribute("listaHorariosClases",claseSacada.getHoraios()); //DEBE DEVOLVER VARIAS COSAS PERO NO SE SEGURO COMO HACERLO -> Devuelve todos los horariosde la clase
+		
 		return "apuntarseClase";
 	}
 }

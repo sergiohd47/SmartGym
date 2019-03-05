@@ -91,15 +91,13 @@
 							<tr>
 								<th scope="col"></th>
 								<th scope="col">Nombre Usuario</th>
-								<th scope="col">Objetivo</th>
 								<th scope="col">Rutina</th>
 							</tr>
 						</thead>
 						{{#listaClientes}}
 						<tr>
 							<td>{{-index}}</td> 
-							<td> </td>  <!-- Nombre Usuario -->
-							<td> </td> <!-- Objetivo Rutina -->
+							<td>{{.}}</td>  <!-- Nombre Usuario -->
 							<td id="añadirRutinas" name="añadirRutinas"
 							value = "{{.}}">Elegir Rutina</td>
 						</tr>

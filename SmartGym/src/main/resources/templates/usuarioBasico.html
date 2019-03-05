@@ -103,9 +103,10 @@
 						<tr>
 							<td>{{-index}}</td>
 							<td>{{.}}</td>
-							<td id="nombreClase" name="nombreClase"
-							href="apuntarseClase" value = "{{.}}">APUNTARSE</td>
+							<td href="apuntarseClase.html" value="{{.}}" name="nombreClase">APUNTARSE</td>
+							
 						</tr>
+						
 						{{/listaClases}}
 					</table>
 				</div>
@@ -138,9 +139,12 @@
 							<td> </td> <!-- Objetivo Rutina -->
 							<td id="rutina" name="rutina"
 							value = "{{.}}">Rutina</td>
+							<td></td>
 						</tr>
 						{{/listaRutinasPersonales}}	
 					</table>
+					<a class="btn btn-dark btn-xl js-scroll-trigger"
+						href="solicitarRutina">SOLICITAR RUTINA</a>
 					<a class="btn btn-dark btn-xl js-scroll-trigger"
 						href="contactarEntrenador">CONTACTAR CON ENTRENADOR</a>
 				</div>
