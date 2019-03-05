@@ -66,7 +66,7 @@ public class TablaRutina {
 	}
 	
 	public String getNombreEntrenador(){
-		return this.entrenador.getNombre();
+		return this.entrenador.getNombreUsuario();
 	}
 	
 	/*public String fechaInicio() {

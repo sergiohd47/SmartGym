@@ -31,7 +31,7 @@ public class Entrenador {
 	@Column
 	//private char[] contrasena = new char[8];
 	private String contrasena;
-	
+	//Añadir campo especialidad metodos
 	/*
 	private int numUsuarios;
 	private int numRutinasPendientes;

@@ -26,9 +26,9 @@ public class UsuarioController {
 	private UsuariosRepository usuarios;
 	@Autowired
 	private ClaseRepository clases;
-	/*@Autowired
-	private  rutinas; //REPOSITORY EN EL QUE SE GUARDARIAN LAS RUTINAS PEDIDAS A UN ENTRENADOR PERSONAL RELACION USUARIO->ENTRENADOR
-	
+	@Autowired
+	private TablaRutinaRepository rutinas; //REPOSITORY EN EL QUE SE GUARDARIAN LAS RUTINAS PEDIDAS A UN ENTRENADOR PERSONAL RELACION USUARIO->ENTRENADOR
+	/*
 	@Autowired 
 	private RutinasFavoritasRepository rutinasFavoritas; //REPOSITORY DE RUTINAS FAVORITAS DE UN USUARIO
 	*/
@@ -43,12 +43,12 @@ public class UsuarioController {
 				Usuario user = usuarios.getByNombre(nombreUsuario);
 				model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
 				model.addAttribute("listaClases",clases.findAllNombre());
-				model.addAttribute("listaRutinasPersonales",user.getRutinas()); //RUTINAS PERSONALES MANDADAS POR UN ENTRENADOR -> Devuelvo la lista de rutinas del usuario
-				if(user.getRutinas()!=null) {
-					for(TablaRutina rutina: user.getRutinas()) {
-						model.addAttribute("nombreEntrenadorRutina",rutina.getNombreEntrenador());
-						model.addAttribute("objetivoRutina",rutina.getObjetivo());
-						model.addAttribute("duracionRutina",rutina.getDuracion());
+				if(rutinas.getByUsuario(user)!=null) {
+					model.addAttribute("listaRutinasPersonales",rutinas.findByUsuario(user)); //RUTINAS PERSONALES MANDADAS POR UN ENTRENADOR -> Devuelvo la lista de rutinas del usuario
+					for(TablaRutina rutina: rutinas.findByUsuario(user)) {
+						model.addAttribute("nombreEntrenadorRutina",/*rutina.getNombreEntrenador()*/"Entrenador");
+						model.addAttribute("objetivoRutina",/*rutina.getObjetivo()*/"Objetivo");
+						model.addAttribute("duracionRutina",/*rutina.getDuracion()*/"Duracion");
 					}
 				}
 				//model.addAttribute("listaRutinasFavoritas",user.getRutinas_fav()); //RUTINAS FAVORITAS DE UN USUARIO -> Devuelvo la lista de rutinas favoritas del usuario
