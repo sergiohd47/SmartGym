@@ -124,43 +124,6 @@
 			</div>
 		</div>
 	</section>
-	<section id="entrenadorPersonal">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-12 text-center">
-					<h2 class="section-heading">ENTRENADOR PERSONAL</h2>
-					<hr class="my-4">
-					<p class="text-dark mb-4">En esta seccion, aparecera el
-						seguimiento de tu entrenador personal.</p>
-					<p class="text-dark mb-4">Si no dispones de uno, no dudes en
-						contactar con alguno de ellos.</p>
-					<table class="table table-dark">
-						<thead>
-							<tr>
-								<th scope="col"></th>
-								<th scope="col">Nombre Entrenador</th>
-								<th scope="col">Objetivo</th>
-								<th scope="col">Rutina</th>
-							</tr>
-						</thead>
-						{{#listaRutinasPersonales}}
-						<tr>
-							<td>{{-index}}</td> 
-							<td> </td>  <!-- Nombre Entrenador -->
-							<td> </td> <!-- Objetivo Rutina -->
-							<td id="rutina" name="rutina"
-							value = "{{.}}">Rutina</td>
-						</tr>
-						{{/listaRutinasPersonales}}	
-					</table>
-					<a class="btn btn-dark btn-xl js-scroll-trigger"
-						href="solicitarRutina">SOLICITAR RUTINA</a>
-					<a class="btn btn-dark btn-xl js-scroll-trigger"
-						href="contactarEntrenador">CONTACTAR CON ENTRENADOR</a>
-				</div>
-			</div>
-		</div>
-	</section>
 	<section id="contacto">
 		<div class="container">
 			<div class="row">
