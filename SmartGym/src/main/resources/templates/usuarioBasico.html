@@ -103,10 +103,12 @@
 						<tr>
 							<td>{{-index}}</td>
 							<td>{{.}}</td>
+
 							<td href="apuntarseClase.html" value="{{.}}" name="nombreClase">APUNTARSE</td>
-							
+
+
 						</tr>
-						
+
 						{{/listaClases}}
 					</table>
 				</div>
@@ -134,14 +136,14 @@
 						</thead>
 						{{#listaRutinasPersonales}}
 						<tr>
-							<td>{{-index}}</td> 
+							<td>{{-index}}</td>
 							<td> </td>  <!-- Nombre Entrenador -->
 							<td> </td> <!-- Objetivo Rutina -->
 							<td id="rutina" name="rutina"
 							value = "{{.}}">Rutina</td>
 							<td></td>
 						</tr>
-						{{/listaRutinasPersonales}}	
+						{{/listaRutinasPersonales}}
 					</table>
 					<a class="btn btn-dark btn-xl js-scroll-trigger"
 						href="solicitarRutina">SOLICITAR RUTINA</a>
@@ -172,7 +174,7 @@
 						</thead>
 						{{#listaRutinasFavoritas}}
 						<tr>
-							<td>{{-index}}</td> 
+							<td>{{-index}}</td>
 							<td> </td>  <!-- Objetivo Rutina -->
 							<td> </td> <!-- Rutina -->
 							<td id="rutina" name="rutina"
@@ -180,7 +182,7 @@
 							<td id="quitarFavoritos" name="quitarFavoritos"
 							value = "{{.}}">Eliminar Favoritos</td>
 						</tr>
-						{{/listaRutinasFavoritas}}	
+						{{/listaRutinasFavoritas}}
 					</table>
 				</div>
 			</div>

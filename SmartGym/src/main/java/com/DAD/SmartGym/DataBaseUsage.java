@@ -24,7 +24,7 @@ public class DataBaseUsage {
 	
 	@PostConstruct
 	public void init(){
-		/*
+		
 		Usuario user1 = new Usuario("Danny","Molina","Raider","danyel@mail.com",'m',"password");
 		Usuario user2 = new Usuario("Victory","Saint","Hatebreeder","markku@mail.com",'f',"rock");
 		Usuario user3 = new Usuario("Mariete", "Barriga","NonRiddel","riddle@mail.com",'m',"wow");
@@ -77,6 +77,6 @@ public class DataBaseUsage {
 	
 		user1.anadirComentario(new Retroalimentacion ("ExtremeFit", true, "Esta muy bien la clase para aquellos que quieran llegar al limite",user1));
 		userRepo.save(user1);
-		*/
+		
 	}
 }

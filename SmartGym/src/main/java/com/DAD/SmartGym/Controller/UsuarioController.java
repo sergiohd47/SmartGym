@@ -36,8 +36,8 @@ public class UsuarioController {
 		sesion.setAttribute("nombreUsuarioSesion", nombreUsuario);
 		sesion.setAttribute("tipoUsuarioSesion", usuario);
 		if(sesion.getAttribute("tipoUsuarioSesion").equals("usuarioBasico") ) {
-			if(usuarios.getContrasenaByNombreUsuario(nombreUsuario).toString().equals(contrasena)) {
-				Usuario user = usuarios.getByNombre(nombreUsuario);
+			if(usuarios.getContrasenaByNombreUsuario(nombreUsuario).equals(contrasena)) {
+				//Usuario user = usuarios.getByNombre(nombreUsuario);
 				model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
 				model.addAttribute("listaClases",clases.findAllNombre());
 				//model.addAttribute("listaRutinasPersonales",user.getRutinas()); //RUTINAS PERSONALES MANDADAS POR UN ENTRENADOR -> Devuelvo la lista de rutinas del usuario
@@ -49,7 +49,7 @@ public class UsuarioController {
 			
 		} else if (sesion.getAttribute("tipoUsuarioSesion").equals("usuarioEntrenador")) {
 			
-			if(entrenadores.getContrasenaByNombreUsuario(nombreUsuario).toString().equals(contrasena)) {
+			if(entrenadores.getContrasenaByNombreUsuario(nombreUsuario).equals(contrasena)) {
 				model.addAttribute("nombreUsuario",nombreUsuario);
 				model.addAttribute("listaClases",clases.findAllNombre());
 				//model.addAttribute("listaRutinasPersonales",rutinas.); //RUTINAS PERSONALES MANDADAS POR UN ENTRENADOR
