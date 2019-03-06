@@ -91,7 +91,6 @@
 							<tr>
 								<th scope="col"></th>
 								<th scope="col">Nombre Entrenador</th>
-								<th scope="col">Especialidad</th>
 								<th scope="col">Objetivo Rutina</th>
 								<th scope="col">Contactar</th>
 							</tr>
@@ -100,12 +99,11 @@
 						<tr>
 							<td>{{-index}}</td> 
 							<td>{{.}}</td>  <!-- Nombre Entrenador -->
-							<td> </td> <!-- Especialidad -->
 							<td>
 								<input type="text" placeholder="Objetivo Rutina" name="objetivoRutina"/>
 							</td>
 							<td>
-								<input type="submit" value="CONTACTAR"/>
+								<input type="submit" value="CONTACTAR" name="contactarEntrenador"/>
 							</td>
 						</tr>
 						{{/listaEntrenadores}}	

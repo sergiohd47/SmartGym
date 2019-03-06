@@ -61,7 +61,9 @@ public class Entrenador {
 		this.genero = genero;
 		this.contrasena = contrasena;
 	}
-	
+	public List<TablaRutina> getPendientes(){
+		return this.pendientes;
+	}
 	public List<Usuario> getUsuarios() {
 		return usuarios;
 	}
