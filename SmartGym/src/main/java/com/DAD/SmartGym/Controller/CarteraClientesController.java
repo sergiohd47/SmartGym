@@ -19,12 +19,7 @@ public class CarteraClientesController {
 	public String acceder(Model model, HttpSession sesion) {
 		model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
 		Entrenador trainer = entrenadores.getByNombre(sesion.getAttribute("nombreUsuarioSesion").toString());
-		model.addAttribute("listaClientes",trainer.getUsuarios()); // Devuelve el nombre de todos los clientes que quieren estar con ese entrenador -> Devuelve una lista de los usuarios que es entrenador
-		if(trainer.getUsuarios()!=null) {
-			for(TablaRutina rutina : trainer.getPendientes()) {
-				model.addAttribute("objetivoRutina",rutina.getObjetivo());
-			}
-		}
+		model.addAttribute("listaClientes",trainer.getPendientes()); // Devuelve el nombre de todos los clientes que quieren estar con ese entrenador -> Devuelve una lista de los usuarios que es entrenador
 		return "carteraClientes";
 	}
 }
