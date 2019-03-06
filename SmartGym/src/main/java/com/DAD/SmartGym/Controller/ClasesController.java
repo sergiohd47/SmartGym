@@ -1,5 +1,7 @@
 package com.DAD.SmartGym.Controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,14 +32,25 @@ public class ClasesController {
 		model.addAttribute("plazasClase",claseSacada.getMax_plazas());
 		model.addAttribute("monitorClase",claseSacada.getMonitor().getNombre());
 		model.addAttribute("listaHorariosClases",claseSacada.getHoraios());
-		if(claseSacada.getHoraios()!=null) {
+		/*if(claseSacada.getHoraios()!=null) {
+			int i = 1;
+			String nombre;
 			for(Horario horario: claseSacada.getHoraios()) {
-				model.addAttribute("diaClase",horario.getDia());
-				model.addAttribute("horaComienzo",horario.getHora());
-				model.addAttribute("salaClase",horario.getSala());
-			}
-		}
+				nombre=get.Dia
+				model.addAttribute(nombre,horario.getDia());
+				nombre="horaComienzo"+i;
+				model.addAttribute(nombre,horario.getHora());
+				nombre="salaClase"+i;
+				model.addAttribute(nombre,horario.getSala());
+				i++;
+			}*/
+		
+		//model.addAttribute("listaDiasClases",claseSacada.getHoraios());
+		
+		
 		
 		return "apuntarseClase";
 	}
+	
+	
 }
