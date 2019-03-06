@@ -29,6 +29,7 @@ public class NuevaClaseController {
 		clases.save(clase);
 		//entrenadores.save(trainer);
 		model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
+		model.addAttribute("listaClases",clases.findAllNombre());
 		return "usuarioEntrenador";
 	}
 }

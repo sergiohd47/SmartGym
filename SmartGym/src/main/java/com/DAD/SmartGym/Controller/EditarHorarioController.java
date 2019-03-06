@@ -19,11 +19,12 @@ public class EditarHorarioController {
 	
 	@RequestMapping("/editarHorario")
 	public String cambiar(Model model,@RequestParam String nombreClase, @RequestParam String diaClase,
-			@RequestParam int horaClase,@RequestParam int plazasClase,@RequestParam int salaClase, HttpSession sesion) {
+			@RequestParam int horaClase,@RequestParam int salaClase, HttpSession sesion) {
 		Clase clase = clases.getByNombre(nombreClase);
 		clase.addHorarios(horaClase, diaClase, salaClase);
 		clases.save(clase);
 		model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
+		model.addAttribute("listaClases",clases.findAllNombre());
 		//tablaHorario(model);
 		return "usuarioEntrenador";
 	}

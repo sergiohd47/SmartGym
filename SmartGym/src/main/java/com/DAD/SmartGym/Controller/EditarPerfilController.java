@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.DAD.SmartGym.Repository.EntrenadoresRepository;
 import com.DAD.SmartGym.Repository.UsuariosRepository;
+import com.DAD.SmartGym.Repository.ClaseRepository;
 
 @Controller
 public class EditarPerfilController {
@@ -17,6 +18,8 @@ public class EditarPerfilController {
 	private EntrenadoresRepository entrenadores;
 	@Autowired
 	private UsuariosRepository usuarios;
+	@Autowired
+	private ClaseRepository clases;
 	
 	@RequestMapping("/editarPerfil")
 	public String acceder(Model model, HttpSession sesion) {
@@ -53,6 +56,7 @@ public class EditarPerfilController {
 			entrenadores.setContrasenaById(contrasena, id);
 			entrenadores.setMailById(email, id);
 			model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
+			model.addAttribute("listaClases",clases.findAllNombre());
 			return "usuarioEntrenador";
 		}
 	}
