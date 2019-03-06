@@ -27,4 +27,6 @@ public interface HorarioRepository extends JpaRepository<Horario, Long> {
 	Horario getByDia(String dia);
 	
 	Horario getBySala(int sala);
+	
+	Horario getById(int id);
 }

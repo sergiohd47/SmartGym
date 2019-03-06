@@ -136,6 +136,7 @@ public class Clase {
     	String resultado;
     	if(hora.getPlazas()>0) {
     		hora.reservarPlaza();
+    		idUsuario.anadirClase(this);
     		this.plazasReservadas.add(idUsuario);
 	    		resultado ="Su plaza ha sido reservada con éxito";
     		} else {

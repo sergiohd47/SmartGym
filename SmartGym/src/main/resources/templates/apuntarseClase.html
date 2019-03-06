@@ -90,6 +90,7 @@
 					<p class="text-faded mb-4">Plazas libres: {{plazasClase}}</p>
 					<p class="text-faded mb-4">Monitor: {{monitorClase}}</p>
 					<p class="text-faded mb-4">HORARIO</p>
+					<form action="reservarHora">
 					<table class="table table-dark">
 						<thead>
 							<tr>
@@ -107,12 +108,13 @@
 							<td>{{hora}}</td> <!-- Hora Comienzo -->
 							<td>{{sala}}</td> <!-- Sala -->
 							<td> 
-								<input type="submit" id="reservaPlaza" name="reservaHorario"
-							value = "RESERVAR" onclick="apuntadoAClase()"/>
+								<button id="reservarHorario" name="reservarHorario"
+							value = "{{id}}" onclick="apuntadoAClase()">RESERVAR</button>
 							</td>
 						</tr>
 						{{/listaHorariosClases}}	
 					</table>
+					</form>
 				</div>
 			</div>
 		</div>

@@ -26,6 +26,10 @@ public class Horario {
 		this.sala = sala;
 		this.plazas = plazas;
 	}
+	
+	public int getId() {
+		return (int)this.id;
+	}
 
 	public int getHora() {
 		return hora;

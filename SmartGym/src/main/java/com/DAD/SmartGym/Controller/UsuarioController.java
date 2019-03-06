@@ -46,7 +46,7 @@ public class UsuarioController {
 				if(rutinas.getByUsuario(user)!=null) {
 					//model.addAttribute("listaRutinasPersonales",rutinas.findByUsuario(user)); //RUTINAS PERSONALES MANDADAS POR UN ENTRENADOR -> Devuelvo la lista de rutinas del usuario
 				}
-				model.addAttribute("listaRutinasFavoritas",user.getRutinas_fav()); //RUTINAS FAVORITAS DE UN USUARIO -> Devuelvo la lista de rutinas favoritas del usuario
+				//model.addAttribute("listaRutinasFavoritas",user.getRutinas_fav()); //RUTINAS FAVORITAS DE UN USUARIO -> Devuelvo la lista de rutinas favoritas del usuario
 				return "usuarioBasico";
 			} else {
 				return "acceso";

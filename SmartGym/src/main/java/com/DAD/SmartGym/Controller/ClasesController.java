@@ -10,13 +10,16 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.DAD.SmartGym.Model.Clase;
-import com.DAD.SmartGym.Model.Horario;
+import com.DAD.SmartGym.Model.*;
 import com.DAD.SmartGym.Repository.*;
 @Controller
 public class ClasesController {
 	@Autowired
 	private ClaseRepository clases;
+	@Autowired
+	private UsuariosRepository usuarios;
+	@Autowired
+	private HorarioRepository horarios;
 	/*@Autowired
 	private horariosClases; //REPOSITORY QUE RELACIONA UNA CLASE CON LOS DIAS HORA DE COMIENZO Y SALA DE LA CLASE
 	*/
@@ -50,6 +53,18 @@ public class ClasesController {
 		
 		
 		return "apuntarseClase";
+	}
+	
+	@RequestMapping("/reservarHora")
+	public String reservarHora(Model model,@RequestParam int reservarHorario, HttpSession sesion) {
+		Horario hora = horarios.getById(reservarHorario);
+		Usuario user = usuarios.getByNombre(sesion.getAttribute("nombreUsuarioSesion").toString());
+		Clase clase=clases.getById(clases.getClaseByHorario(reservarHorario));
+		clase.reservarPlaza(user, hora);
+		model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
+		model.addAttribute("listaClases",clases.findAllNombre());
+		
+		return "usuarioBasico";
 	}
 	
 	

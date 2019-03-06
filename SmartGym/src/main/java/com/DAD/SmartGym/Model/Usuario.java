@@ -200,5 +200,8 @@ public class Usuario {
 		return this.comentarios.get(indice);
 	}
 	
+	public void anadirClase(Clase clase) {
+		this.clases_apuntadas.add(clase);
+	}
 	
 }

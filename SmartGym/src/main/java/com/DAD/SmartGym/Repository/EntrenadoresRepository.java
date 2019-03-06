@@ -23,6 +23,9 @@ public interface EntrenadoresRepository extends JpaRepository<Entrenador ,Long>{
 	@Query(value="select nombre from entrenador", nativeQuery=true)
 	List<String> findAllNombre();
 	
+	@Query(value="select nombre_usuario from entrenador", nativeQuery=true)
+	List<String> findAllNombreUsuario();
+	
 	@Query(value = "select contrasena from entrenador where entrenador.nombre_usuario= ?1", nativeQuery = true)
 	String getContrasenaByNombreUsuario(String nombreUsuario);
 	
@@ -50,6 +53,8 @@ public interface EntrenadoresRepository extends JpaRepository<Entrenador ,Long>{
 	void setMailById( String mail , int id);
 	
 	Entrenador getByNombre(String nombre);
+	
+	Entrenador getByNombreUsuario(String nombreUsuario);
 	
 	Entrenador getByMail(String mail);
 	
