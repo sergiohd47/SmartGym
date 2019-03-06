@@ -126,6 +126,7 @@
 						seguimiento de tu entrenador personal.</p>
 					<p class="text-dark mb-4">Si no dispones de uno, no dudes en
 						contactar con alguno de ellos.</p>
+					<form action="">
 					<table class="table table-dark">
 						<thead>
 							<tr>
@@ -140,18 +141,19 @@
 						 {{#listaRutinasPersonales}}
 						<tr>
 							<td>{{-index}}</td>
-							<td>{{nombreEntrenadorRutina}}</td>  <!-- Nombre Entrenador -->
-							<td>{{objetivoRutina}}</td> <!-- Objetivo Rutina -->
-							<td>{{duracionRutina}}</td> <!-- Duracion Rutina -->
+							<td>{{entrenador}}</td>  <!-- Nombre Entrenador -->
+							<td>{{objetivo}}</td> <!-- Objetivo Rutina -->
+							<td>{{duracion}}</td> <!-- Duracion Rutina -->
 							<td> 
-								<a href="añadirFavoritos" onclick="rutinaAñadidaFavoritos()">AÑADIR FAVORITOS</a>
+								<button name="añadirFavoritos" id="añadirFavoritos"  value="{{.}}">APUNTARSE</button>
 							</td> <!-- Añadir Favoritos -->
 							<td>
-								<a href="verRutina">RUTINA</a> <!-- ARCHIVO CON RUTINA -->
+								<<button name="rutina" id="rutina"  value="{{.}}">RUTINA</button>
 							</td>
 						</tr>
 						{{/listaRutinasPersonales}} 
 					</table>
+					</form>
 					<a class="btn btn-dark btn-xl js-scroll-trigger"
 						href="contactarEntrenador">CONTACTAR CON ENTRENADOR</a>
 				</div>
@@ -173,6 +175,7 @@
 							<tr>
 								<th scope="col"></th>
 								<th scope="col">Objetivo</th>
+								<th scope="col">Duracion</th>
 								<th scope="col">Rutina</th>
 								<th scope="col">Eliminar Favoritos</th>
 							</tr>
@@ -180,8 +183,8 @@
 						{{#listaRutinasFavoritas}}
 						<tr>
 							<td>{{-index}}</td>
-							<td> </td><!-- Objetivo Rutina -->
-							<td> </td><!-- Rutina -->
+							<td>{{objetivo}}</td><!-- Objetivo Rutina -->
+							<td>{{duracion}}</td><!-- Duracion Rutina -->
 							<td>
 								<a href="verRutina">RUTINA</a> <!-- ARCHIVO CON RUTINA -->
 							</td>
