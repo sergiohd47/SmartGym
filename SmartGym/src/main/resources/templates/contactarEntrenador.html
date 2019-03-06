@@ -104,7 +104,7 @@
 								<input type="text" placeholder="Objetivo Rutina" name="objetivoRutina"/>
 							</td>
 							<td>
-								<button name="contactarEntrenador" id="contactarEntrenador"  value="{{.}}">CONTACTAR</button>
+								<button name="contactarEntrenador" id="contactarEntrenador"  value="{{.}}" onclick="contactarEntrenador()">CONTACTAR</button>
 							</td>
 						</tr>
 						{{/listaEntrenadores}}	
@@ -150,6 +150,11 @@
 
 	<!-- Custom scripts for this template -->
 	<script src="js/creative.min.js"></script>
+	<script>
+		function contactarEntrenador(){
+			alert("Has contactado con el entrenador correctamente!");
+		}
+	</script>
 
 </body>
 

@@ -107,7 +107,7 @@
 								<output id="list"></output>
 							</td>
 							<td>
-								<button name="enviarRutinaCliente" id="enviarRutinaCliente"  value="{{.}}">ENVIAR</button>
+								<button name="enviarRutinaCliente" id="enviarRutinaCliente"  value="{{.}}" onclick="enviarRutinaCliente()">ENVIAR</button>
 							</td>
 						</tr>
 						{{/listaClientes}}	
@@ -166,5 +166,10 @@
 	}
 	document.getElementById('files').addEventListener('change',handleFileSelect,false);
 </script>
+<script>
+		function enviarRutinaCliente(){
+			alert("Has enviado una rutina al cliente de manera correcta!");
+		}
+	</script>
 </body>
 </html>
