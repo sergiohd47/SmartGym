@@ -101,10 +101,10 @@
 							<td>{{-index}}</td> 
 							<td>{{.}}</td>  <!-- Nombre Entrenador -->
 							<td>
-								<input type="text" placeholder="Objetivo Rutina" name="objetivoRutina"/>
+								<input type="text" placeholder="Objetivo Rutina" name="objetivoRutina"  id="objetivoRutina"/>
 							</td>
 							<td>
-								<button name="contactarEntrenador" id="contactarEntrenador"  value="{{.}}" onclick="contactarEntrenador()">CONTACTAR</button>
+								<button name="contactarEntrenador" id="contactarEntrenador"  value="{{.}}" onclick="contactEntrenador()">CONTACTAR</button>
 							</td>
 						</tr>
 						{{/listaEntrenadores}}	
@@ -151,7 +151,7 @@
 	<!-- Custom scripts for this template -->
 	<script src="js/creative.min.js"></script>
 	<script>
-		function contactarEntrenador(){
+		function contactEntrenador(){
 			alert("Has contactado con el entrenador correctamente!");
 		}
 	</script>

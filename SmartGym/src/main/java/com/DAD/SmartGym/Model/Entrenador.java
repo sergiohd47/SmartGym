@@ -146,8 +146,7 @@ public class Entrenador {
 	}
 	
 	public void crearRutina(int duracion) {
-		TablaRutina rutina = this.pendientes.get(0);
-		rutina.getUsuario().recibirRutina(rutina.iniciarRutina(duracion));
+		this.pendientes.get(0).getUsuario().recibirRutina(this.pendientes.get(0).iniciarRutina(duracion));
 	}
 	
 	public void añadirComentario(Retroalimentacion comentario) {

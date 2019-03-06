@@ -11,7 +11,8 @@ import com.DAD.SmartGym.Model.Usuario;
 public interface UsuariosRepository extends JpaRepository<Usuario,Long>{
 	List<Usuario> findByNombre(String nombre);
 	
-	List<Usuario> findByNombreUsuario(String nombreUsuario);
+	@Query(value="select * from usuario where usuario.nombre_usuario = ?1", nativeQuery=true)
+	Usuario findByNombreUsuario(String nombreUsuario);
 
 	List<Usuario> findByMail(String mail);
 	

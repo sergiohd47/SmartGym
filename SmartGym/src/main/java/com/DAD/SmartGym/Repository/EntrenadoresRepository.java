@@ -14,6 +14,7 @@ public interface EntrenadoresRepository extends JpaRepository<Entrenador ,Long>{
 	
 	List<Entrenador> findByNombre(String nombre);
 	
+	@Query(value="select * from entrenador where entrenador.nombre_usuario = ?1", nativeQuery=true)
 	Entrenador findByNombreUsuario(String nombreUsuario);
 	
 	List<Entrenador> findListByNombreUsuario(String nombreUsuario);

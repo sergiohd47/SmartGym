@@ -26,13 +26,15 @@ public class TablaRutina {
 	@ManyToOne
 	private Usuario usuario;
 	
-	/*@Column
-	private Date inicio;
-	private DateFormat form = new SimpleDateFormat("dd-MM-yyyy");*/
 	@Column
 	private int duracion;//semanas
 	@Column
 	private String objetivo;
+	
+
+	/*@Column
+	private Date inicio;
+	private DateFormat form = new SimpleDateFormat("dd-MM-yyyy");*/
 	
 	//private PNG rutina;
 	

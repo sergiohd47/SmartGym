@@ -25,28 +25,27 @@ public class ContactarEntrenadorController {
 	}
 	
 	@RequestMapping("/seleccionarEntrenador")
-	public String contactar(Model model, @RequestParam String contactarEntrenador,@RequestParam String objetivoRutina, HttpSession sesion) {
-		/*entrenadores.getIdByNombreUsuario(contactarEntrenador);
-		
-		Entrenador trainer = entrenadores.findById;
-		System.out.println(trainer.getNombreUsuario());
-		Usuario user = usuarios.getByNombre(sesion.getAttribute("nombreUsuarioSesion").toString());
-		String solicitarEntre = user.solicitarEntrenador(trainer);
-		String rutinaSol = user.solicitarRutina(objetivoRutina);
-		/*if (user.tieneEntrenador()) {
-			if(user.getEntrenador().equals(trainer)) {
-				String rutinaSol = user.solicitarRutina(objetivoRutina);
+	public String seleccionar(Model model, @RequestParam String contactarEntrenador,@RequestParam String objetivoRutina, HttpSession sesion) {
+		Entrenador trainer = entrenadores.findByNombreUsuario(contactarEntrenador);
+		Usuario user = usuarios.findByNombreUsuario(sesion.getAttribute("nombreUsuarioSesion").toString());
+		String respuestaRutina;
+		String respuestaEntrenador;
+		if(user.tieneEntrenador()) {
+			if(user.getEntrenador().getNombreUsuario().equals(contactarEntrenador)) {
+				respuestaRutina = user.solicitarRutina(objetivoRutina);
+				respuestaEntrenador = "No cambia";
 			}else {
-				String cambiarEntre = user.cambiarEntrenador(trainer);
-				String rutinaSol = user.solicitarRutina(objetivoRutina);
+				respuestaEntrenador = user.cambiarEntrenador(trainer);
+				respuestaRutina = user.solicitarRutina(objetivoRutina);
 			}
-		}else {
-			String solicitarEntre = user.solicitarEntrenador(trainer);
-			String rutinaSol = user.solicitarRutina(objetivoRutina);
+		} else {
+			respuestaEntrenador = user.solicitarEntrenador(trainer);
+			respuestaRutina = user.solicitarRutina(objetivoRutina);
 		}
-		*/
+		System.out.println(respuestaEntrenador);
+		System.out.println(respuestaRutina);
+		usuarios.save(user);
 		model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
-		
 		return "usuarioBasico";
 	}
 }
