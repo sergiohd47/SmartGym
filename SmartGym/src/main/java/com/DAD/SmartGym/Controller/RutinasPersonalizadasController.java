@@ -16,11 +16,14 @@ import com.DAD.SmartGym.Model.*;
 public class RutinasPersonalizadasController {
 	@Autowired
 	private UsuariosRepository usuarios;
+	@Autowired
+	private TablaRutinaRepository tablas;
 	@RequestMapping("/rutinasPersonalizadas")
-	public String acceder(Model model, HttpSession sesion, @RequestParam String nombreUsuario) {
+	public String acceder(Model model, HttpSession sesion) {
 		model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
-		Usuario usuario=usuarios.getByNombre(nombreUsuario);
-		model.addAttribute("listaRutinasPersonales",usuario.getRutinas()); //MODIFICO REPOSITORY PARA SACAR TODOS LOS NOMBRES DE ENT.
+		
+		Usuario usuario=usuarios.getByNombre(sesion.getAttribute("nombreUsuarioSesion").toString());
+		model.addAttribute("listaRutinasPersonales",tablas.findByUsuario(usuario)); //MODIFICO REPOSITORY PARA SACAR TODOS LOS NOMBRES DE ENT.
 		return "rutinasPersonalizadas";
 	}
 

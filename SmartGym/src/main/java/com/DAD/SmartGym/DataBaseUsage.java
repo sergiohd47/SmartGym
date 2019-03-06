@@ -81,8 +81,15 @@ public class DataBaseUsage {
 	
 		user1.anadirComentario(new Retroalimentacion ("ExtremeFit", true, "Esta muy bien la clase para aquellos que quieran llegar al limite",user1));
 		userRepo.save(user1);
+		*//*
+		Entrenador trainer = new Entrenador("Cristina","Cifuentes","Cifu","cifu@mail.com",'f',"master");
+		trainerRepo.save(trainer);
+		
+		
+		Usuario user = new Usuario("Juanma", "Tell","Janmatell","cali@mail.com",'m',"telas");
+		userRepo.save(user);
+		user.solicitarEntrenador(trainer);
+		user.solicitarRutina("Calistenia");
 		*/
-		
-		
 	}
 }

@@ -26,9 +26,14 @@ public class ContactarEntrenadorController {
 	
 	@RequestMapping("/seleccionarEntrenador")
 	public String contactar(Model model, @RequestParam String contactarEntrenador,@RequestParam String objetivoRutina, HttpSession sesion) {
-		Entrenador trainer = entrenadores.getByNombreUsuario(contactarEntrenador);
+		/*entrenadores.getIdByNombreUsuario(contactarEntrenador);
+		
+		Entrenador trainer = entrenadores.findById;
+		System.out.println(trainer.getNombreUsuario());
 		Usuario user = usuarios.getByNombre(sesion.getAttribute("nombreUsuarioSesion").toString());
-		if (user.getEntrenador()!=null) {
+		String solicitarEntre = user.solicitarEntrenador(trainer);
+		String rutinaSol = user.solicitarRutina(objetivoRutina);
+		/*if (user.tieneEntrenador()) {
 			if(user.getEntrenador().equals(trainer)) {
 				String rutinaSol = user.solicitarRutina(objetivoRutina);
 			}else {
@@ -39,7 +44,7 @@ public class ContactarEntrenadorController {
 			String solicitarEntre = user.solicitarEntrenador(trainer);
 			String rutinaSol = user.solicitarRutina(objetivoRutina);
 		}
-		String solicitarEntre = user.solicitarEntrenador(trainer);
+		*/
 		model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
 		
 		return "usuarioBasico";

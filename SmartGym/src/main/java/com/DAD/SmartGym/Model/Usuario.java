@@ -114,6 +114,10 @@ public class Usuario {
 	public Entrenador getEntrenador() {
 		return entrenador;
 	}
+	
+	public boolean tieneEntrenador() {
+		return this.entrenador!=null;
+	}
 
 	public String solicitarEntrenador(Entrenador entrenador) {
 		if (entrenador.disponible()) {

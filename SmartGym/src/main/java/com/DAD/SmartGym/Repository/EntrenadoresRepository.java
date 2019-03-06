@@ -54,7 +54,7 @@ public interface EntrenadoresRepository extends JpaRepository<Entrenador ,Long>{
 	
 	Entrenador getByNombre(String nombre);
 	
-	Entrenador getByNombreUsuario(String nombreUsuario);
+	Entrenador getById(int id);
 	
 	Entrenador getByMail(String mail);
 	
