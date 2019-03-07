@@ -98,13 +98,14 @@
 							</tr>
 						</thead>
 						{{#listaClientes}}
-						<tr>
+						<trth:each="rutina: ${listaClientes}">
 							<td>{{-index}}</td> 
-							<td>{{.}}</td>  <!-- Nombre Usuario -->
-							<td>{{objetivo}}</td> <!-- Objetivo Rutina -->
+							<td th:text="${rutina.usuario.getNombreUsuario()}"/>  <!-- Nombre Usuario -->
+							<td th:text="${rutina.objetivo}"/> <!-- Objetivo Rutina -->
+							<td th:text="${rutina.duracion}"/> <!-- Duracion Rutina -->
 							<td>
 								<input type="file" id="rutina" name="rutina" multiple/>
-								<output id="list"></output>
+								<!-- <output id="list"></output> -->
 							</td>
 							<td>
 								<button name="enviarRutinaCliente" id="enviarRutinaCliente"  value="{{.}}" onclick="enviarRutinaCliente()">ENVIAR</button>

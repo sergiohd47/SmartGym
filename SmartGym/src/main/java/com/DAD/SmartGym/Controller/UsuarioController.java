@@ -40,13 +40,16 @@ public class UsuarioController {
 		sesion.setAttribute("tipoUsuarioSesion", usuario);
 		if(sesion.getAttribute("tipoUsuarioSesion").equals("usuarioBasico") ) {
 			if(usuarios.getContrasenaByNombreUsuario(nombreUsuario).equals(contrasena)) {
-				Usuario user = usuarios.getByNombre(nombreUsuario);
+				Usuario user = usuarios.findByNombreUsuario(nombreUsuario);
 				model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
 				model.addAttribute("listaClases",clases.findAllNombre());
-				if(rutinas.getByUsuario(user)!=null) {
-					//model.addAttribute("listaRutinasPersonales",rutinas.findByUsuario(user)); //RUTINAS PERSONALES MANDADAS POR UN ENTRENADOR -> Devuelvo la lista de rutinas del usuario
+				/*if(rutinas.findByUsuario(user)!=null) {
+					/model.addAttribute("listaRutinasPersonales",rutinas.findByUsuario(user)); //RUTINAS PERSONALES MANDADAS POR UN ENTRENADOR -> Devuelvo la lista de rutinas del usuario
+				}*/
+				//if(rutinas.findFavByUsuario(usuarios.getIdByNombreUsuario(user.getNombreUsuario()))!=null) {
+				if(user.hayFavoritas()) {
+					model.addAttribute("listaRutinasFavoritas",rutinas.findFavoritasByIdUsuario(usuarios.getIdByNombreUsuario(user.getNombreUsuario()))); //RUTINAS FAVORITAS DE UN USUARIO -> Devuelvo la lista de rutinas favoritas del usuario
 				}
-				//model.addAttribute("listaRutinasFavoritas",user.getRutinas_fav()); //RUTINAS FAVORITAS DE UN USUARIO -> Devuelvo la lista de rutinas favoritas del usuario
 				return "usuarioBasico";
 			} else {
 				return "acceso";

@@ -22,7 +22,7 @@ public class RutinasPersonalizadasController {
 	public String acceder(Model model, HttpSession sesion) {
 		model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
 		
-		Usuario usuario=usuarios.getByNombre(sesion.getAttribute("nombreUsuarioSesion").toString());
+		Usuario usuario=usuarios.findByNombreUsuario(sesion.getAttribute("nombreUsuarioSesion").toString());
 		model.addAttribute("listaRutinasPersonales",tablas.findByUsuario(usuario)); //MODIFICO REPOSITORY PARA SACAR TODOS LOS NOMBRES DE ENT.
 		return "rutinasPersonalizadas";
 	}

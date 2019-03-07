@@ -16,8 +16,8 @@ public interface ClaseRepository extends JpaRepository<Clase, Long>{
 	@Query(value="select nombre from clase", nativeQuery=true)
 	List<String> findAllNombre();
 	
-	@Query(value="select clase_id from clase_horario where clase_horario.horarios_id", nativeQuery=true)
-	int getClaseByHorario(int horario);
+	@Query(value="select clase_id from clase_horarios where clase_horarios.horarios_id=?1", nativeQuery=true)
+	int getClaseByHorario(long horario);
 	
 	/*@Query(value = "select clase.nombre from clase, clase_horarios, horario  where clase_horarios.clase_id=clase.id and horario.id=clase_horarios.horarios_id and horario.dia= ?1 and horario.hora= ?2")
 	String findNombreByDiaAndHora(String dia, int hora);*/
@@ -68,7 +68,7 @@ public interface ClaseRepository extends JpaRepository<Clase, Long>{
 	
 	Clase getByNombre(String nombre);
 	
-	Clase getById(int id);
+	Clase getById(long id);
 	
 	
 }

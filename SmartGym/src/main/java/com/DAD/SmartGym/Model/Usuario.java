@@ -51,21 +51,7 @@ public class Usuario {
 	@ManyToMany(cascade=CascadeType.ALL)
 	private List<Clase> clases_apuntadas = new ArrayList<Clase>();
 	
-	public List<TablaRutina> getRutinas() {
-		return rutinas;
-	}
 
-	public void setRutinas(List<TablaRutina> rutinas) {
-		this.rutinas = rutinas;
-	}
-
-	public List<TablaRutina> getRutinas_fav() {
-		return rutinas_fav;
-	}
-
-	public void setRutinas_fav(List<TablaRutina> rutinas_fav) {
-		this.rutinas_fav = rutinas_fav;
-	}
 
 	@OneToMany(cascade=CascadeType.ALL)
 	private List<Retroalimentacion> comentarios = new ArrayList<Retroalimentacion>();
@@ -117,6 +103,26 @@ public class Usuario {
 	
 	public boolean tieneEntrenador() {
 		return this.entrenador!=null;
+	}
+	
+	public List<TablaRutina> getRutinas() {
+		return rutinas;
+	}
+
+	public void setRutinas(List<TablaRutina> rutinas) {
+		this.rutinas = rutinas;
+	}
+
+	public List<TablaRutina> getRutinas_fav() {
+		return rutinas_fav;
+	}
+
+	public void setRutinas_fav(List<TablaRutina> rutinas_fav) {
+		this.rutinas_fav = rutinas_fav;
+	}
+	
+	public boolean hayFavoritas() {
+		return this.rutinas_fav!=null;
 	}
 
 	public String solicitarEntrenador(Entrenador entrenador) {

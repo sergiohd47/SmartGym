@@ -43,7 +43,7 @@ public class EditarPerfilController {
 			@RequestParam String email, @RequestParam String contrasena, HttpSession sesion) {
 		if(sesion.getAttribute("tipoUsuarioSesion").equals("usuarioBasico")) {
 			
-			int id = usuarios.getIdByNombreUsuario(sesion.getAttribute("nombreUsuarioSesion").toString());
+			int id = (int) usuarios.getIdByNombreUsuario(sesion.getAttribute("nombreUsuarioSesion").toString());
 			usuarios.setUsuarioById(nombreUsuario, id);
 			usuarios.setMailById(email, id);
 			usuarios.setContrasenaById(contrasena, id);

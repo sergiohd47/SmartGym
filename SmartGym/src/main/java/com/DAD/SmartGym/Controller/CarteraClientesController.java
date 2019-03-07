@@ -18,7 +18,8 @@ public class CarteraClientesController {
 	@RequestMapping("/carteraClientes")
 	public String acceder(Model model, HttpSession sesion) {
 		model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
-		Entrenador trainer = entrenadores.getByNombre(sesion.getAttribute("nombreUsuarioSesion").toString());
+		Entrenador trainer = entrenadores.findByNombreUsuario(sesion.getAttribute("nombreUsuarioSesion").toString());
+		System.out.println(trainer.getNombreUsuario());
 		model.addAttribute("listaClientes",trainer.getPendientes()); // Devuelve el nombre de todos los clientes que quieren estar con ese entrenador -> Devuelve una lista de los usuarios que es entrenador
 		return "carteraClientes";
 	}

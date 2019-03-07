@@ -22,7 +22,7 @@ public class InicioRegistroController {
 			@RequestParam char sexo,@RequestParam String nombreUsuario,@RequestParam String email,
 			@RequestParam String contrasena, @RequestParam String usuario) {
 		if(usuario.equals("usuarioBasico")) {
-			if(usuarios.findByNombreUsuario(nombreUsuario).size()==0) {
+			if(usuarios.findListByNombreUsuario(nombreUsuario).size()==0) {
 				Usuario user = new Usuario(nombre,apellidos,nombreUsuario,email,sexo,contrasena);
 				usuarios.save(user);
 				return "acceso";

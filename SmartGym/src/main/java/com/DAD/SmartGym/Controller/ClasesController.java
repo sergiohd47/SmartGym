@@ -56,11 +56,19 @@ public class ClasesController {
 	}
 	
 	@RequestMapping("/reservarHora")
-	public String reservarHora(Model model,@RequestParam int reservarHorario, HttpSession sesion) {
-		Horario hora = horarios.getById(reservarHorario);
-		Usuario user = usuarios.getByNombre(sesion.getAttribute("nombreUsuarioSesion").toString());
+	public String reservarHora(Model model,@RequestParam long reservarHorario, HttpSession sesion) {
+		/*Horario hora = horarios.getById(reservarHorario);
+		System.out.println(hora.getDia());
+		Usuario user = usuarios.findByNombreUsuario(sesion.getAttribute("nombreUsuarioSesion").toString());
+		System.out.println(user.getNombreUsuario());
 		Clase clase=clases.getById(clases.getClaseByHorario(reservarHorario));
+		System.out.println(clase.getNombre());
 		clase.reservarPlaza(user, hora);
+		*/
+		clases.getById(clases.getClaseByHorario(reservarHorario)).reservarPlaza(usuarios.findByNombreUsuario(sesion.getAttribute("nombreUsuarioSesion").toString()),
+				horarios.getById(reservarHorario));
+		Usuario user = usuarios.findByNombreUsuario(sesion.getAttribute("nombreUsuarioSesion").toString());
+		usuarios.save(user);
 		model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
 		model.addAttribute("listaClases",clases.findAllNombre());
 		

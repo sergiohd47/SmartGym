@@ -89,7 +89,6 @@
 						<thead>
 							<tr>
 								<th scope="col"></th>
-								<th scope="col">Nombre Entrenador</th>
 								<th scope="col">Objetivo</th>
 								<th scope="col">Duracion</th>
 								<th scope="col">Añadir Favoritos
@@ -99,11 +98,10 @@
 						 {{#listaRutinasPersonales}}
 						<tr>
 							<td>{{-index}}</td>
-							<td>{{.}}</td>  <!-- Nombre Entrenador -->
 							<td>{{objetivo}}</td> <!-- Objetivo Rutina -->
-							<td>{{.}}</td> <!-- Duracion Rutina -->
+							<td>{{duracion}}</td> <!-- Duracion Rutina -->
 							<td> 
-								<button name="añadirFavoritos" id="añadirFavoritos"  value="{{.}}" onclick="rutinaAñadidaFavoritos()">AÑADIR FAVORITOS</button>
+								<button name="anadirFavoritos" id="anadirFavoritos"  value="{{.}}" onclick="rutinaAñadidaFavoritos()">AÑADIR FAVORITOS</button>
 							</td> <!-- Añadir Favoritos -->
 							<td>
 								<button name="rutina" id="rutina"  value="{{.}}">RUTINA</button>
