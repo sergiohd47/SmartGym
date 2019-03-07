@@ -93,18 +93,20 @@ El equipo de desarrollo de la pagina web es:
    
    - ***Página Usuario Básico***
    ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym9.PNG)
-      - _Clases Presenciales:_ horario de todas aquellas clases que contenga el gimnasio 
-	  ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym10.PNG)
-			- _Clases:_ clases que se realizan en dicho gimnasio 
+      - _Clases Presenciales:_ disponibilidad de las clases impartidas. A la hora de realizar click, se acceder a la pagina de la clase en concreto
+	  ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGymDAD1.PNG)
+			- _Clases:_ pagina de clases presenciales
 			![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym15.PNG)
 			- _Visualizar Tipo de Clase:_ explica al usuario las funcionalidades de cada clase (duracion, nivel de intensidad de cardio o de fuerza, sala y número total de plazas) 
-			![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym16.PNG) 
+			![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SMDAD2.PNG) 
 			- _Seleccionar Horario de Clase:_ posibilidad para el usuario de elegir su horario deseado para ejecutar dicho tipo de clase 
 			![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym17.PNG)			 
-	  - _Entrenador Personal:_ el usuario puede seguir la rutina del entrenador personal que haya escogido. En caso de no tener entrenador, podrá contactar con alguno de ellos 
-	  ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym11.PNG)
+	  - _Entrenador Personal:_ el usuario puede seguir la rutina del entrenador personal que haya escogido. En caso de no tener entrenador, podrá contactar con alguno de ellos. El usuario escribira el objetivo de la rutina pedida y dara click a enviar, por el cual se contactara con entrenador.
+	  ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SMDAD3.PNG)
+	  - _Seguimiento Personalizado:_ una vez contactado con el entrenador, en esta seccion se almacenaran las rutinas personal.
+	  ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SMDAD4.PNG)
 	  - _Rutinas Favoritas:_ visualización de las rutinas favoritas elegidas por el usuario 
-	  ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym12.PNG) 
+	  ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SMDAD5.PNG) 
 	  - _Editar Perfil:_ el usuario podrá editar su perfil cuando él lo desee 
 	  ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym13.PNG) 
 	  - _Cerrar Sesion:_ el usuario podrá cerrar su sesión en cualquier momento 
@@ -114,8 +116,13 @@ El equipo de desarrollo de la pagina web es:
 	  Muchas de las funcionalidades básicas de un usuario básico también las proporciona un entrenador (ver clases presenciales o rutinas favoritas, editar perfil y cerrar sesión)
       - _Cartera Clientes:_ organización del trabajo para cada entrenador 
 	  ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym18.PNG)
-			- _Visualizar Cartera Clientes:_ el entrenador podrá ver la lista de clientes que se hayan puesto en contacto con él para solicitar sus servicios 
-			![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym19.PNG)
-		 
+			- _Visualizar Cartera Clientes:_ el entrenador podrá ver la lista de clientes que se hayan puesto en contacto con él para solicitar sus servicios. Una vez seleccionado el archivo mediante el boton Seleccionar Archivo, se mandara esta al usuario.
+			![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SMDAD6.PNG)
+			- _Clases Presenciales:_ un entrenador tendra disponible la opcion de añadir una clase nueva o editar el horario de una de ellas.
+			![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SMDAD9.PNG)
+					- _Editar Horario:_ posibilidad de editar horario de una clase
+					![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SMDAD7.PNG)
+					- _Añadir Clase:_ posibilidad de añadir una clase nueva
+					![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SMDAD8.PNG)
    
    
