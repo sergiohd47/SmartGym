@@ -43,9 +43,6 @@ public class UsuarioController {
 				Usuario user = usuarios.findByNombreUsuario(nombreUsuario);
 				model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
 				model.addAttribute("listaClases",clases.findAllNombre());
-				/*if(rutinas.findByUsuario(user)!=null) {
-					/model.addAttribute("listaRutinasPersonales",rutinas.findByUsuario(user)); //RUTINAS PERSONALES MANDADAS POR UN ENTRENADOR -> Devuelvo la lista de rutinas del usuario
-				}*/
 				//if(rutinas.findFavByUsuario(usuarios.getIdByNombreUsuario(user.getNombreUsuario()))!=null) {
 				if(user.hayFavoritas()) {
 					model.addAttribute("listaRutinasFavoritas",rutinas.findFavoritasByIdUsuario(usuarios.getIdByNombreUsuario(user.getNombreUsuario()))); //RUTINAS FAVORITAS DE UN USUARIO -> Devuelvo la lista de rutinas favoritas del usuario
@@ -83,4 +80,15 @@ public class UsuarioController {
 		return "acceso";
 	} 
 	
+	@RequestMapping("/volver")
+	public String usuarioBasico(Model model, HttpSession sesion) {
+		model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
+		Usuario user = usuarios.findByNombreUsuario(sesion.getAttribute("nombreUsuarioSesion").toString());
+		model.addAttribute("listaClases",clases.findAllNombre());
+		//if(rutinas.findFavByUsuario(usuarios.getIdByNombreUsuario(user.getNombreUsuario()))!=null) {
+		if(user.hayFavoritas()) {
+			model.addAttribute("listaRutinasFavoritas",rutinas.findFavoritasByIdUsuario(usuarios.getIdByNombreUsuario(user.getNombreUsuario())));
+		}
+		return "usuarioBasico";
+	}
 }

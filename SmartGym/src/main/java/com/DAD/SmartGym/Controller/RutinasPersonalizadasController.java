@@ -37,5 +37,16 @@ public class RutinasPersonalizadasController {
 		model.addAttribute("listaRutinasPersonales",tablas.findByUsuario(usuario)); //MODIFICO REPOSITORY PARA SACAR TODOS LOS NOMBRES DE ENT.
 		return "rutinasPersonalizadas";
 	}
+	
+	@RequestMapping("/quitarFavorito")
+	public String quitarFavorito(Model model,@RequestParam long quitFavoritos, HttpSession sesion) {
+		model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
+		TablaRutina rutina = tablas.getById(quitFavoritos);
+		Usuario usuario=usuarios.findByNombreUsuario(sesion.getAttribute("nombreUsuarioSesion").toString());
+		usuario.quitarRutinaFavorita(rutina);
+		usuarios.save(usuario);
+		model.addAttribute("listaRutinasPersonales",tablas.findByUsuario(usuario)); //MODIFICO REPOSITORY PARA SACAR TODOS LOS NOMBRES DE ENT.
+		return "rutinasPersonalizadas";
+	}
 
 }
