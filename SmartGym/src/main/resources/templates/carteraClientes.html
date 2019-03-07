@@ -92,17 +92,14 @@
 							<tr>
 								<th scope="col"></th>
 								<th scope="col">Nombre Usuario</th>
-								<th scope="col">Objetivo Rutina</th>
-								<th scope="col">Rutina</th>
+								<th scope="col">Seleccionar rutina</th>
 								<th scope="col">Enviar</th>
 							</tr>
 						</thead>
 						{{#listaClientes}}
-						<trth:each="rutina: ${listaClientes}">
+						<tr>
 							<td>{{-index}}</td> 
-							<td th:text="${rutina.usuario.getNombreUsuario()}"/>  <!-- Nombre Usuario -->
-							<td th:text="${rutina.objetivo}"/> <!-- Objetivo Rutina -->
-							<td th:text="${rutina.duracion}"/> <!-- Duracion Rutina -->
+							<td>{{.}}</td>  <!-- Nombre Usuario -->
 							<td>
 								<input type="file" id="rutina" name="rutina" multiple/>
 								<!-- <output id="list"></output> -->

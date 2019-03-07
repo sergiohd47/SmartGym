@@ -9,6 +9,10 @@ import org.springframework.transaction.annotation.Transactional;
 import com.DAD.SmartGym.Model.Usuario;
 
 public interface UsuariosRepository extends JpaRepository<Usuario,Long>{
+	
+	@Query(value="select nombre_usuario from usuario where usuario.entrenador_id = ?1", nativeQuery=true)
+	List<String> getNombreUsuariosByIdEntrenador(long id);
+	
 	List<Usuario> findByNombre(String nombre);
 	
 	List<Usuario> findListByNombreUsuario(String nombreUsuario);
