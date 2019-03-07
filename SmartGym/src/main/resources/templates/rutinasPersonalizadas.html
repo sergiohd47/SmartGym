@@ -84,7 +84,7 @@
 					<hr class="my-4">
 					<p class="text-dark mb-4">En esta seccion, aparecera el
 						seguimiento de tu entrenador personal.</p>
-					<form action="">
+					<form action="favorito">
 					<table class="table table-dark">
 						<thead>
 							<tr>
@@ -101,7 +101,7 @@
 							<td>{{objetivo}}</td> <!-- Objetivo Rutina -->
 							<td>{{duracion}}</td> <!-- Duracion Rutina -->
 							<td> 
-								<button name="anadirFavoritos" id="anadirFavoritos"  value="{{.}}" onclick="rutinaAñadidaFavoritos()">AÑADIR FAVORITOS</button>
+								<button name="anadirFavoritos" id="anadirFavoritos"  value="{{id}}" onclick="rutinaAñadidaFavoritos()">AÑADIR FAVORITOS</button>
 							</td> <!-- Añadir Favoritos -->
 							<td>
 								<button name="rutina" id="rutina"  value="{{.}}">RUTINA</button>

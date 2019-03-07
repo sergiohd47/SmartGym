@@ -30,20 +30,25 @@ public class ContactarEntrenadorController {
 		Usuario user = usuarios.findByNombreUsuario(sesion.getAttribute("nombreUsuarioSesion").toString());
 		String respuestaRutina;
 		String respuestaEntrenador;
+		int duracion = (int)(Math.random()*8)+1;
 		if(user.tieneEntrenador()) {
 			if(user.getEntrenador().getNombreUsuario().equals(contactarEntrenador)) {
 				respuestaRutina = user.solicitarRutina(objetivoRutina);
 				respuestaEntrenador = "No cambia";
+				trainer.crearRutina(duracion);
 			}else {
 				respuestaEntrenador = user.cambiarEntrenador(trainer);
 				respuestaRutina = user.solicitarRutina(objetivoRutina);
+				trainer.crearRutina(duracion);
 			}
 		} else {
 			respuestaEntrenador = user.solicitarEntrenador(trainer);
 			respuestaRutina = user.solicitarRutina(objetivoRutina);
+			trainer.crearRutina(duracion);
+			
 		}
-		System.out.println(respuestaEntrenador);
-		System.out.println(respuestaRutina);
+		//System.out.println(respuestaEntrenador);
+		//System.out.println(respuestaRutina);
 		usuarios.save(user);
 		model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
 		return "usuarioBasico";

@@ -17,6 +17,9 @@ public interface TablaRutinaRepository extends JpaRepository<TablaRutina,Long> {
 	
 	List<TablaRutina> findByEntrenador(Entrenador entrenador);
 	
+	@Query(value = "select * from rutina where rutina.id_rutina = ?1", nativeQuery = true)
+	TablaRutina getById(long id);
+	
 	@Query(value = "select rutinas_fav_id_rutina from usuario_rutinas_fav where usuario_rutinas_fav.usuario_id= ?1", nativeQuery = true)
 	long[] findFavByUsuario(long usuario);
 	

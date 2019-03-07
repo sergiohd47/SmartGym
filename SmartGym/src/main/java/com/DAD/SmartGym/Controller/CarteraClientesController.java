@@ -19,7 +19,7 @@ public class CarteraClientesController {
 	public String acceder(Model model, HttpSession sesion) {
 		model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
 		Entrenador trainer = entrenadores.findByNombreUsuario(sesion.getAttribute("nombreUsuarioSesion").toString());
-		System.out.println(trainer.getNombreUsuario());
+		//System.out.println(trainer.getNombreUsuario());
 		model.addAttribute("listaClientes",trainer.getPendientes()); // Devuelve el nombre de todos los clientes que quieren estar con ese entrenador -> Devuelve una lista de los usuarios que es entrenador
 		return "carteraClientes";
 	}
