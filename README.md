@@ -98,9 +98,7 @@ El equipo de desarrollo de la pagina web es:
 			- _Clases:_ pagina de clases presenciales
 			![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym15.PNG)
 			- _Visualizar Tipo de Clase:_ explica al usuario las funcionalidades de cada clase (duracion, nivel de intensidad de cardio o de fuerza, sala y número total de plazas) 
-			![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SMDAD2.PNG) 
-			- _Seleccionar Horario de Clase:_ posibilidad para el usuario de elegir su horario deseado para ejecutar dicho tipo de clase 
-			![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SmartGym17.PNG)			 
+			![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SMDAD2.PNG) 			 
 	  - _Entrenador Personal:_ el usuario puede seguir la rutina del entrenador personal que haya escogido. En caso de no tener entrenador, podrá contactar con alguno de ellos. El usuario escribira el objetivo de la rutina pedida y dara click a enviar, por el cual se contactara con entrenador.
 	  ![Alt text](https://github.com/sergiohd47/SmartGym/blob/master/ImagenesPaginaWeb/SMDAD3.PNG)
 	  - _Seguimiento Personalizado:_ una vez contactado con el entrenador, en esta seccion se almacenaran las rutinas personal.
