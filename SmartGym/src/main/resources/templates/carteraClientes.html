@@ -86,29 +86,26 @@
 						de clientes que han solicitado tus servicios.</p>
 					<p class="text-faded mb-4">Contacta con ellos mediante el
 						correo de Smart Gym</p>
-					<form action="">
+					<form action="nuevaRutina">
 					<table class="table table-dark">
 						<thead>
 							<tr>
 								<th scope="col"></th>
 								<th scope="col">Nombre Usuario</th>
-								<th scope="col">Seleccionar rutina</th>
-								<th scope="col">Enviar</th>
+								<th scope="col">Objetivo</th>
+								<th scope="col">Rutina</th>
 							</tr>
 						</thead>
-						{{#listaClientes}}
+						{{#listaRutinasPendientes}} <!-- LISTA RUTINAS -->
 						<tr>
 							<td>{{-index}}</td> 
-							<td>{{.}}</td>  <!-- Nombre Usuario -->
+							<td>{{usuario}}</td>  <!-- Nombre Usuario -->
+							<td>{{objetivo}}</td> <!-- Objetivo Rutina -->
 							<td>
-								<input type="file" id="rutina" name="rutina" multiple/>
-								<!-- <output id="list"></output> -->
-							</td>
-							<td>
-								<button name="enviarRutinaCliente" id="enviarRutinaCliente"  value="{{.}}" onclick="enviarRutinaCliente()">ENVIAR</button>
+								<button name="nuevaRutina" id="nuevaRutina"  value="{{nombreUsuario}}">NUEVA RUTINA</button>
 							</td>
 						</tr>
-						{{/listaClientes}}	
+						{{/listaRutinasPendientes}}	
 					</table>
 					</form>
 				</div>
@@ -151,23 +148,5 @@
 
 	<!-- Custom scripts for this template -->
 	<script src="js/creative.min.js"></script>
-
-<!-- SCRIPT PARA SELECCION ARCHIVOS LOCALES -->
-<script>
-	function handleFileSelect(evt){
-		var files=evt.target.files;
-		var output=[];
-		for(var i=0,f;f=files[i];i++){
-			output.push('<li><strong>',escape(f.name),'</strong (',f.type || 'n/a', ') -',f.size, 'bytes, last modified: ',f.lastModifiedDate.toLocaleDateString(),'</li>');
-		}
-		document.getElementById('list').innerHTML='<ul>'+output.join('')+'</ul>';
-	}
-	document.getElementById('files').addEventListener('change',handleFileSelect,false);
-</script>
-<script>
-		function enviarRutinaCliente(){
-			alert("Has enviado una rutina al cliente de manera correcta!");
-		}
-	</script>
 </body>
 </html>

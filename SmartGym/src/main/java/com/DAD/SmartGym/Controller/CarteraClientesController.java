@@ -15,14 +15,17 @@ import com.DAD.SmartGym.Repository.*;
 @Controller
 public class CarteraClientesController {
 	@Autowired
-	private EntrenadoresRepository entrenadores; //REPOSITORIO CON TODOS LOS USUARIOS QUE PIDEN CONTACTAR CON UN ENTRENADOR X
+	private EntrenadoresRepository entrenadores;
 	@Autowired
 	private UsuariosRepository usuarios;
+	@Autowired
+	private TablaRutinaRepository tablasRutinas;
 	@RequestMapping("/carteraClientes")
 	public String acceder(Model model, HttpSession sesion) {
 		model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
 		Entrenador trainer = entrenadores.findByNombreUsuario(sesion.getAttribute("nombreUsuarioSesion").toString());
-		model.addAttribute("listaClientes",usuarios.getNombreUsuariosByIdEntrenador(entrenadores.getIdByNombreUsuario(sesion.getAttribute("nombreUsuarioSesion").toString()))); // Devuelve el nombre de todos los clientes que quieren estar con ese entrenador -> Devuelve una lista de los usuarios que es entrenador
+		//ACTUALIZAR HTML Y COSAS PARA QUE SEA CORRECTO
+		//model.addAttribute("listaRutinasPendientes",usuarios.getNombreUsuariosByIdEntrenador(entrenadores.getIdByNombreUsuario(sesion.getAttribute("nombreUsuarioSesion").toString()))); 
 		return "carteraClientes";
 	}
 }
