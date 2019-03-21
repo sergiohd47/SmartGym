@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -38,7 +39,7 @@ public class EditarPerfilController {
 		}
 	}
 	*/
-	@RequestMapping("/cambiarPerfil")
+	@PostMapping("/cambiarPerfil")
 	public String cambiar(Model model,@RequestParam String nombreUsuario,
 			@RequestParam String email, @RequestParam String contrasena, HttpSession sesion) {
 		if(sesion.getAttribute("tipoUsuarioSesion").equals("usuarioBasico")) {

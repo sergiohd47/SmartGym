@@ -3,6 +3,7 @@ package com.DAD.SmartGym.Controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -17,7 +18,7 @@ public class InicioRegistroController {
 	private EntrenadoresRepository entrenadores;
 	@Autowired
 	private UsuariosRepository usuarios;	
-	@RequestMapping("/accesoRegistro")
+	@PostMapping("/accesoRegistro")
 	public String inicioRegistrar(Model model,@RequestParam String nombre, @RequestParam String apellidos,
 			@RequestParam char sexo,@RequestParam String nombreUsuario,@RequestParam String email,
 			@RequestParam String contrasena, @RequestParam String usuario) {

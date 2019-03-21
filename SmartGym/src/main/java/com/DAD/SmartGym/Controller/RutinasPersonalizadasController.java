@@ -5,6 +5,7 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -27,7 +28,7 @@ public class RutinasPersonalizadasController {
 		return "rutinasPersonalizadas";
 	}
 	
-	@RequestMapping("/favorito")
+	@PostMapping("/favorito")
 	public String favorito(Model model,@RequestParam long anadirFavoritos, HttpSession sesion) {
 		model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
 		TablaRutina rutina = tablas.getById(anadirFavoritos);
@@ -38,7 +39,7 @@ public class RutinasPersonalizadasController {
 		return "rutinasPersonalizadas";
 	}
 	
-	@RequestMapping("/quitarFavorito")
+	@PostMapping("/quitarFavorito")
 	public String quitarFavorito(Model model,@RequestParam long quitFavoritos, HttpSession sesion) {
 		model.addAttribute("nombreUsuario",sesion.getAttribute("nombreUsuarioSesion"));
 		TablaRutina rutina = tablas.getById(quitFavoritos);

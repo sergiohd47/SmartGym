@@ -4,6 +4,7 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -14,7 +15,7 @@ public class NuevaRutinaController {
 		return "nuevaRutina";	
 	}
 	
-	@RequestMapping("/nuevaRutinaFormulario")
+	@PostMapping("/nuevaRutinaFormulario")
 	public String nuevaRutinaFormulario(Model model, @RequestParam String nombreEjercicio1,@RequestParam int seriesEjercicio1,
 			@RequestParam int repeticionesEjercicio1, @RequestParam String intensidadEjercicio1, @RequestParam int descansoEjercicio1,
 			@RequestParam String nombreEjercicio2,@RequestParam int seriesEjercicio2,

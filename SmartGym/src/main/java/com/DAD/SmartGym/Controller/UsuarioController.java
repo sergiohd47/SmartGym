@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -34,7 +35,7 @@ public class UsuarioController {
 	*/
 	private String nombreUsuarioSesion;
 	private String tipoUsuarioSesion;
-	@RequestMapping("/usuarioController")
+	@PostMapping("/usuarioController")
 	public String usuarioBasico(Model model, @RequestParam String nombreUsuario, @RequestParam String contrasena, @RequestParam String usuario, HttpSession sesion) {
 		sesion.setAttribute("nombreUsuarioSesion", nombreUsuario);
 		sesion.setAttribute("tipoUsuarioSesion", usuario);
