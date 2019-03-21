@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +20,7 @@
 		<div class="image"></div>
 		<div class="frm">
 			<h1>Nuevo Horario</h1>
-			<form action="editarHorario" method="post">
+			<form action="@{/editarHorario}" method="post">
 				<div class="form-group">
 					<label for="nombre">Nombre Clase</label> <input type="text"
 						class="form-control" id="nombreClase" name="nombreClase" placeholder="Nombre Clase">
@@ -40,7 +40,7 @@
 				<div class="form-group">
 					<button type="confirmarHorario" class="btn btn-success btn-lg" onclick="alertaAñadirHorario()">Confirmar</button>
 				</div>
-				<input type="hidden" name="_csrf" value="{{token}}">
+				
 			</form>
 		</div>
 	</div>

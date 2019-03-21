@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,7 +20,7 @@
 		<div class="image"></div>
 		<div class="frm">
 			<h1>Nueva Rutina</h1>
-			<form action="nuevaRutinaFormulario" method="post">
+			<form action="@{/nuevaRutinaFormulario}" method="post">
 				<!-- Ejercicio 1 -->
 				<div class="form-group">
 					<label for="nombreEjercicio1">Nombre Ejercicio:</label> <input
@@ -127,7 +127,7 @@
 				<div style="text-align: center;">
 						<button type="submit" class="btn btn-success btn-lg" onclick="rutinaCreadaOK()">Enviar</button>
 				</div>
-				<input type="hidden" name="_csrf" value="{{token}}">
+				
 			</form>
 		</div>
 	</div>
