@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -23,7 +23,7 @@
 		<div class="image"></div>
 		<div class="frm">
 			<h1>Editar Perfil</h1>
-			<form action="/cambiarPerfil" method="post">
+			<form th:action="@{/cambiarPerfil}" method="post">
 				<div class="form-group">
 					<label for="nombreUsuario">Nuevo Nombre Usuario:</label> <input
 						type="text" class="form-control" id="nombreUsuario"
@@ -42,7 +42,7 @@
 						<button type="submit" class="btn btn-success btn-lg" onclick="editarPerfilOK()">Editar</button>
 						<button type="submit" class="btn btn-success btn-lg" href="cancelar" onclick="descartadosCambios()">Cancelar</button>
 				</div>
-				<input type="hidden" name="_csrf" value="{{token}}"/>
+				<!-- <input type="hidden" name="_csrf" value="{{token}}"/> -->
 			</form>
 		</div>
 	</div>
