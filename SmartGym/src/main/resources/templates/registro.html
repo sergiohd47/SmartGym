@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html>
 
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,7 +15,7 @@
 		<div class="image"></div>
 		<div class="frm">
 			<h1>Primer paso</h1>
-			<form action="@{/accesoRegistro}" method="post">
+			<form action="/accesoRegistro" method="post">
 				<div class="form-group">
 					<label for="nombre">Nombre:</label> <input type="text"
 						class="form-control" id="nombre" name="nombre" placeholder="Nombre">
@@ -60,7 +60,7 @@
 					<button type="registrarse" class="btn btn-success btn-lg" onclick="registroCorrecto()">Registrarse</button>
 					
 				</div>
-				
+				<input type="hidden" name="_csrf" value="{{token}}"/>
 			</form>
 		</div>
 	</div>
