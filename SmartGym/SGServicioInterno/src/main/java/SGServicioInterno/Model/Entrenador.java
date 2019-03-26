@@ -143,7 +143,7 @@ public class Entrenador {
 		this.pendientes.get(0).getUsuario().recibirRutina(this.pendientes.get(0).iniciarRutina(duracion));
 	}
 	*/
-	public void añadirComentario(Retroalimentacion comentario) {
+	public void anadirCOmentario(Retroalimentacion comentario) {
 		comentarios.add(comentario);
 	} 
 	
