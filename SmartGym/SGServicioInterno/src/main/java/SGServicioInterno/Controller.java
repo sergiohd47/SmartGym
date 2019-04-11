@@ -5,16 +5,31 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import javax.persistence.EntityNotFoundException;
+
 import com.itextpdf.text.*;
 import com.itextpdf.text.Font.FontFamily;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 
-import SGServicioInterno.Model.TablaRutina;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
 
+import SGServicioInterno.Model.EjerciciosTabla;
+import SGServicioInterno.Model.TablaRutina;
+import SGServicioInterno.Repository.TablaRutinaRepository;
+
+
+@RestController
 public class Controller {
+	@Autowired
+	public TablaRutinaRepository tablaRutina;
 	
-	public static void GenerarPDF(TablaRutina rutina) {
+	public static FileOutputStream generarPDF(TablaRutina rutina) throws DocumentException, IOException{
 		Document documento = new Document();
 		
 		Font tituloFuente = new Font(Font.FontFamily.COURIER,18,Font.BOLD);
@@ -22,7 +37,7 @@ public class Controller {
 		
 		int NumeroColumnas = 2;
 		
-		try {
+		
 			String path = new File(".").getCanonicalPath();
 			String name = path + "/test.pdf";
 			
@@ -37,14 +52,9 @@ public class Controller {
 			anadirTitulo(documento,rutina.getObjetivo(),tituloFuente);
 			anadirFoto(documento,logo);
 			anadirUsuarios(documento,rutina.getNombreUsuario(),rutina.getNombreEntrenador(),rutina.getDuracion(),subtituloFuente);
-			
-			
-			
-		}catch (FileNotFoundException | DocumentException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-			e.printStackTrace();
-		}
+			anadirTabla(documento,2,rutina);
+			return fos;
+		
 	}
 	
 	private static void anadirTitulo(Document documento,String titulo,Font fuente) throws DocumentException{
@@ -62,29 +72,49 @@ public class Controller {
 		
 	}
 	
-	private static void anadirUsuarios(Document documento, String usuario, String entrenador,int duracion,Font fuente) {
+	private static void anadirUsuarios(Document documento, String usuario, String entrenador,int duracion,Font fuente) throws DocumentException {
 		Paragraph datos = new Paragraph();
 		datos.add(new Paragraph(" "));
 		datos.add(new Paragraph("Usuario: "+usuario, fuente));
 		datos.add(new Paragraph(" "));
 		datos.add(new Paragraph("Entrenador: "+entrenador, fuente));
 		datos.add(new Paragraph(" "));
-		datos.add(new Paragraph("Duración: "+ duracion +" semanas", fuente));
+		datos.add(new Paragraph("Duracion: "+ duracion +" semanas", fuente));
 		datos.add(new Paragraph(" "));
+		documento.add(datos);
 	}
 	
-	private static void anadirTabla(int numColumnas) {
-		PdfPTable tablaRutuina = new PdfPTable(numColumnas);
+	private static void anadirTabla(Document documento, int numColumnas,TablaRutina rutina) throws DocumentException {
+		Paragraph tabla = new Paragraph();
+		PdfPTable tablaRutina = new PdfPTable(numColumnas);
+		EjerciciosTabla ejercicios = rutina.getEjercicios();
+		for(int i = 0; i < numColumnas; i++) {
+			anadirCelda(tablaRutina,ejercicios.getEjercicio(i),ejercicios.getSerie(i),ejercicios.getRepeticiones(i),ejercicios.getDescanso(i));
+		}
+		tabla.add(tablaRutina);
+		documento.add(tabla);
 	}
 	
-	private static void anadirCelda(PdfPTable tablaRutina, String nombreEjercico, int series, int repeticiones, String intensidad, int descanso) {
+	private static void anadirCelda(PdfPTable tablaRutina, String nombreEjercico, int series, int repeticiones, int descanso) {
 		Paragraph ejercicio = new Paragraph();
 		ejercicio.add(new Paragraph(nombreEjercico));
 		ejercicio.add(new Paragraph("Series: "+ series));
 		ejercicio.add(new Paragraph("Repeticiones: "+ repeticiones));
-		ejercicio.add(new Paragraph("Intensidad: "+ intensidad));
 		ejercicio.add(new Paragraph("Descanso: "+ descanso+" segundos"));
 		tablaRutina.addCell(ejercicio);
+	}
+	
+	
+	@GetMapping("/crearPDF/{id}")
+	public ResponseEntity<Object> crearPDF(@PathVariable long id) throws DocumentException, IOException{
+		try {
+			TablaRutina rutina = tablaRutina.getById(id);
+			FileOutputStream fos = generarPDF(rutina);
+			return new ResponseEntity<>(fos,HttpStatus.OK);
+		}catch (EntityNotFoundException e){
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+		}
+		
 	}
 
 }

@@ -1,6 +1,9 @@
 package com.DAD.SmartGym.Controller;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.web.csrf.CsrfToken;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,7 +24,9 @@ public class InicioRegistroController {
 	@PostMapping("/accesoRegistro")
 	public String inicioRegistrar(Model model,@RequestParam String nombre, @RequestParam String apellidos,
 			@RequestParam char sexo,@RequestParam String nombreUsuario,@RequestParam String email,
-			@RequestParam String contrasena, @RequestParam String usuario) {
+			@RequestParam String contrasena, @RequestParam String usuario,  HttpServletRequest request) {
+		CsrfToken token = (CsrfToken) request.getAttribute("_csrf");
+		model.addAttribute("token", token.getToken()); 
 		if(usuario.equals("usuarioBasico")) {
 			if(usuarios.findListByNombreUsuario(nombreUsuario).size()==0) {
 				Usuario user = new Usuario(nombre,apellidos,nombreUsuario,email,sexo,contrasena);

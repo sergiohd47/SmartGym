@@ -13,6 +13,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 		http.authorizeRequests().antMatchers("/").permitAll();
 		http.authorizeRequests().antMatchers("/acceso").permitAll();
 		http.authorizeRequests().antMatchers("/registro").permitAll();
+		http.authorizeRequests().antMatchers("/accesoRegistro").permitAll();
 		http.authorizeRequests().antMatchers("/vendor/**").permitAll();
 		http.authorizeRequests().antMatchers("/css/**").permitAll();
 		http.authorizeRequests().antMatchers("/scss/**").permitAll();
@@ -26,6 +27,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 		
 		//PAGINA ACCESO	
 		http.formLogin().loginPage("/acceso");
+		
 		http.formLogin().usernameParameter("nombreUsuario");
 		http.formLogin().passwordParameter("password");
 		http.formLogin().defaultSuccessUrl("/usuarioBasico");
@@ -42,7 +44,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception{
 		auth.inMemoryAuthentication().withUser("usuario").password("pass").roles("USUARIO");
-		auth.inMemoryAuthentication().withUser("entrenador").password("entrenadorpass").roles("ENTRENADOR");
+		auth.inMemoryAuthentication().withUser("entrenador").password("entrenadorpass").roles("USUARIO","ENTRENADOR");
 	}
 	
 

@@ -1,4 +1,4 @@
-package com.DAD.SmartGym.Model;
+package SGServicioInterno.Model;
 
 import javax.persistence.OneToOne;
 

@@ -4,13 +4,17 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import SGServicioInterno.Model.EjerciciosTabla;
 
 @Entity
 @Table(name = "rutina")
@@ -36,7 +40,12 @@ public class TablaRutina {
 	private Date inicio;
 	private DateFormat form = new SimpleDateFormat("dd-MM-yyyy");*/
 	
-	//private PNG rutina;
+
+	@OneToOne(cascade=CascadeType.ALL)
+	private EjerciciosTabla ejercicios;
+	
+	@Column
+	private String pdf;
 	
 	protected TablaRutina() {} // Constructor para la base de datos
 	
@@ -84,6 +93,9 @@ public class TablaRutina {
 	}
 	
 
+	public EjerciciosTabla getEjercicios() {
+		return this.ejercicios;
+	}
 	
 
 }
