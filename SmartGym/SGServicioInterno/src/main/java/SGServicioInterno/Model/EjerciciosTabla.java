@@ -1,10 +1,24 @@
 package SGServicioInterno.Model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "tablaEjercicios")
 public class EjerciciosTabla {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int idEjercicio;
+	
+	@Column
 	private int numero;
+	
 	private String[] ejercicios;
 	private int[] series;
 	private int[] repeticiones;
@@ -27,6 +41,10 @@ public class EjerciciosTabla {
 		this.series[pos]=series;
 		this.repeticiones[pos]=repeticiones;
 		this.descanso[pos]=descanso;
+	}
+	
+	public int getId() {
+		return idEjercicio;
 	}
 	
 	public int getNumero() {

@@ -38,8 +38,8 @@ public class Controller {
 		int NumeroColumnas = 2;
 		
 		
-			String path = new File(".").getCanonicalPath();
-			String name = path + "/test.pdf";
+			
+			String name = "TablaEjercicio" + rutina.getEjercicios().getId();
 			
 			File archivo = new File(name);
 			FileOutputStream fos = new FileOutputStream(archivo);

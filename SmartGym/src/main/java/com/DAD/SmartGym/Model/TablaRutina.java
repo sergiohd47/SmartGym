@@ -14,6 +14,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
+import com.DAD.SmartGym.Model.EjerciciosTabla;
+
 @Entity
 @Table(name = "rutina")
 public class TablaRutina {
@@ -89,6 +91,9 @@ public class TablaRutina {
 		return this.duracion;
 	}
 	
+	public EjerciciosTabla getEjercicios() {
+		return this.ejercicios;
+	}
 
 	
 

@@ -1,10 +1,17 @@
 package com.DAD.SmartGym.Controller;
 
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+
+import com.DAD.SmartGym.Repository.TablaRutinaRepository;
+import  com.DAD.SmartGym.Model.TablaRutina;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,6 +22,8 @@ import org.springframework.web.client.RestTemplate;
 
 @Controller
 public class NuevaRutinaController {
+	@Autowired
+	public TablaRutinaRepository tablaRutina;
 	
 	private static final String direccionURL = "http://192.168.1.1:8080/crearPDF/";
 	@RequestMapping("/nuevaRutina")
@@ -35,12 +44,16 @@ public class NuevaRutinaController {
 		return "carteraClientes";
 	}
 	
-	@GetMapping("pdf")
+	@GetMapping("/obtenerPDF")
 	public void getPdf(@RequestParam long id, HttpServletResponse response) throws IOException {
 		RestTemplate restTemplate = new RestTemplate();
 		try {
-			ObjectNode data = restTemplate.getForObject(direccionURL + id, ObjectNode.class);
-			
+			ObjectNode datos = restTemplate.getForObject(direccionURL + id, ObjectNode.class);
+			TablaRutina rutina = tablaRutina.getById(id);
+			String name = "TablaEjercicio" + rutina.getEjercicios().getId();
+			File archivo = new File(name);
+			FileOutputStream fos = new FileOutputStream(archivo);
+					//response.getOutputStream();
 			response.flushBuffer();
 		} catch (Exception e) {
 			response.sendRedirect("/error");
