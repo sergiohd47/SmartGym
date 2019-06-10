@@ -1,5 +1,6 @@
 package SGServicioInterno;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -110,6 +111,8 @@ public class Controller {
 		try {
 			TablaRutina rutina = tablaRutina.getById(id);
 			FileOutputStream fos = generarPDF(rutina);
+			//ByteArrayOutputStream baos = new ByteArrayOutputStream();
+			//baos = generarPDF(rutina).toByteArray();
 			return new ResponseEntity<>(fos,HttpStatus.OK);
 		}catch (EntityNotFoundException e){
 			return new ResponseEntity<>(HttpStatus.NOT_FOUND);

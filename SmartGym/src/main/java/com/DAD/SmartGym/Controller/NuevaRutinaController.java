@@ -11,6 +11,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.DAD.SmartGym.Repository.TablaRutinaRepository;
 import  com.DAD.SmartGym.Model.TablaRutina;
 
+import org.h2.store.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -32,7 +33,7 @@ public class NuevaRutinaController {
 	}
 	
 	@PostMapping("/nuevaRutinaFormulario")
-	public String nuevaRutinaFormulario(Model model, @RequestParam String nombreEjercicio1,@RequestParam int seriesEjercicio1,
+	public String nuevaRutinaFormulario(Model model, @RequestParam long id, @RequestParam String nombreEjercicio1,@RequestParam int seriesEjercicio1,
 			@RequestParam int repeticionesEjercicio1, @RequestParam String intensidadEjercicio1, @RequestParam int descansoEjercicio1,
 			@RequestParam String nombreEjercicio2,@RequestParam int seriesEjercicio2,
 			@RequestParam int repeticionesEjercicio2, @RequestParam String intensidadEjercicio2, @RequestParam int descansoEjercicio2,
@@ -44,21 +45,27 @@ public class NuevaRutinaController {
 		return "carteraClientes";
 	}
 	
-	@GetMapping("/obtenerPDF")
+	/*@GetMapping("/obtenerPDF")
 	public void getPdf(@RequestParam long id, HttpServletResponse response) throws IOException {
 		RestTemplate restTemplate = new RestTemplate();
 		try {
 			ObjectNode datos = restTemplate.getForObject(direccionURL + id, ObjectNode.class);
+			
+			//byte[] b = datos.get("file").binaryValue();
+			
 			TablaRutina rutina = tablaRutina.getById(id);
 			String name = "TablaEjercicio" + rutina.getEjercicios().getId();
 			File archivo = new File(name);
 			FileOutputStream fos = new FileOutputStream(archivo);
-					//response.getOutputStream();
+			fos.write(datos.binaryValue());
+			//ByteArrayOutputStream boas = new ByteArrayOutputStream();
+            //boas.write(b);
+			//response.getOutputStream();
 			response.flushBuffer();
 		} catch (Exception e) {
 			response.sendRedirect("/error");
 		}
-	}
+	}*/
 	
 
 	
