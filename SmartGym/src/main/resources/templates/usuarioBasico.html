@@ -165,6 +165,7 @@
 							</td>
 							<td>
 								<button name="quitFavoritos" id="quitFavoritos"  value="{{id}}" onclick="rutinaEliminadaFavoritos()">ELIMINAR FAVORITOS</button>
+								<input type="hidden" name="_csrf" value="{{token}}"/>
 							</td>
 						</tr>
 						{{/listaRutinasFavoritas}}

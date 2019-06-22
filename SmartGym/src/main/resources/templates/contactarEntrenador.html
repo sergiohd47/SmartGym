@@ -105,6 +105,7 @@
 							</td>
 							<td>
 								<button name="contactarEntrenador" id="contactarEntrenador"  value="{{.}}" onclick="contactEntrenador()">CONTACTAR</button>
+								<input type="hidden" name="_csrf" value="{{token}}"/>
 							</td>
 						</tr>
 						{{/listaEntrenadores}}	

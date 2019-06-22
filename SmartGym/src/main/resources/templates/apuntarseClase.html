@@ -110,6 +110,7 @@
 							<td> 
 								<button id="reservarHorario" name="reservarHorario"
 							value = "{{id}}" onclick="apuntadoAClase()">RESERVAR</button>
+							<input type="hidden" name="_csrf" value="{{token}}"/>
 							</td>
 						</tr>
 						{{/listaHorariosClases}}	

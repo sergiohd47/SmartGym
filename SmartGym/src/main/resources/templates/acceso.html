@@ -21,7 +21,7 @@
 					placeholder="Nombre Usuario">
 			</div>
 			<div class="form-group">
-				<input type="password" class="form-control" id="contraseña" name="contrasena"
+				<input type="password" class="form-control" id="contrasena" name="contrasena"
 					placeholder="Contraseña">
 			</div>
 			<div class="clearfix"></div>
@@ -36,6 +36,7 @@
 			</div>
 			<div class="form-group form-group-btn">
 				<button type="submit" class="btn btn-success btn-lg" href="acceso" value="submit">Acceder</button>
+				<input type="hidden" name="_csrf" value="{{token}}"/>
 			</div>
 		</form>
 	</div>

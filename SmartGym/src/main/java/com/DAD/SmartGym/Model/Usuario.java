@@ -18,8 +18,21 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
+	//Seguridad
+	private String passwordHash;
+	/*@ElementCollection(fetch = FetchType.EAGER)
+	private List<String> roles;*/
+	
 	@Column
 	private String nombre;
+	public String getPasswordHash() {
+		return passwordHash;
+	}
+
+	public void setPasswordHash(String passwordHash) {
+		this.passwordHash = passwordHash;
+	}
+
 	@Column
 	private String apellidos;
 	@Column

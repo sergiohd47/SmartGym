@@ -60,9 +60,9 @@
 				<!-- <button type="registrarse" class="btn btn-success btn-lg" href="accesoRegistro">Registrarse</button> -->
 
 					<button type="registrarse" class="btn btn-success btn-lg" onclick="registroCorrecto()">Registrarse</button>
-					
+					<input type="hidden" name="_csrf" value="{{token}}"/>
 				</div>
-				<input type="hidden" name="_csrf" value="{{token}}"/>
+				
 				<!-- <input type="hidden" name="_csrf" value="{{token}}"/> -->
 			</form>
 		</div>

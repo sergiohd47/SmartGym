@@ -9,8 +9,9 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.DAD.SmartGym.Model.Entrenador;
 import com.DAD.SmartGym.Model.Usuario;
+import org.springframework.data.repository.CrudRepository;
 
-public interface EntrenadoresRepository extends JpaRepository<Entrenador ,Long>{
+public interface EntrenadoresRepository extends JpaRepository<Entrenador ,Long>/*, CrudRepository<Entrenador, Long>*/{
 	
 	List<Entrenador> findByNombre(String nombre);
 	

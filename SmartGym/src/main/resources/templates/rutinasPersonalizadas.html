@@ -102,6 +102,7 @@
 							<td>{{duracion}}</td> <!-- Duracion Rutina -->
 							<td> 
 								<button name="anadirFavoritos" id="anadirFavoritos"  value="{{id}}" onclick="rutinaAñadidaFavoritos()">AÑADIR FAVORITOS</button>
+								<input type="hidden" name="_csrf" value="{{token}}"/>
 							</td> <!-- Añadir Favoritos -->
 							<td>
 								<button name="rutina" id="rutina"  value="{{.}}">RUTINA</button>

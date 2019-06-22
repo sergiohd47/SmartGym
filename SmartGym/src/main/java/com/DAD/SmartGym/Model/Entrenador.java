@@ -18,6 +18,11 @@ public class Entrenador {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
+	//Seguridad
+	/*private String passwordHash;
+	@ElementCollection(fetch = FetchType.EAGER)
+	private List<String> roles;*/
+	
 	@Column
 	private String nombre;
 	@Column
